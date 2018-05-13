@@ -1,0 +1,296 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlFreightFinish.ascx.cs" Inherits="TMS_Recycling.WebUserControlFreightFinish" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register src="CalendarWithTimeControl.ascx" tagname="CalendarWithTimeControl" tagprefix="uc1" %>
+<%@ Register src="URLPopUpControl.ascx" tagname="URLPopUpControl" tagprefix="uc2" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+    <asp:Panel ID="PanelSecondWeighingOrderNumber" runat="server">
+        <asp:Label ID="LabelSorteerbon" runat="server" CssClass="SubMenuHeader" 
+            Text="Sorteerbonnummer opgeven"></asp:Label>
+        <table style="width: 100%;">
+        <tr>
+        <td width="20%">
+
+            <asp:Label ID="LabelOrderNumber" runat="server" Text="Geef het weegbon nummer"></asp:Label>
+
+        </td>
+        <td>
+            <asp:TextBox ID="TextBoxOrderNumber" runat="server"></asp:TextBox>
+            <asp:MaskedEditExtender ID="TextBoxOrderNumber_MaskedEditExtender" 
+                runat="server" Mask="999999" TargetControlID="TextBoxOrderNumber">
+            </asp:MaskedEditExtender>
+        </td>
+        <td>
+            <asp:CheckBox ID="CheckBoxNewSorting" runat="server" 
+                Text="Het betreft een nieuwe nog niet geregistreerde sorteerbon." />
+        </td>
+        </tr>
+        </table>
+    </asp:Panel>
+
+    <asp:Panel ID="PanelBasicData" runat="server">
+        <asp:Label ID="LabelBasicData" runat="server" CssClass="SubMenuHeader" 
+            Text="Basisgegevens sorteerbon"></asp:Label>
+        <table style="width: 100%;">
+        <tr>
+        <td width="20%">
+        </td>
+        <td>
+            <uc2:URLPopUpControl ID="URLPopUpControlShowSorting" runat="server" 
+                Text="Lege weegbon nogmaals tonen" />
+            </td>
+        </tr>
+        <tr>
+        <td width="20%">
+            <asp:Label ID="LabelBuyOrSell" runat="server" 
+                Text="Is deze sorteerbon voor de in- of verkoop"></asp:Label></td>
+        <td>
+            <asp:RadioButtonList ID="RadioButtonListBuyOrSell" runat="server" 
+                AutoPostBack="True" 
+                onselectedindexchanged="RadioButtonListBuyOrSell_SelectedIndexChanged" >
+                <asp:ListItem Selected="True" Value="Buy">Sorteerbon tbv inkoop of niet van toepassing</asp:ListItem>
+                <asp:ListItem Value="Sell">Sorteerbon tbv verkoop</asp:ListItem>
+            </asp:RadioButtonList>
+        </td>
+            <tr>
+                <td width="20%">
+                    <asp:Label ID="LabelLocation" runat="server" Text="Weeglokatie"></asp:Label>
+                </td>
+                <td>
+                    <cc11:ClassComboBoxLocation ID="ComboBoxWeighingLocation" runat="server" 
+                        AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" 
+                        DataSourceID="EntityDataSourceLocations" DataTextField="Description" 
+                        DataValueField="Id" AutoPostBack="True" 
+                        onselectedindexchanged="ComboBoxWeighingLocation_SelectedIndexChanged">
+                    </cc11:ClassComboBoxLocation>
+                  
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <asp:Label ID="LabelDateTime1" runat="server" Text="Datum en tijd"></asp:Label>
+                </td>
+                <td>
+                    <uc1:CalendarWithTimeControl ID="CalendarWithTimeControlDateTime1" 
+                        runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <asp:Label ID="LabelGrossWeight" runat="server" Text="Netto gewogen gewicht"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="TextBoxTotalNetWeight" runat="server"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="TextBoxTotalNetWeight_MaskedEditExtender" 
+                        runat="server" MaskType="Number" Mask="99999" TargetControlID="TextBoxTotalNetWeight">
+                    </asp:MaskedEditExtender>
+                    &nbsp;&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <asp:Label ID="LabelPMV" runat="server" Text="PMV"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="TextBoxPMV" runat="server" Enabled="True"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <asp:Label ID="LabelOurPlate" runat="server" 
+                        Text="Kenteken (indien gewogen met één van onze trucks)"></asp:Label>
+                </td>
+                <td>
+                    <cc11:ClassComboBox ID="ComboBoxOurPlate" runat="server" 
+                        AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" 
+                        DataSourceID="EntityDataSourceTrucks" DataTextField="Description" 
+                        DataValueField="Id" AppendDataBoundItems="True">
+                        <asp:ListItem Value="">-Nvt-</asp:ListItem>
+                    </cc11:ClassComboBox>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <asp:Label ID="LabelCustomerPlate" runat="server" Text="Kenteken klant"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="TextBoxCustomerPlate" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <asp:Label ID="LabelCustomerID" runat="server" Text="Identificatie klant"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="TextBoxCustomerID" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <asp:Label ID="LabelCustomer" runat="server" Text="Klant"></asp:Label>
+                </td>
+                <td>
+                    <cc11:ClassComboBox ID="ComboBoxCustomer" runat="server" 
+                        AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" 
+                        DataSourceID="EntityDataSourceCustomers" DataTextField="Description" 
+                        DataValueField="Id">
+                    </cc11:ClassComboBox>
+                </td>
+            </tr>
+        </tr>
+ </table>
+ </asp:Panel>
+
+
+    <asp:Panel ID="PanelMaterials" runat="server">
+        <asp:Label ID="LabelMaterials" runat="server" CssClass="SubMenuHeader" 
+            Text="Gewogen materialen"></asp:Label><br />
+        <cc11:ClassGridView ID="GridViewMaterials" runat="server" AutoGenerateColumns="False" 
+            DataSourceID="XmlDataSourceMaterials" PageSize="99999">
+            <Columns>
+                <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" 
+                    Visible="False" />
+                <asp:BoundField DataField="description" HeaderText="Materiaal" 
+                    SortExpression="description" />
+                <asp:TemplateField HeaderText="Bruto" SortExpression="GrossAmount">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox21" runat="server" Text='<%# Bind("GrossAmount") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:TextBox ID="TextBox22" runat="server" Text='<%# Bind("GrossAmount") %>'></asp:TextBox>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Tarra" SortExpression="NetAmount">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox11" runat="server" Text='<%# Bind("NetAmount") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:TextBox ID="TextBox12" runat="server" Text='<%# Bind("NetAmount") %>'></asp:TextBox>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField DataField="TotalAmount" HeaderText="Netto" 
+                    SortExpression="TotalAmount" />
+                <asp:BoundField DataField="materialid" HeaderText="materialid" 
+                    SortExpression="materialid" Visible="False" />
+            </Columns>
+        </cc11:ClassGridView>
+    </asp:Panel>
+
+<asp:Panel ID="PanelTotals" runat="server">
+<asp:Label ID="LabelTotals" runat="server" Text="Totalen" 
+        CssClass="SubMenuHeader"></asp:Label>
+        <table style="width: 100%;">
+        <tr>
+        <td width="20%">
+            <asp:Label ID="LabelTotalWeight" runat="server" 
+                Text="Totaal opgegeven gewicht"></asp:Label>
+        </td>
+        <td>
+            <asp:Label ID="LabelTotalWeightInOrder" runat="server" 
+                Text="000"></asp:Label>
+        </td>
+        </tr>
+        <tr>
+        <td width="20%">
+            <asp:Label ID="LabelUnassignedWeight" runat="server" 
+                Text="Nog niet uitgesorteerd gewicht"></asp:Label>
+        </td>
+        <td>
+            <asp:Label ID="LabelTotalUnassignedWeightInOrder" runat="server" 
+                Text="0"></asp:Label>
+            &nbsp;&nbsp;&nbsp;
+            <asp:Label ID="LabelWeightWarning" runat="server" 
+                Text="U heeft meer gewicht uitgesorteerd dan in de oorspronkelijke weging is opgenomen. Controleer het totaal gewicht van alle materialen en de order." 
+                Visible="False"></asp:Label>
+        </td>
+        </tr>
+        <tr>
+        <td width="20%">
+        </td>
+        <td>
+            <asp:CheckBox ID="CheckBoxRestIsDirt" runat="server" Text="Rest van het gewicht is vuil. Hiermee de order aanvullen tot het netto gewicht." />
+            <br />
+            <asp:CheckBox ID="CheckBoxSubtractOverweight" runat="server" 
+                Text="Te veel gesorteerd gewicht aftrekken van {0}." Visible="False" />
+        </td>
+        </tr>
+        </table>
+</asp:Panel>
+
+<asp:Panel ID="PanelInvoice" runat="server">
+<asp:Label ID="LabelInvoice" runat="server" Text="Printvoorbeeld sorteerbon" 
+        CssClass="SubMenuHeader"></asp:Label>
+    <br />
+    <nobr>
+  <iframe id="FrameShowInvoice" scrolling="auto" runat="server" height="400px" width="100%">
+  </iframe>
+  </nobr>
+</asp:Panel>
+
+<table width="100%">
+<tr>
+<td>
+    <asp:Button ID="ButtonRevert" runat="server" Text="Vorige stap" 
+        onclick="ButtonRevert_Click" />
+    <asp:Button ID="ButtonContinue" runat="server" Text="Volgende stap" 
+        onclick="ButtonContinue_Click" />
+    <asp:Button ID="ButtonPrintAndProcess" runat="server" Text="Sorteerbon verwerken en printen" 
+        onclick="ButtonPrintAndProcess_Click" />
+    <asp:Button ID="ButtonProcessAndCashInvoice" runat="server" 
+        Text="Sorteerbon verwerken en direct per kas factureren" 
+        onclick="ButtonProcessAndCashInvoice_Click" />
+    <asp:Button ID="ButtonDestroyAndBack" runat="server" 
+        Text="Sorteerbon aanpassen" onclick="ButtonDestroyOrderAndBack_Click" />
+    <asp:Button ID="ButtonNew" runat="server" Text="Nieuwe sorteerbon" 
+        onclick="ButtonNewOrder_Click" />
+</td>
+<td align="right">
+    <asp:Button ID="ButtonInvoiceOrder" runat="server" 
+        Text="Sorteerbon factureren" onclick="ButtonInvoiceOrder_Click" />
+</td>
+</tr>
+</table>
+<asp:XmlDataSource ID="XmlDataSourceMaterials" runat="server">
+    <Data>
+<MaterialLines>
+ <MaterialLine id="" GrossAmount="0" NetAmount="0" description="testmaterial" 
+        materialid="" TotalAmount="0" />
+</MaterialLines></Data>
+</asp:XmlDataSource>
+
+<asp:Label ID="LabelCurrentPageNr" runat="server" Text="1" Visible="False"></asp:Label>
+<asp:Label ID="LabelPreviousPageNr" runat="server" Text="1" Visible="False"></asp:Label>
+<asp:Label ID="LabelCurrentOrderId" runat="server" Visible="False"></asp:Label>
+<asp:Label ID="LabelMaterialData" runat="server" Visible="False"></asp:Label>
+<asp:Label ID="LabelCustomerType" runat="server" Text="Creditor" Visible="False"></asp:Label>
+<asp:Label ID="LabelMaterialInvoiceType" runat="server" Text="Buy" Visible="False"></asp:Label>
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceLocations" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EnableFlattening="False" 
+    EntitySetName="LocationSet" Select="it.[Description], it.[Id], it.[IsActive]" 
+    Where="it.IsActive = true" OrderBy="it.Description">
+</cc11:ClassEntityDataSource>
+
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceCustomers" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EnableFlattening="False" 
+    EntitySetName="RelationSet" 
+    
+    
+    Where="(it.IsActive = true) and ( (it.CustomerType = @CustomerType) || (it.CustomerType = &quot;Both&quot;)  || (it.CustomerType = &quot;Other&quot;) )" 
+    Select="it.Id, it.Description" OrderBy="it.Description">
+    <WhereParameters>
+        <asp:ControlParameter ControlID="LabelCustomerType" Name="CustomerType" 
+            PropertyName="Text" Type="String" />
+    </WhereParameters>
+</cc11:ClassEntityDataSource>
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceTrucks" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EntitySetName="TruckSet" 
+    OrderBy="it.Description" Where="it.IsActive" 
+    Select="it.Id, It.Description, it.IsActive">
+</cc11:ClassEntityDataSource>
+

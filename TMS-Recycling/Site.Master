@@ -1,0 +1,193 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TMS_Recycling.SiteMaster" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+<script type="text/javascript" src="scripts\soundmanager2-nodebug-jsmin.js"></script>
+<script type = "text/javascript" >
+    function disableBackButton() {
+        window.history.forward();
+    }
+    // fix for ie8 problems with text in table cells appearing at random positions 
+    function changeWidth() {
+        setTimeout("changeWidth2()", 1);
+    }
+    function changeWidth2() {
+        document.getElementById("ITSBasePage").style.width = "98%";
+    }
+    function disableAll() {
+        var count = document.forms[0].elements.length;
+        
+        // hide flasher
+        document.getElementById("SaveMessage").style.visibility = "hidden";
+        buttonSaveColorChangeBlocked = true;
+
+        for (i = 0; i < count; i++) {
+            var element = document.forms[0].elements[i];
+            element.disabled = true;
+        }
+    }
+    var buttonSaveColorAvailable = false;
+    var buttonSaveOriginalColor = 0;
+    var buttonSaveColorChangeBlocked = false;
+    function highlightSaveButton() {
+        var firsttime = true;
+        if (!buttonSaveColorChangeBlocked) {
+            var count = document.forms[0].elements.length;
+            for (i = 0; i < count; i++) {
+                var element = document.forms[0].elements[i];
+                var s = element.name;
+                if (s.indexOf("ButtonSave") > 0) {
+                    if (!buttonSaveColorAvailable) {
+                        buttonSaveOriginalColor = element.style.backgroundColor;
+                        buttonSaveColorAvailable = true;
+                        setTimeout("highlightSaveButton()", 1000);
+                        break;
+                    }
+                    else {
+                        document.getElementById("SaveMessage").style.visibility = "visible";
+                        if (element.style.backgroundColor != buttonSaveOriginalColor) {
+                            element.style.backgroundColor = buttonSaveOriginalColor;
+                            document.getElementById("LabelSaveMessage").style.color = "white";
+                        }
+                        else {
+                            element.style.backgroundColor = "Green";
+                            document.getElementById("LabelSaveMessage").style.color = "black";
+                        }
+                        if (firsttime) {
+                            setTimeout("highlightSaveButton()", 400);
+                            firsttime = false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    setTimeout("disableBackButton()", 0);
+
+    var BellToggle = 0;
+    function checkOpenActionPoints() {
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.open("GET", "XMLCheckOpenActions.aspx", false);
+        xmlhttp.send();
+        txt = xmlhttp.responseText;
+
+        if (window.DOMParser) {
+            parser = new DOMParser();
+            xmlDoc = parser.parseFromString(txt, "text/xml");
+        }
+        else // Internet Explorer
+        {
+            xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+            xmlDoc.async = "false";
+            xmlDoc.loadXML(txt);
+        }
+
+        openActionsAmount = parseInt(xmlDoc.getElementsByTagName("openactions")[0].childNodes[0].nodeValue);
+
+        frame = document.getElementById("ReminderBell");
+        if (frame != null) {
+            if (openActionsAmount != 0) {
+                if (BellToggle == 0) {
+                    frame.src = "images/reminder.png";
+                    frame.style.visibility = "Visible";
+                    setTimeout("checkOpenActionPoints()", 5000);
+                    BellToggle = 1;
+                }
+                else {
+                    frame.style.visibility = "Hidden";
+                    frame.src = "images/reminder.png";
+                    setTimeout("checkOpenActionPoints()", 1000);
+                    BellToggle = 0;
+                }
+            }
+            else {
+                frame.src = "images/remindergrey.png"; 
+                frame.style.visibility = "Visible";
+                setTimeout("checkOpenActionPoints()", 30000);
+            }
+        }
+
+    }
+</script>
+</head>
+<body onload="changeWidth();">
+    <form id="ITSForm" runat="server" onsubmit="setTimeout('disableAll();',10); return true;">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </asp:ToolkitScriptManager>
+    <div id="SaveMessage" style="background-color:Green; visibility:hidden; position:fixed; bottom:0; left:0; width:100px; text-align:center;">
+         <asp:Label ClientIDMode="Static" ID="LabelSaveMessage" runat="server" Text="Vergeet niet op te slaan!"></asp:Label>
+    </div>
+    <div id="ITSBasePage" class="page" style="width: 95%;">
+        <div class="header">
+             <div class="title">
+                    <span class="Header1">TMS&nbsp;</span>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderPath" runat="server"/>
+             </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <asp:Label ID="LabelWelcome" runat="server" Text="Label">Welkom</asp:Label> <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Afmelden" LogoutPageUrl="~/"/> ]
+                        <div id="QuickButtons" style="background-color:#DDDDDD; visibility:visible; position:fixed; bottom:0; right:0; width:32px; z-index:1001;">
+                        <img src="images/home.png" onclick="if (confirm('Weet u zeker dat u uw huidige bewerking wilt annuleren en naar het startscherm wilt gaan?')) { window.location.href='default.aspx'; }" />
+                        <img src="images/phone.png" onclick="document.getElementById('TakeCallNow').style.visibility = 'visible'; var frame = document.getElementById('HeadLoginView_IFrameTakeCallNowPopUp'); frame.src = 'WebFormPopup.aspx?UC=TakeCall';" />
+                        <img id="ReminderBell" src="images/remindergrey.png" />
+                        </div>
+                        <div id="TakeCallNow" style="background-color:#DDDDDD; visibility:hidden; position:fixed; bottom:0; right:0; height:350px; width:418px; z-index:1002; text-align:right;">
+                            <asp:Label ID="LabelTakeCallNow" runat="server" Text="Vergeet uw call niet op te slaan!" CssClass="SubMenuHeader" Font-Italic="False" />
+                            <input id="ButtonTakeCallNowClose" type="button" value="X" style="width:20px;" onclick="document.getElementById('TakeCallNow').style.visibility = 'hidden';" />
+                            <iframe id="IFrameTakeCallNowPopUp" src="" runat="server" style="width:100%; height:100%;"></iframe>
+                        </div>
+                        <script type="text/javascript">
+                            setTimeout("checkOpenActionPoints()", 500);
+                        </script>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    ItemWrap="True" >
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Selected="True"/>
+                        <asp:MenuItem Text="Inkopen" Value="Buy" NavigateUrl="~/WebFormPurchaseLanding.aspx" />
+                        <asp:MenuItem Text="Verkopen" Value="Sale" NavigateUrl="~/WebFormSaleLanding.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Voorraad en materialen" Value="Stock"  NavigateUrl="~/WebFormStockLanding.aspx"  ></asp:MenuItem>
+                        <asp:MenuItem Text="Relaties" Value="Customer" NavigateUrl="~/WebFormCustomerRelationLanding.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Wegen en sorteren" Value="Freight" NavigateUrl="~/WebFormFreightLanding.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Verhuur" Value="Rental" NavigateUrl="~/WebFormRentLanding.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Kasboeken" Value="Bookkeeping" NavigateUrl="~/WebFormBookKeepingLanding.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Beheer" Value="Setting" NavigateUrl="~/WebFormSettingLanding.aspx" ></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main" onclick="if (!buttonSaveColorAvailable) {highlightSaveButton();}" onkeydown="if (!buttonSaveColorAvailable) {highlightSaveButton();}">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+    <small>Trade Management System - Recycling v0.8. Copyright 2011 <A target=_blank href="http:\\www.quopt.com">Quopt business & ICT Services</A>.<br />
+    <A target=_blank href="http:\\www.quopt.com\usageconditions.aspx">Voorwaarden voor gebruik van dit systeem vindt u hier (engelstalig).</A></small>
+    </div>
+    </form>
+</body>
+
+
+</html>

@@ -1,0 +1,2222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89A92872-37EB-48DE-9C0F-8799B418D4DD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TMS_Recycling</RootNamespace>
+    <AssemblyName>TMS-Recycling</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;TMS_Recycling</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\TMS-Recycling.XML</DocumentationFile>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <PublishDatabases>false</PublishDatabases>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <NoStdLib>false</NoStdLib>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FileAlignment>1024</FileAlignment>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>bin\TMS-Recycling.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Codeplex tools\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="ComboBoxLocation.ascx" />
+    <Content Include="Images\InvoiceFooter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\InvoiceHeader.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CalendarControl.ascx" />
+    <Content Include="CalendarWithTimeControl.ascx" />
+    <Content Include="Login.aspx" />
+    <Content Include="ModelTMS.edmx.sql" />
+    <Content Include="Scripts\lightbox.js" />
+    <Content Include="Scripts\lightbox_prototype.js" />
+    <Content Include="SitePurchase.master" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.2.js" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="TMSService.svc" />
+    <Content Include="URLPopUpControl.ascx" />
+    <Content Include="WebFormBookKeepingChecks.aspx" />
+    <Content Include="WebFormBookKeepingClosures.aspx" />
+    <Content Include="WebFormBookKeepingLanding.aspx" />
+    <Content Include="WebFormCustomerRelationLanding.aspx" />
+    <Content Include="WebFormCustomerReport.aspx" />
+    <Content Include="WebFormCustomerReportContract.aspx" />
+    <Content Include="WebFormCustomerReportLabels.aspx" />
+    <Content Include="WebFormCustomerReportProjectRevenue.aspx" />
+    <Content Include="WebFormCustomerReportRevenue.aspx" />
+    <Content Include="WebFormError.aspx" />
+    <Content Include="WebFormFreightCollect.aspx" />
+    <Content Include="WebFormFreightLanding.aspx" />
+    <Content Include="WebFormFreightControl.aspx" />
+    <Content Include="WebFormFreightFinish.aspx" />
+    <Content Include="WebFormFreightInvoice.aspx" />
+    <Content Include="WebFormFreightNew.aspx" />
+    <Content Include="WebFormFreightWeigh.aspx" />
+    <Content Include="WebFormLedgerChecks.aspx" />
+    <Content Include="WebFormLedgerClosures.aspx" />
+    <Content Include="WebFormLedgerMutations.aspx" />
+    <Content Include="WebFormLedgerReportComparison.aspx" />
+    <Content Include="WebFormLedgerReportOpenInvoices.aspx" />
+    <Content Include="WebFormLedgerReportProfitAndLoss.aspx" />
+    <Content Include="WebFormLedgerReportPurchasedMaterials.aspx" />
+    <Content Include="WebFormLedgerReportSoldMaterials.aspx" />
+    <Content Include="WebFormLedgers.aspx" />
+    <Content Include="WebFormOtherInvoiceBuy.aspx" />
+    <Content Include="WebFormOtherInvoiceSell.aspx" />
+    <Content Include="WebFormPurchaseInvoiceConstruct.aspx" />
+    <Content Include="WebFormPurchaseLanding.aspx" />
+    <Content Include="WebFormRent.aspx" />
+    <Content Include="WebFormRentCreateInvoice.aspx" />
+    <Content Include="WebFormRentCredit.aspx" />
+    <Content Include="WebFormRentInvoice.aspx" />
+    <Content Include="WebFormRentLanding.aspx" />
+    <Content Include="WebFormRentLedger.aspx" />
+    <Content Include="WebFormRentMaterials.aspx" />
+    <Content Include="WebFormRentMaterialType.aspx" />
+    <Content Include="WebFormRentReport.aspx" />
+    <Content Include="WebFormRentReportUsage.aspx" />
+    <Content Include="WebFormRentReturn.aspx" />
+    <Content Include="WebFormRentSwap.aspx" />
+    <Content Include="WebFormRentVAT.aspx" />
+    <Content Include="WebFormReportTest.aspx" />
+    <Content Include="WebFormSale.aspx" />
+    <Content Include="WebFormSaleCredit.aspx" />
+    <Content Include="WebFormSaleInvoice.aspx" />
+    <Content Include="WebFormSaleInvoiceConstruct.aspx" />
+    <Content Include="WebFormSaleLanding.aspx" />
+    <Content Include="WebFormSaleLedger.aspx" />
+    <Content Include="WebFormSettingLanding.aspx" />
+    <Content Include="WebFormSettingUserProfile.aspx" />
+    <Content Include="WebFormStockClosures.aspx" />
+    <Content Include="WebFormStockLanding.aspx" />
+    <Content Include="WebFormStockMutations.aspx" />
+    <Content Include="WebFormStockReportLevels.aspx" />
+    <Content Include="WebFormStockReportPrices.aspx" />
+    <Content Include="WebFormStockUnits.aspx" />
+    <Content Include="WebFormTrucks.aspx" />
+    <Content Include="WebServiceTMS.asmx" />
+    <Content Include="WebUserControlBookingCodeBase.ascx" />
+    <Content Include="WebUserControlBookingCodeCorrection.ascx" />
+    <Content Include="WebUserControlBookingCodeOverview.ascx" />
+    <Content Include="WebUserControlBookingCorrection.ascx" />
+    <Content Include="WebUserControlBookKeepingCheckBase.ascx" />
+    <Content Include="WebUserControlBookKeepingChecks.ascx" />
+    <Content Include="WebUserControlBookKeepingClosureBase.ascx" />
+    <Content Include="WebUserControlBookKeepingClosuresOverview.ascx" />
+    <Content Include="WebUserControlBookKeepingInvoiceBuyOverview.ascx" />
+    <Content Include="WebUserControlBookKeepingInvoiceSellOverview.ascx" />
+    <Content Include="WebUserControlBookKeepingMutations.ascx" />
+    <Content Include="WebUserControlBookKeepingOverview.ascx" />
+    <Content Include="WebUserControlConstructInvoiceFromOrder.ascx" />
+    <Content Include="WebUserControlCustomerRelationContactLogOverview.ascx" />
+    <Content Include="WebUserControlCustomerRelationContactOverview.ascx" />
+    <Content Include="WebUserControlCustomerRelationLocationOverview.ascx" />
+    <Content Include="WebUserControlCustomerRelationOverview.ascx" />
+    <Content Include="WebUserControlCustomerRelationProjectOverview.ascx" />
+    <Content Include="WebUserControlCustomerReport.ascx" />
+    <Content Include="WebUserControlCustomerReportContract.ascx" />
+    <Content Include="WebUserControlCustomerReportLabels.ascx" />
+    <Content Include="WebUserControlCustomerReportProjectRevenue.ascx" />
+    <Content Include="WebUserControlCustomerReportRevenue.ascx" />
+    <Content Include="WebUserControlEditAdvancePayments.ascx" />
+    <Content Include="WebUserControlEditOrderMaterials.ascx" />
+    <Content Include="WebUserControlFreightBase.ascx" />
+    <Content Include="WebUserControlFreightFinish.ascx" />
+    <Content Include="WebUserControlFreightInvoice.ascx" />
+    <Content Include="WebUserControlFreightLegalDocuments.ascx" />
+    <Content Include="WebUserControlFreightNewSorting.ascx" />
+    <Content Include="WebUserControlFreightOverview.ascx" />
+    <Content Include="WebUserControlFreightWeighing.ascx" />
+    <Content Include="WebUserControlInvoiceBase.ascx" />
+    <Content Include="WebUserControlInvoiceOverview.ascx" />
+    <Content Include="WebUserControlInvoicePartialPayment.ascx" />
+    <Content Include="WebUserControlLedgerOverview.ascx" />
+    <Content Include="WebUserControlLedgerReportComparison.ascx" />
+    <Content Include="WebUserControlLedgerReportMaterialMovement.ascx" />
+    <Content Include="WebUserControlLedgerReportOpenInvoices.ascx" />
+    <Content Include="WebUserControlLedgerReportProfitAndLoss.ascx" />
+    <Content Include="WebUserControlNonCashPurchase.ascx" />
+    <Content Include="WebUserControlOpenActions.ascx" />
+    <Content Include="WebUserControlOrderBase.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebFormBookKeeping.aspx" />
+    <Content Include="WebFormBookKeepingMutations.aspx" />
+    <Content Include="WebFormCompanyLocations.aspx" />
+    <Content Include="WebFormCustomerRelation.aspx" />
+    <Content Include="WebFormCustomerRelationAddress.aspx" />
+    <Content Include="WebFormCustomerRelationAdvancePayment.aspx" />
+    <Content Include="WebFormCustomerRelationContacts.aspx" />
+    <Content Include="WebFormCustomerRelationContracts.aspx" />
+    <Content Include="WebFormCustomerRelationLocations.aspx" />
+    <Content Include="WebFormCustomerRelationMaterials.aspx" />
+    <Content Include="WebFormCustomerRelationPriceAgreement.aspx" />
+    <Content Include="WebFormCustomerRelationProjects.aspx" />
+    <Content Include="WebFormCustomerRelationWork.aspx" />
+    <Content Include="WebFormPopUp.aspx" />
+    <Content Include="WebFormPurchase.aspx" />
+    <Content Include="WebFormPurchaseCredit.aspx" />
+    <Content Include="WebFormPurchaseInvoice.aspx" />
+    <Content Include="WebFormPurchaseLedger.aspx" />
+    <Content Include="WebFormSetting.aspx" />
+    <Content Include="WebFormSettingChangePassword.aspx" />
+    <Content Include="WebFormStock.aspx" />
+    <Content Include="WebUserControlCashPurchase.ascx" />
+    <Content Include="WebUserControlCompanyLocation.ascx" />
+    <Content Include="WebUserControlCustomerRelation.ascx" />
+    <Content Include="WebUserControlCustomerRelationAdvancePayment.ascx" />
+    <Content Include="WebUserControlCustomerRelationContact.ascx" />
+    <Content Include="WebUserControlCustomerRelationContactLog.ascx" />
+    <Content Include="WebUserControlCustomerRelationContract.ascx" />
+    <Content Include="WebUserControlCustomerRelationContractMaterial.ascx" />
+    <Content Include="WebUserControlCustomerRelationMaterial.ascx" />
+    <Content Include="WebUserControlCustomerRelationPriceAgreement.ascx" />
+    <Content Include="WebUserControlCustomerRelationProject.ascx" />
+    <Content Include="WebUserControlCustomerRelationWork.ascx" />
+    <Content Include="WebUserControlLedgerBase.ascx" />
+    <Content Include="WebUserControlLedgerMutation.ascx" />
+    <Content Include="WebUserControlCustomerRelationLocation.ascx" />
+    <Content Include="WebUserControlCustomerRelationAddress.ascx" />
+    <Content Include="WebUserControlRentAlternativeMaterials.ascx" />
+    <Content Include="WebUserControlRentCreateInvoice.ascx" />
+    <Content Include="WebUserControlRentInvoiceOverview.ascx" />
+    <Content Include="WebUserControlRentLedgerBase.ascx" />
+    <Content Include="WebUserControlRentLedgerOverview.ascx" />
+    <Content Include="WebUserControlRentMaterialBase.ascx" />
+    <Content Include="WebUserControlRentMaterialOverview.ascx" />
+    <Content Include="WebUserControlRentMaterials.ascx" />
+    <Content Include="WebUserControlRentMaterialTypeBase.ascx" />
+    <Content Include="WebUserControlRentMaterialTypeOverview.ascx" />
+    <Content Include="WebUserControlRentOut.ascx" />
+    <Content Include="WebUserControlRentReport.ascx" />
+    <Content Include="WebUserControlRentReportUsage.ascx" />
+    <Content Include="WebUserControlRentReturn.ascx" />
+    <Content Include="WebUserControlRentVATBase.ascx" />
+    <Content Include="WebUserControlRentVATOverview.ascx" />
+    <Content Include="WebUserControlSecurityRole.ascx" />
+    <Content Include="WebUserControlSecurityRoleOverview.ascx" />
+    <Content Include="WebUserControlShowLinks.ascx" />
+    <Content Include="WebUserControlShowReport.ascx" />
+    <Content Include="WebUserControlStaffMember.ascx" />
+    <Content Include="WebUserControlStockClosureBase.ascx" />
+    <Content Include="WebUserControlStockClosuresOverview.ascx" />
+    <Content Include="WebUserControlStockCorrectLevel.ascx" />
+    <Content Include="WebUserControlStockMaterial.ascx" />
+    <Content Include="WebUserControlStockMutationsBase.ascx" />
+    <Content Include="WebUserControlStockMutationsOverview.ascx" />
+    <Content Include="WebUserControlStockOverview.ascx" />
+    <Content Include="WebUserControlStockReportLevels.ascx" />
+    <Content Include="WebUserControlStockReportPrices.ascx" />
+    <Content Include="WebUserControlStockUnitsBase.ascx" />
+    <Content Include="WebUserControlStockUnitsOverview.ascx" />
+    <Content Include="WebUserControlTakeCall.ascx" />
+    <Content Include="WebUserControlTruckBase.ascx" />
+    <Content Include="WebUserControlTruckOverview.ascx" />
+    <Content Include="XMLCheckOpenActions.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassComboBox.cs" />
+    <Compile Include="ClassComboBoxLocation.cs" />
+    <Compile Include="ClassDataSetHelper.cs" />
+    <Compile Include="CalendarControl.ascx.cs">
+      <DependentUpon>CalendarControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalendarControl.ascx.designer.cs">
+      <DependentUpon>CalendarControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarWithTimeControl.ascx.cs">
+      <DependentUpon>CalendarWithTimeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalendarWithTimeControl.ascx.designer.cs">
+      <DependentUpon>CalendarWithTimeControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassCommon.cs" />
+    <Compile Include="ClassCustomBinding.cs" />
+    <Compile Include="ClassEntityDataSource.cs" />
+    <Compile Include="ClassEntityModelExtensions.cs" />
+    <Compile Include="ClassEntityModelSetExtensions.cs" />
+    <Compile Include="ClassGridView.cs" />
+    <Compile Include="ClassMail.cs" />
+    <Compile Include="ClassSecurity.cs" />
+    <Compile Include="ClassTMSUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClassTMSWebPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClassTranslate.cs" />
+    <Compile Include="ComboBoxLocation.ascx.cs">
+      <DependentUpon>ComboBoxLocation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComboBoxLocation.ascx.designer.cs">
+      <DependentUpon>ComboBoxLocation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetComparisonCustomerTotals.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetComparisonCustomerTotals.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetComparisonMaterialTotals.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetComparisonMaterialTotals.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetComparisonTotals.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetComparisonTotals.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetFreight.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFreight.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetInvoice.cs">
+      <DependentUpon>DataSetInvoice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetInvoice.Designer.cs">
+      <DependentUpon>DataSetInvoice.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DataSetMaterialMovement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMaterialMovement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetMaterialStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMaterialStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetOnlyInvoices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOnlyInvoices.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetOrder.cs">
+      <DependentUpon>DataSetOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetProfitAndLoss.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProfitAndLoss.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRelation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRelation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRelationAdvancePayment.Designer.cs">
+      <DependentUpon>DataSetRelationAdvancePayment.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DataSetRelationContract.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRelationContract.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRelationContracts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRelationContracts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRelationPriceAgreement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRelationPriceAgreement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRelationRevenue.cs">
+      <DependentUpon>DataSetRelationRevenue.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRelationRevenue.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRelationRevenue.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRelationWork.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRelationWork.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRent.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRentMaterials.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRentMaterials.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRentMaterialsUsage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRentMaterialsUsage.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSorting.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSorting.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetWeighing.cs">
+      <DependentUpon>DataSetWeighing.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetWeighing.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetWeighing.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HTTPSessionState.cs" />
+    <Compile Include="ImageHandler.ashx.cs">
+      <DependentUpon>ImageHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTMS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTMS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteBookkeeping.master.cs">
+      <DependentUpon>SiteBookkeeping.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteBookkeeping.master.designer.cs">
+      <DependentUpon>SiteBookkeeping.master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteCustomerRelation.master.cs">
+      <DependentUpon>SiteCustomerRelation.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteCustomerRelation.master.designer.cs">
+      <DependentUpon>SiteCustomerRelation.master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteFreight.master.cs">
+      <DependentUpon>SiteFreight.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteFreight.master.designer.cs">
+      <DependentUpon>SiteFreight.master</DependentUpon>
+    </Compile>
+    <Compile Include="SitePurchase.master.cs">
+      <DependentUpon>SitePurchase.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitePurchase.master.designer.cs">
+      <DependentUpon>SitePurchase.master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteRent.master.cs">
+      <DependentUpon>SiteRent.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteRent.master.designer.cs">
+      <DependentUpon>SiteRent.master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteSale.master.cs">
+      <DependentUpon>SiteSale.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteSale.master.designer.cs">
+      <DependentUpon>SiteSale.master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteSetting.master.cs">
+      <DependentUpon>SiteSetting.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteSetting.master.designer.cs">
+      <DependentUpon>SiteSetting.master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteStock.Master.cs">
+      <DependentUpon>SiteStock.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteStock.Master.designer.cs">
+      <DependentUpon>SiteStock.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TMSService.svc.cs">
+      <DependentUpon>TMSService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionScope.cs" />
+    <Compile Include="URLPopUpControl.ascx.cs">
+      <DependentUpon>URLPopUpControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="URLPopUpControl.ascx.designer.cs">
+      <DependentUpon>URLPopUpControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormBookKeepingChecks.aspx.cs">
+      <DependentUpon>WebFormBookKeepingChecks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormBookKeepingChecks.aspx.designer.cs">
+      <DependentUpon>WebFormBookKeepingChecks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormBookKeepingClosures.aspx.cs">
+      <DependentUpon>WebFormBookKeepingClosures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormBookKeepingClosures.aspx.designer.cs">
+      <DependentUpon>WebFormBookKeepingClosures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormBookKeepingLanding.aspx.cs">
+      <DependentUpon>WebFormBookKeepingLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormBookKeepingLanding.aspx.designer.cs">
+      <DependentUpon>WebFormBookKeepingLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationLanding.aspx.cs">
+      <DependentUpon>WebFormCustomerRelationLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationLanding.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelationLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerReport.aspx.cs">
+      <DependentUpon>WebFormCustomerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerReport.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerReportContract.aspx.cs">
+      <DependentUpon>WebFormCustomerReportContract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerReportContract.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerReportContract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerReportLabels.aspx.cs">
+      <DependentUpon>WebFormCustomerReportLabels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerReportLabels.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerReportLabels.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerReportProjectRevenue.aspx.cs">
+      <DependentUpon>WebFormCustomerReportProjectRevenue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerReportProjectRevenue.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerReportProjectRevenue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerReportRevenue.aspx.cs">
+      <DependentUpon>WebFormCustomerReportRevenue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerReportRevenue.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerReportRevenue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormError.aspx.cs">
+      <DependentUpon>WebFormError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormError.aspx.designer.cs">
+      <DependentUpon>WebFormError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormFreightCollect.aspx.cs">
+      <DependentUpon>WebFormFreightCollect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormFreightCollect.aspx.designer.cs">
+      <DependentUpon>WebFormFreightCollect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormFreightLanding.aspx.cs">
+      <DependentUpon>WebFormFreightLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormFreightLanding.aspx.designer.cs">
+      <DependentUpon>WebFormFreightLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormFreightControl.aspx.cs">
+      <DependentUpon>WebFormFreightControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormFreightControl.aspx.designer.cs">
+      <DependentUpon>WebFormFreightControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormFreightFinish.aspx.cs">
+      <DependentUpon>WebFormFreightFinish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormFreightFinish.aspx.designer.cs">
+      <DependentUpon>WebFormFreightFinish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormFreightInvoice.aspx.cs">
+      <DependentUpon>WebFormFreightInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormFreightInvoice.aspx.designer.cs">
+      <DependentUpon>WebFormFreightInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormFreightNew.aspx.cs">
+      <DependentUpon>WebFormFreightNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormFreightNew.aspx.designer.cs">
+      <DependentUpon>WebFormFreightNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormFreightWeigh.aspx.cs">
+      <DependentUpon>WebFormFreightWeigh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormFreightWeigh.aspx.designer.cs">
+      <DependentUpon>WebFormFreightWeigh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormLedgerChecks.aspx.cs">
+      <DependentUpon>WebFormLedgerChecks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormLedgerChecks.aspx.designer.cs">
+      <DependentUpon>WebFormLedgerChecks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormLedgerClosures.aspx.cs">
+      <DependentUpon>WebFormLedgerClosures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormLedgerClosures.aspx.designer.cs">
+      <DependentUpon>WebFormLedgerClosures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormLedgerMutations.aspx.cs">
+      <DependentUpon>WebFormLedgerMutations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormLedgerMutations.aspx.designer.cs">
+      <DependentUpon>WebFormLedgerMutations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormLedgerReportComparison.aspx.cs">
+      <DependentUpon>WebFormLedgerReportComparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormLedgerReportComparison.aspx.designer.cs">
+      <DependentUpon>WebFormLedgerReportComparison.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormLedgerReportOpenInvoices.aspx.cs">
+      <DependentUpon>WebFormLedgerReportOpenInvoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormLedgerReportOpenInvoices.aspx.designer.cs">
+      <DependentUpon>WebFormLedgerReportOpenInvoices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormLedgerReportProfitAndLoss.aspx.cs">
+      <DependentUpon>WebFormLedgerReportProfitAndLoss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormLedgerReportProfitAndLoss.aspx.designer.cs">
+      <DependentUpon>WebFormLedgerReportProfitAndLoss.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormLedgerReportPurchasedMaterials.aspx.cs">
+      <DependentUpon>WebFormLedgerReportPurchasedMaterials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormLedgerReportPurchasedMaterials.aspx.designer.cs">
+      <DependentUpon>WebFormLedgerReportPurchasedMaterials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormLedgerReportSoldMaterials.aspx.cs">
+      <DependentUpon>WebFormLedgerReportSoldMaterials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormLedgerReportSoldMaterials.aspx.designer.cs">
+      <DependentUpon>WebFormLedgerReportSoldMaterials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormLedgers.aspx.cs">
+      <DependentUpon>WebFormLedgers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormLedgers.aspx.designer.cs">
+      <DependentUpon>WebFormLedgers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormOtherInvoiceBuy.aspx.cs">
+      <DependentUpon>WebFormOtherInvoiceBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormOtherInvoiceBuy.aspx.designer.cs">
+      <DependentUpon>WebFormOtherInvoiceBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormOtherInvoiceSell.aspx.cs">
+      <DependentUpon>WebFormOtherInvoiceSell.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormOtherInvoiceSell.aspx.designer.cs">
+      <DependentUpon>WebFormOtherInvoiceSell.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormPurchaseInvoiceConstruct.aspx.cs">
+      <DependentUpon>WebFormPurchaseInvoiceConstruct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormPurchaseInvoiceConstruct.aspx.designer.cs">
+      <DependentUpon>WebFormPurchaseInvoiceConstruct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormPurchaseLanding.aspx.cs">
+      <DependentUpon>WebFormPurchaseLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormPurchaseLanding.aspx.designer.cs">
+      <DependentUpon>WebFormPurchaseLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRent.aspx.cs">
+      <DependentUpon>WebFormRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRent.aspx.designer.cs">
+      <DependentUpon>WebFormRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentCreateInvoice.aspx.cs">
+      <DependentUpon>WebFormRentCreateInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentCreateInvoice.aspx.designer.cs">
+      <DependentUpon>WebFormRentCreateInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentCredit.aspx.cs">
+      <DependentUpon>WebFormRentCredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentCredit.aspx.designer.cs">
+      <DependentUpon>WebFormRentCredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentInvoice.aspx.cs">
+      <DependentUpon>WebFormRentInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentInvoice.aspx.designer.cs">
+      <DependentUpon>WebFormRentInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentLanding.aspx.cs">
+      <DependentUpon>WebFormRentLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentLanding.aspx.designer.cs">
+      <DependentUpon>WebFormRentLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentLedger.aspx.cs">
+      <DependentUpon>WebFormRentLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentLedger.aspx.designer.cs">
+      <DependentUpon>WebFormRentLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentMaterials.aspx.cs">
+      <DependentUpon>WebFormRentMaterials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentMaterials.aspx.designer.cs">
+      <DependentUpon>WebFormRentMaterials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentMaterialType.aspx.cs">
+      <DependentUpon>WebFormRentMaterialType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentMaterialType.aspx.designer.cs">
+      <DependentUpon>WebFormRentMaterialType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentReport.aspx.cs">
+      <DependentUpon>WebFormRentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentReport.aspx.designer.cs">
+      <DependentUpon>WebFormRentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentReportUsage.aspx.cs">
+      <DependentUpon>WebFormRentReportUsage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentReportUsage.aspx.designer.cs">
+      <DependentUpon>WebFormRentReportUsage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentReturn.aspx.cs">
+      <DependentUpon>WebFormRentReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentReturn.aspx.designer.cs">
+      <DependentUpon>WebFormRentReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentSwap.aspx.cs">
+      <DependentUpon>WebFormRentSwap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentSwap.aspx.designer.cs">
+      <DependentUpon>WebFormRentSwap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRentVAT.aspx.cs">
+      <DependentUpon>WebFormRentVAT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRentVAT.aspx.designer.cs">
+      <DependentUpon>WebFormRentVAT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormReportTest.aspx.cs">
+      <DependentUpon>WebFormReportTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormReportTest.aspx.designer.cs">
+      <DependentUpon>WebFormReportTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormSale.aspx.cs">
+      <DependentUpon>WebFormSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormSale.aspx.designer.cs">
+      <DependentUpon>WebFormSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormSaleCredit.aspx.cs">
+      <DependentUpon>WebFormSaleCredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormSaleCredit.aspx.designer.cs">
+      <DependentUpon>WebFormSaleCredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormSaleInvoice.aspx.cs">
+      <DependentUpon>WebFormSaleInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormSaleInvoice.aspx.designer.cs">
+      <DependentUpon>WebFormSaleInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormSaleInvoiceConstruct.aspx.cs">
+      <DependentUpon>WebFormSaleInvoiceConstruct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormSaleInvoiceConstruct.aspx.designer.cs">
+      <DependentUpon>WebFormSaleInvoiceConstruct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormSaleLanding.aspx.cs">
+      <DependentUpon>WebFormSaleLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormSaleLanding.aspx.designer.cs">
+      <DependentUpon>WebFormSaleLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormSaleLedger.aspx.cs">
+      <DependentUpon>WebFormSaleLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormSaleLedger.aspx.designer.cs">
+      <DependentUpon>WebFormSaleLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormSettingLanding.aspx.cs">
+      <DependentUpon>WebFormSettingLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormSettingLanding.aspx.designer.cs">
+      <DependentUpon>WebFormSettingLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormSettingUserProfile.aspx.cs">
+      <DependentUpon>WebFormSettingUserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormSettingUserProfile.aspx.designer.cs">
+      <DependentUpon>WebFormSettingUserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormStockClosures.aspx.cs">
+      <DependentUpon>WebFormStockClosures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormStockClosures.aspx.designer.cs">
+      <DependentUpon>WebFormStockClosures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormStockLanding.aspx.cs">
+      <DependentUpon>WebFormStockLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormStockLanding.aspx.designer.cs">
+      <DependentUpon>WebFormStockLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormStockMutations.aspx.cs">
+      <DependentUpon>WebFormStockMutations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormStockMutations.aspx.designer.cs">
+      <DependentUpon>WebFormStockMutations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormStockReportLevels.aspx.cs">
+      <DependentUpon>WebFormStockReportLevels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormStockReportLevels.aspx.designer.cs">
+      <DependentUpon>WebFormStockReportLevels.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormStockReportPrices.aspx.cs">
+      <DependentUpon>WebFormStockReportPrices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormStockReportPrices.aspx.designer.cs">
+      <DependentUpon>WebFormStockReportPrices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormStockUnits.aspx.cs">
+      <DependentUpon>WebFormStockUnits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormStockUnits.aspx.designer.cs">
+      <DependentUpon>WebFormStockUnits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormTrucks.aspx.cs">
+      <DependentUpon>WebFormTrucks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormTrucks.aspx.designer.cs">
+      <DependentUpon>WebFormTrucks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceTMS.asmx.cs">
+      <DependentUpon>WebServiceTMS.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookingCodeBase.ascx.cs">
+      <DependentUpon>WebUserControlBookingCodeBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookingCodeBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookingCodeBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookingCodeCorrection.ascx.cs">
+      <DependentUpon>WebUserControlBookingCodeCorrection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookingCodeCorrection.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookingCodeCorrection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookingCodeOverview.ascx.cs">
+      <DependentUpon>WebUserControlBookingCodeOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookingCodeOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookingCodeOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookingCorrection.ascx.cs">
+      <DependentUpon>WebUserControlBookingCorrection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookingCorrection.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookingCorrection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingCheckBase.ascx.cs">
+      <DependentUpon>WebUserControlBookKeepingCheckBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingCheckBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookKeepingCheckBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingChecks.ascx.cs">
+      <DependentUpon>WebUserControlBookKeepingChecks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingChecks.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookKeepingChecks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingClosureBase.ascx.cs">
+      <DependentUpon>WebUserControlBookKeepingClosureBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingClosureBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookKeepingClosureBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingClosuresOverview.ascx.cs">
+      <DependentUpon>WebUserControlBookKeepingClosuresOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingClosuresOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookKeepingClosuresOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingInvoiceBuyOverview.ascx.cs">
+      <DependentUpon>WebUserControlBookKeepingInvoiceBuyOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingInvoiceBuyOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookKeepingInvoiceBuyOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingInvoiceSellOverview.ascx.cs">
+      <DependentUpon>WebUserControlBookKeepingInvoiceSellOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingInvoiceSellOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookKeepingInvoiceSellOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingMutations.ascx.cs">
+      <DependentUpon>WebUserControlBookKeepingMutations.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingMutations.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookKeepingMutations.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingOverview.ascx.cs">
+      <DependentUpon>WebUserControlBookKeepingOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlBookKeepingOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlBookKeepingOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCashPurchase.ascx.cs">
+      <DependentUpon>WebUserControlCashPurchase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlConstructInvoiceFromOrder.ascx.cs">
+      <DependentUpon>WebUserControlConstructInvoiceFromOrder.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlConstructInvoiceFromOrder.ascx.designer.cs">
+      <DependentUpon>WebUserControlConstructInvoiceFromOrder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContactLogOverview.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationContactLogOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContactLogOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationContactLogOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContactOverview.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationContactOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContactOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationContactOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationLocationOverview.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationLocationOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationLocationOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationLocationOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationOverview.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationProjectOverview.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationProjectOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationProjectOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationProjectOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerReport.ascx.cs">
+      <DependentUpon>WebUserControlCustomerReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerReport.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerReportContract.ascx.cs">
+      <DependentUpon>WebUserControlCustomerReportContract.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerReportContract.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerReportContract.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerReportLabels.ascx.cs">
+      <DependentUpon>WebUserControlCustomerReportLabels.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerReportLabels.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerReportLabels.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerReportProjectRevenue.ascx.cs">
+      <DependentUpon>WebUserControlCustomerReportProjectRevenue.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerReportProjectRevenue.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerReportProjectRevenue.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerReportRevenue.ascx.cs">
+      <DependentUpon>WebUserControlCustomerReportRevenue.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerReportRevenue.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerReportRevenue.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlEditAdvancePayments.ascx.cs">
+      <DependentUpon>WebUserControlEditAdvancePayments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlEditAdvancePayments.ascx.designer.cs">
+      <DependentUpon>WebUserControlEditAdvancePayments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlEditOrderMaterials.ascx.cs">
+      <DependentUpon>WebUserControlEditOrderMaterials.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlEditOrderMaterials.ascx.designer.cs">
+      <DependentUpon>WebUserControlEditOrderMaterials.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlFreightBase.ascx.cs">
+      <DependentUpon>WebUserControlFreightBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlFreightBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlFreightBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlFreightFinish.ascx.cs">
+      <DependentUpon>WebUserControlFreightFinish.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlFreightFinish.ascx.designer.cs">
+      <DependentUpon>WebUserControlFreightFinish.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlFreightInvoice.ascx.cs">
+      <DependentUpon>WebUserControlFreightInvoice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlFreightInvoice.ascx.designer.cs">
+      <DependentUpon>WebUserControlFreightInvoice.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlFreightLegalDocuments.ascx.cs">
+      <DependentUpon>WebUserControlFreightLegalDocuments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlFreightLegalDocuments.ascx.designer.cs">
+      <DependentUpon>WebUserControlFreightLegalDocuments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlFreightNewSorting.ascx.cs">
+      <DependentUpon>WebUserControlFreightNewSorting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlFreightNewSorting.ascx.designer.cs">
+      <DependentUpon>WebUserControlFreightNewSorting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlFreightOverview.ascx.cs">
+      <DependentUpon>WebUserControlFreightOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlFreightOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlFreightOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlFreightWeighing.ascx.cs">
+      <DependentUpon>WebUserControlFreightWeighing.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlFreightWeighing.ascx.designer.cs">
+      <DependentUpon>WebUserControlFreightWeighing.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlInvoiceBase.ascx.cs">
+      <DependentUpon>WebUserControlInvoiceBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlInvoiceBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlInvoiceBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlInvoiceOverview.ascx.cs">
+      <DependentUpon>WebUserControlInvoiceOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlInvoiceOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlInvoiceOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlInvoicePartialPayment.ascx.cs">
+      <DependentUpon>WebUserControlInvoicePartialPayment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlInvoicePartialPayment.ascx.designer.cs">
+      <DependentUpon>WebUserControlInvoicePartialPayment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlLedgerOverview.ascx.cs">
+      <DependentUpon>WebUserControlLedgerOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlLedgerOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlLedgerOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlLedgerReportComparison.ascx.cs">
+      <DependentUpon>WebUserControlLedgerReportComparison.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlLedgerReportComparison.ascx.designer.cs">
+      <DependentUpon>WebUserControlLedgerReportComparison.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlLedgerReportMaterialMovement.ascx.cs">
+      <DependentUpon>WebUserControlLedgerReportMaterialMovement.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlLedgerReportMaterialMovement.ascx.designer.cs">
+      <DependentUpon>WebUserControlLedgerReportMaterialMovement.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlLedgerReportOpenInvoices.ascx.cs">
+      <DependentUpon>WebUserControlLedgerReportOpenInvoices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlLedgerReportOpenInvoices.ascx.designer.cs">
+      <DependentUpon>WebUserControlLedgerReportOpenInvoices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlLedgerReportProfitAndLoss.ascx.cs">
+      <DependentUpon>WebUserControlLedgerReportProfitAndLoss.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlLedgerReportProfitAndLoss.ascx.designer.cs">
+      <DependentUpon>WebUserControlLedgerReportProfitAndLoss.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlNonCashPurchase.ascx.cs">
+      <DependentUpon>WebUserControlNonCashPurchase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlNonCashPurchase.ascx.designer.cs">
+      <DependentUpon>WebUserControlNonCashPurchase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlOpenActions.ascx.cs">
+      <DependentUpon>WebUserControlOpenActions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlOpenActions.ascx.designer.cs">
+      <DependentUpon>WebUserControlOpenActions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlOrderBase.ascx.cs">
+      <DependentUpon>WebUserControlOrderBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlOrderBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlOrderBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormBookKeeping.aspx.cs">
+      <DependentUpon>WebFormBookKeeping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormBookKeeping.aspx.designer.cs">
+      <DependentUpon>WebFormBookKeeping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormBookKeepingMutations.aspx.cs">
+      <DependentUpon>WebFormBookKeepingMutations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormBookKeepingMutations.aspx.designer.cs">
+      <DependentUpon>WebFormBookKeepingMutations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCompanyLocations.aspx.cs">
+      <DependentUpon>WebFormCompanyLocations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCompanyLocations.aspx.designer.cs">
+      <DependentUpon>WebFormCompanyLocations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelation.aspx.cs">
+      <DependentUpon>WebFormCustomerRelation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelation.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationAddress.aspx.cs">
+      <DependentUpon>WebFormCustomerRelationAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationAddress.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelationAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationAdvancePayment.aspx.cs">
+      <DependentUpon>WebFormCustomerRelationAdvancePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationAdvancePayment.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelationAdvancePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationContacts.aspx.cs">
+      <DependentUpon>WebFormCustomerRelationContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationContacts.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelationContacts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationContracts.aspx.cs">
+      <DependentUpon>WebFormCustomerRelationContracts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationContracts.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelationContracts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationLocations.aspx.cs">
+      <DependentUpon>WebFormCustomerRelationLocations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationLocations.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelationLocations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationMaterials.aspx.cs">
+      <DependentUpon>WebFormCustomerRelationMaterials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationMaterials.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelationMaterials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationPriceAgreement.aspx.cs">
+      <DependentUpon>WebFormCustomerRelationPriceAgreement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationPriceAgreement.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelationPriceAgreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationProjects.aspx.cs">
+      <DependentUpon>WebFormCustomerRelationProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationProjects.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelationProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationWork.aspx.cs">
+      <DependentUpon>WebFormCustomerRelationWork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCustomerRelationWork.aspx.designer.cs">
+      <DependentUpon>WebFormCustomerRelationWork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormPopUp.aspx.cs">
+      <DependentUpon>WebFormPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormPopUp.aspx.designer.cs">
+      <DependentUpon>WebFormPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormPurchase.aspx.cs">
+      <DependentUpon>WebFormPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormPurchase.aspx.designer.cs">
+      <DependentUpon>WebFormPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormPurchaseCredit.aspx.cs">
+      <DependentUpon>WebFormPurchaseCredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormPurchaseCredit.aspx.designer.cs">
+      <DependentUpon>WebFormPurchaseCredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormPurchaseInvoice.aspx.cs">
+      <DependentUpon>WebFormPurchaseInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormPurchaseInvoice.aspx.designer.cs">
+      <DependentUpon>WebFormPurchaseInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormPurchaseLedger.aspx.cs">
+      <DependentUpon>WebFormPurchaseLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormPurchaseLedger.aspx.designer.cs">
+      <DependentUpon>WebFormPurchaseLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormSetting.aspx.cs">
+      <DependentUpon>WebFormSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormSetting.aspx.designer.cs">
+      <DependentUpon>WebFormSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormSettingChangePassword.aspx.cs">
+      <DependentUpon>WebFormSettingChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormSettingChangePassword.aspx.designer.cs">
+      <DependentUpon>WebFormSettingChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormStock.aspx.cs">
+      <DependentUpon>WebFormStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormStock.aspx.designer.cs">
+      <DependentUpon>WebFormStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCashPurchase.ascx.designer.cs">
+      <DependentUpon>WebUserControlCashPurchase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCompanyLocation.ascx.cs">
+      <DependentUpon>WebUserControlCompanyLocation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCompanyLocation.ascx.designer.cs">
+      <DependentUpon>WebUserControlCompanyLocation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelation.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelation.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationAdvancePayment.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationAdvancePayment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationAdvancePayment.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationAdvancePayment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContact.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationContact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContact.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationContact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContactLog.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationContactLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContactLog.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationContactLog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContract.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationContract.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContract.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationContract.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContractMaterial.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationContractMaterial.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationContractMaterial.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationContractMaterial.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationMaterial.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationMaterial.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationMaterial.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationMaterial.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationPriceAgreement.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationPriceAgreement.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationPriceAgreement.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationPriceAgreement.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationProject.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationProject.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationProject.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationProject.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationWork.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationWork.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationWork.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationWork.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlLedgerBase.ascx.cs">
+      <DependentUpon>WebUserControlLedgerBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlLedgerBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlLedgerBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlLedgerMutation.ascx.cs">
+      <DependentUpon>WebUserControlLedgerMutation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlLedgerMutation.ascx.designer.cs">
+      <DependentUpon>WebUserControlLedgerMutation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationLocation.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationLocation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationLocation.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationLocation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationAddress.ascx.cs">
+      <DependentUpon>WebUserControlCustomerRelationAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlCustomerRelationAddress.ascx.designer.cs">
+      <DependentUpon>WebUserControlCustomerRelationAddress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentAlternativeMaterials.ascx.cs">
+      <DependentUpon>WebUserControlRentAlternativeMaterials.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentAlternativeMaterials.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentAlternativeMaterials.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentCreateInvoice.ascx.cs">
+      <DependentUpon>WebUserControlRentCreateInvoice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentCreateInvoice.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentCreateInvoice.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentInvoiceOverview.ascx.cs">
+      <DependentUpon>WebUserControlRentInvoiceOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentInvoiceOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentInvoiceOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentLedgerBase.ascx.cs">
+      <DependentUpon>WebUserControlRentLedgerBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentLedgerBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentLedgerBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentLedgerOverview.ascx.cs">
+      <DependentUpon>WebUserControlRentLedgerOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentLedgerOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentLedgerOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentMaterialBase.ascx.cs">
+      <DependentUpon>WebUserControlRentMaterialBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentMaterialBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentMaterialBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentMaterialOverview.ascx.cs">
+      <DependentUpon>WebUserControlRentMaterialOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentMaterialOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentMaterialOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentMaterials.ascx.cs">
+      <DependentUpon>WebUserControlRentMaterials.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentMaterials.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentMaterials.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentMaterialTypeBase.ascx.cs">
+      <DependentUpon>WebUserControlRentMaterialTypeBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentMaterialTypeBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentMaterialTypeBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentMaterialTypeOverview.ascx.cs">
+      <DependentUpon>WebUserControlRentMaterialTypeOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentMaterialTypeOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentMaterialTypeOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentOut.ascx.cs">
+      <DependentUpon>WebUserControlRentOut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentOut.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentOut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentReport.ascx.cs">
+      <DependentUpon>WebUserControlRentReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentReport.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentReportUsage.ascx.cs">
+      <DependentUpon>WebUserControlRentReportUsage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentReportUsage.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentReportUsage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentReturn.ascx.cs">
+      <DependentUpon>WebUserControlRentReturn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentReturn.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentReturn.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentVATBase.ascx.cs">
+      <DependentUpon>WebUserControlRentVATBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentVATBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentVATBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRentVATOverview.ascx.cs">
+      <DependentUpon>WebUserControlRentVATOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRentVATOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlRentVATOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlSecurityRole.ascx.cs">
+      <DependentUpon>WebUserControlSecurityRole.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlSecurityRole.ascx.designer.cs">
+      <DependentUpon>WebUserControlSecurityRole.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlSecurityRoleOverview.ascx.cs">
+      <DependentUpon>WebUserControlSecurityRoleOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlSecurityRoleOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlSecurityRoleOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlShowLinks.ascx.cs">
+      <DependentUpon>WebUserControlShowLinks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlShowLinks.ascx.designer.cs">
+      <DependentUpon>WebUserControlShowLinks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlShowReport.ascx.cs">
+      <DependentUpon>WebUserControlShowReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlShowReport.ascx.designer.cs">
+      <DependentUpon>WebUserControlShowReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStaffMember.ascx.cs">
+      <DependentUpon>WebUserControlStaffMember.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStaffMember.ascx.designer.cs">
+      <DependentUpon>WebUserControlStaffMember.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockClosureBase.ascx.cs">
+      <DependentUpon>WebUserControlStockClosureBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockClosureBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockClosureBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockClosuresOverview.ascx.cs">
+      <DependentUpon>WebUserControlStockClosuresOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockClosuresOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockClosuresOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockCorrectLevel.ascx.cs">
+      <DependentUpon>WebUserControlStockCorrectLevel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockCorrectLevel.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockCorrectLevel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockMaterial.ascx.cs">
+      <DependentUpon>WebUserControlStockMaterial.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockMaterial.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockMaterial.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockMutationsBase.ascx.cs">
+      <DependentUpon>WebUserControlStockMutationsBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockMutationsBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockMutationsBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockMutationsOverview.ascx.cs">
+      <DependentUpon>WebUserControlStockMutationsOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockMutationsOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockMutationsOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockOverview.ascx.cs">
+      <DependentUpon>WebUserControlStockOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockReportLevels.ascx.cs">
+      <DependentUpon>WebUserControlStockReportLevels.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockReportLevels.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockReportLevels.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockReportPrices.ascx.cs">
+      <DependentUpon>WebUserControlStockReportPrices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockReportPrices.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockReportPrices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockUnitsBase.ascx.cs">
+      <DependentUpon>WebUserControlStockUnitsBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockUnitsBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockUnitsBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlStockUnitsOverview.ascx.cs">
+      <DependentUpon>WebUserControlStockUnitsOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlStockUnitsOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlStockUnitsOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlTakeCall.ascx.cs">
+      <DependentUpon>WebUserControlTakeCall.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlTakeCall.ascx.designer.cs">
+      <DependentUpon>WebUserControlTakeCall.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlTruckBase.ascx.cs">
+      <DependentUpon>WebUserControlTruckBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlTruckBase.ascx.designer.cs">
+      <DependentUpon>WebUserControlTruckBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlTruckOverview.ascx.cs">
+      <DependentUpon>WebUserControlTruckOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlTruckOverview.ascx.designer.cs">
+      <DependentUpon>WebUserControlTruckOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="XMLCheckOpenActions.aspx.cs">
+      <DependentUpon>XMLCheckOpenActions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMLCheckOpenActions.aspx.designer.cs">
+      <DependentUpon>XMLCheckOpenActions.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="CustomerSettings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ModelTMS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelTMS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SiteSetting.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SiteStock.Master" />
+    <Content Include="SiteCustomerRelation.master" />
+    <Content Include="SiteBookkeeping.master" />
+    <Content Include="ImageHandler.ashx" />
+    <None Include="DataSetComparisonCustomerTotals.xsc">
+      <DependentUpon>DataSetComparisonCustomerTotals.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetComparisonCustomerTotals.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetComparisonCustomerTotals.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetComparisonCustomerTotals.xss">
+      <DependentUpon>DataSetComparisonCustomerTotals.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetComparisonMaterialTotals.xsc">
+      <DependentUpon>DataSetComparisonMaterialTotals.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetComparisonMaterialTotals.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetComparisonMaterialTotals.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetComparisonMaterialTotals.xss">
+      <DependentUpon>DataSetComparisonMaterialTotals.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetComparisonTotals.xsc">
+      <DependentUpon>DataSetComparisonTotals.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetComparisonTotals.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetComparisonTotals.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetComparisonTotals.xss">
+      <DependentUpon>DataSetComparisonTotals.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFreight.xsc">
+      <DependentUpon>DataSetFreight.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFreight.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFreight.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetFreight.xss">
+      <DependentUpon>DataSetFreight.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetInvoice.xsc">
+      <DependentUpon>DataSetInvoice.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetInvoice.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetInvoice.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetInvoice.xss">
+      <DependentUpon>DataSetInvoice.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMaterialMovement.xsc">
+      <DependentUpon>DataSetMaterialMovement.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMaterialMovement.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMaterialMovement.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMaterialMovement.xss">
+      <DependentUpon>DataSetMaterialMovement.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMaterialStock.xsc">
+      <DependentUpon>DataSetMaterialStock.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMaterialStock.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMaterialStock.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMaterialStock.xss">
+      <DependentUpon>DataSetMaterialStock.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOnlyInvoices.xsc">
+      <DependentUpon>DataSetOnlyInvoices.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOnlyInvoices.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOnlyInvoices.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetOnlyInvoices.xss">
+      <DependentUpon>DataSetOnlyInvoices.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOrder.xsc">
+      <DependentUpon>DataSetOrder.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOrder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOrder.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetOrder.xss">
+      <DependentUpon>DataSetOrder.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProfitAndLoss.xsc">
+      <DependentUpon>DataSetProfitAndLoss.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProfitAndLoss.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProfitAndLoss.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetProfitAndLoss.xss">
+      <DependentUpon>DataSetProfitAndLoss.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelation.xsc">
+      <DependentUpon>DataSetRelation.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelation.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRelation.xss">
+      <DependentUpon>DataSetRelation.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationAdvancePayment.xsc">
+      <DependentUpon>DataSetRelationAdvancePayment.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationAdvancePayment.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelationAdvancePayment.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRelationAdvancePayment.xss">
+      <DependentUpon>DataSetRelationAdvancePayment.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationContract.xsc">
+      <DependentUpon>DataSetRelationContract.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationContract.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelationContract.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRelationContract.xss">
+      <DependentUpon>DataSetRelationContract.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationContracts.xsc">
+      <DependentUpon>DataSetRelationContracts.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationContracts.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelationContracts.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRelationContracts.xss">
+      <DependentUpon>DataSetRelationContracts.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationPriceAgreement.xsc">
+      <DependentUpon>DataSetRelationPriceAgreement.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationPriceAgreement.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelationPriceAgreement.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRelationPriceAgreement.xss">
+      <DependentUpon>DataSetRelationPriceAgreement.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationRevenue.xsc">
+      <DependentUpon>DataSetRelationRevenue.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationRevenue.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelationRevenue.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRelationRevenue.xss">
+      <DependentUpon>DataSetRelationRevenue.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationWork.xsc">
+      <DependentUpon>DataSetRelationWork.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelationWork.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelationWork.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRelationWork.xss">
+      <DependentUpon>DataSetRelationWork.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRent.xsc">
+      <DependentUpon>DataSetRent.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRent.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRent.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRent.xss">
+      <DependentUpon>DataSetRent.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRentMaterials.xsc">
+      <DependentUpon>DataSetRentMaterials.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRentMaterials.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRentMaterials.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRentMaterials.xss">
+      <DependentUpon>DataSetRentMaterials.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRentMaterialsUsage.xsc">
+      <DependentUpon>DataSetRentMaterialsUsage.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRentMaterialsUsage.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRentMaterialsUsage.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRentMaterialsUsage.xss">
+      <DependentUpon>DataSetRentMaterialsUsage.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSorting.xsc">
+      <DependentUpon>DataSetSorting.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSorting.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSorting.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetSorting.xss">
+      <DependentUpon>DataSetSorting.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetWeighing.xsc">
+      <DependentUpon>DataSetWeighing.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetWeighing.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetWeighing.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetWeighing.xss">
+      <DependentUpon>DataSetWeighing.xsd</DependentUpon>
+    </None>
+    <None Include="ModelTMS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTMS.Context.cs</LastGenOutput>
+    </None>
+    <Content Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="SiteFreight.master" />
+    <Content Include="SiteSale.master" />
+    <Content Include="SiteRent.master" />
+    <None Include="TMS_Recycling.ModelTMSContainer.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportAdvancePayment.rdlc" />
+    <EmbeddedResource Include="Reports\ReportAppendix1A.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportAppendix1B.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportAppendix7.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportCMR.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportComparisonCustomerTotals.rdlc" />
+    <EmbeddedResource Include="Reports\ReportComparisonMaterialTotals.rdlc" />
+    <EmbeddedResource Include="Reports\ReportComparisonTotals.rdlc" />
+    <EmbeddedResource Include="Reports\ReportGuidanceLetter.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportInvoiceA4.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportInvoiceRentA4.rdlc" />
+    <EmbeddedResource Include="Reports\ReportLedgerOpenInvoices.rdlc" />
+    <EmbeddedResource Include="Reports\ReportLedgerProfitAndLoss.rdlc" />
+    <EmbeddedResource Include="Reports\ReportMaterialMovement.rdlc" />
+    <EmbeddedResource Include="Reports\ReportMaterialStockLevels.rdlc" />
+    <EmbeddedResource Include="Reports\ReportMaterialStockPrices.rdlc" />
+    <EmbeddedResource Include="Reports\ReportMaterialStockSalePrices.rdlc" />
+    <EmbeddedResource Include="Reports\ReportOrderA4.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelation.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationContract.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationContracts.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationInvoiceDetails.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationLabels.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationMaterial.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationMaterialCategory.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationOwnCategory.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationPriceAgreement.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationProjectTotalsPerMaterial.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationRevenueTotals.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationTradeDetails.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRelationWork.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRentContractsA4.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRentReport.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRentReportUsage.rdlc" />
+    <EmbeddedResource Include="Reports\ReportSortingA4.rdlc" />
+    <EmbeddedResource Include="Reports\ReportWeighingA4.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>50878</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50878/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

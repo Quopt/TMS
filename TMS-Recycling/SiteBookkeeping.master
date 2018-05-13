@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SiteBookkeeping.master.cs" Inherits="TMS_Recycling.SiteBookkeeping" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" runat="server" 
+    contentplaceholderid="ContentPlaceHolderPath">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderPathLink" runat="server">
+            </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <table class="submenu"><tr align="left" valign="top"><td width="150px">
+    <asp:TreeView ID="TreeViewBookKeeping" runat="server" CssClass="menutree" 
+            NodeWrap="True" ShowLines="True">
+        <Nodes>
+            <asp:TreeNode Text="Dagboeken" Value="Ledgers" 
+                Expanded="True" NavigateUrl="WebFormBookKeeping.aspx">
+                <asp:TreeNode Text="Mutaties" Value="LedgerMutations" 
+                    NavigateUrl="WebFormBookKeepingMutations.aspx" SelectAction="None"></asp:TreeNode>
+                <asp:TreeNode Text="Sluitstanden" Value="LedgerClosures" 
+                    NavigateUrl="WebFormBookKeepingClosures.aspx" SelectAction="None"></asp:TreeNode>
+                <asp:TreeNode Text="Controles" Value="LedgerChecks" 
+                    NavigateUrl="WebFormBookKeepingChecks.aspx" SelectAction="None"></asp:TreeNode>
+            </asp:TreeNode>
+                <asp:TreeNode Text="Boekingscodes" Value="BookingCodes"
+                    NavigateUrl="WebFormLedgers.aspx">
+                <asp:TreeNode Text="Mutaties" Value="LedgerMutations" 
+                    NavigateUrl="WebFormLedgerMutations.aspx" SelectAction="None"></asp:TreeNode>
+                <asp:TreeNode Text="Sluitstanden" Value="LedgerClosures" 
+                    NavigateUrl="WebFormLedgerClosures.aspx" SelectAction="None"></asp:TreeNode>
+                <asp:TreeNode Text="Controles" Value="LedgerChecks" 
+                    NavigateUrl="WebFormLedgerChecks.aspx" SelectAction="None"></asp:TreeNode>                
+                </asp:TreeNode>
+            <asp:TreeNode Text="Overige facturen" 
+                Value="Reports" Expanded="True" SelectAction="None">
+                <asp:TreeNode Text="Inkopen" Value="LedgerMutations" 
+                    NavigateUrl="WebFormOtherInvoiceBuy.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Verkopen" Value="LedgerClosures" 
+                    NavigateUrl="WebFormOtherInvoiceSell.aspx"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Text="Rapportages" 
+                Value="Reports" Expanded="True" SelectAction="None">
+                <asp:TreeNode Text="Openstaande posten" Value="OpenInvoices" 
+                    NavigateUrl="WebFormLedgerReportOpenInvoices.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Omzetvergelijkings overzichten" Value="RevenueComparison" 
+                    NavigateUrl="WebFormLedgerReportComparison.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Winst- en verliesoverzicht" Value="ProfitAndLoss" 
+                    NavigateUrl="WebFormLedgerReportProfitAndLoss.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Overzicht ingekochte goederen" Value="LedgerPurchasedMaterials" 
+                    NavigateUrl="WebFormLedgerReportPurchasedMaterials.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Overzicht verkochte goederen" Value="LedgerSoldMaterials" 
+                    NavigateUrl="WebFormLedgerReportSoldMaterials.aspx"></asp:TreeNode>
+            </asp:TreeNode>
+        </Nodes>
+    </asp:TreeView>
+   </td>
+   <td width="100%">
+        <div class="maincondensed">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+   </td>
+   </tr>
+   </table>
+</asp:Content>

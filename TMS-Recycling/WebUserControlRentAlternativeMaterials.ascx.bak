@@ -1,0 +1,89 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlRentAlternativeMaterials.ascx.cs" Inherits="TMS_Recycling.WebUserControlRentAlternativeMaterials" %>
+<%@ Register src="ComboBoxLocation.ascx" tagname="ComboBoxLocation" tagprefix="uc1" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+<asp:Label ID="LabelAlternativeMaterials" runat="server" Text="Beschikbare alternatieve materialen"></asp:Label>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBox ID="CheckBoxIncludeAlternativeLocations" 
+    runat="server" AutoPostBack="True" 
+    Text="Toon materialen op alternatieve lokaties" />
+&nbsp;
+<asp:ComboBox ID="ComboBoxLocations" runat="server" 
+    AutoCompleteMode="SuggestAppend" AutoPostBack="True" 
+    DataSourceID="EntityDataSourceLocations" DataTextField="Description" 
+    DataValueField="Id" DropDownStyle="DropDownList" MaxLength="0" 
+    style="display: inline;" AppendDataBoundItems="True">
+    <asp:ListItem Selected="True" Value="">- Alle lokaties -</asp:ListItem>
+</asp:ComboBox>
+<br />
+<cc11:ClassGridView ID="GridView1" runat="server" 
+    DataSourceID="EntityDataSourceMaterials" AutoGenerateColumns="False">
+    <Columns>
+        <asp:BoundField DataField="ItemNumber" HeaderText="Nr" 
+            SortExpression="ItemNumber" />
+        <asp:BoundField DataField="Description" HeaderText="Beschrijving" 
+            SortExpression="Description" />
+        <asp:BoundField DataField="BaseRentalPrice" HeaderText="Basis huurprijs" 
+            SortExpression="BaseRentalPrice" />
+        <asp:BoundField DataField="RentPerDay" HeaderText="Huur per dag" 
+            SortExpression="RentPerDay" />
+        <asp:BoundField DataField="RentPerWeek" HeaderText="Huur per week" 
+            SortExpression="RentPerWeek" />
+        <asp:BoundField DataField="RentPerMonth" HeaderText="Huur per maand" 
+            SortExpression="RentPerMonth" />
+        <asp:BoundField DataField="BailPrice" HeaderText="Borg" 
+            SortExpression="BailPrice" />
+        <asp:BoundField DataField="LocationDescription" HeaderText="Lokatie" 
+            SortExpression="LocationDescription" />
+    </Columns>
+</cc11:ClassGridView>
+<br />
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceMaterials" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" 
+    OrderBy="" Where="" CommandText="select distinct it.Id, it.ItemNumber, it.Description, it.Description, it.BaseRentalPrice, it.RentPerDay, it.RentPerWeek, it.RentPerMonth, it.BailPrice, it.Location.Description as LocationDescription
+from RentalItemSet as it 
+where 
+it.IsActive and 
+(it.RentalType.Id = @RentalType) and (it.Location.Id = @LocationID) and
+( (it.ItemState = &quot;Available&quot;) or (it.ItemState = &quot;Rented&quot;) ) and
+( it not in (
+	select value itx2.RentalItem 
+	from RentalItemActivitySet as itx2 
+	where itx2.RentalItem.Id = it.Id and
+	 ( 
+	   ((@StartDate &lt;= itx2.RentStartDateTime) and (@EndDate &gt;= itx2.RentStartDateTime)) 
+	 ) or
+	 (
+	   ((@StartDate &gt;= itx2.RentStartDateTime) and (@StartDate &lt;= itx2.RentEndStartDateTime))
+	 )
+  )
+)
+order by Description, BaseRentalPrice" EntitySetName="" EntityTypeFilter="" 
+    Select="">
+    <CommandParameters>
+        <asp:Parameter Name="RentalType" DbType="Guid" />
+        <asp:Parameter Name="LocationId" DbType="Guid" />
+        <asp:QueryStringParameter DbType="DateTime" Name="StartDate" 
+            QueryStringField="StartDate" />
+        <asp:QueryStringParameter DbType="DateTime" Name="EndDate" 
+            QueryStringField="EndDate" />
+        <asp:Parameter Name="BorderEndDate" DbType="DateTime" />
+    </CommandParameters>
+</cc11:ClassEntityDataSource>
+
+
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceLocations" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EntitySetName="LocationSet" 
+    Select="it.[Id], it.[Description], it.[IsActive]" OrderBy="it.Description" 
+    Where="it.IsActive">
+</cc11:ClassEntityDataSource>
+
+
+
+
+

@@ -1,0 +1,105 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlCustomerRelationAddress.ascx.cs" Inherits="TMS_Recycling.WebUserControlCustomerRelationAddress" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+<table width="100%">
+<tr>
+ <td colspan="4">
+     <asp:Label ID="LabelBasisgegevens" runat="server" 
+         Text="Basisgegevens adres" CssClass="SubMenuHeader"></asp:Label></td>
+ <td>    <asp:Label ID="LabelIsActive" runat="server" Text="Actief"></asp:Label> </td>
+ <td>   
+            <asp:CheckBox ID="CheckBox_IsActive_Checked" Text="" runat="server" 
+                Checked="True" /></td>
+</tr>
+
+<tr>
+<td>
+    <asp:Label ID="LabelName" runat="server" Text="Naam"></asp:Label> </td>
+    <td colspan="3" width="300px"> <asp:TextBox ID="TextBox_Description_Text" runat="server" Width="90%" 
+            MaxLength="250" ></asp:TextBox>
+    </td>
+    <td><asp:Label ID="LabelRelationType" runat="server" Text="Soort adres"></asp:Label> </td>
+        <td>
+
+    <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownList_AdressType_SelectedValue" runat="server">
+    </cc11:ClassComboBox>
+
+    </td>
+</tr>
+
+
+<tr>
+<td>
+    <asp:Label ID="LabelAddressLine1" runat="server" Text="Adres regel 1"></asp:Label>
+    </td>
+<td colspan="5">
+    <asp:TextBox ID="TextBox_AdressLine1" runat="server" Width="90%"></asp:TextBox>
+    </td>
+</tr>
+<tr>
+<td>
+    <asp:Label ID="LabelAddressLine2" runat="server" Text="Adres regel 2"></asp:Label>
+    </td>
+<td colspan="5">
+    <asp:TextBox ID="TextBox_AdressLine2" runat="server" Width="90%"></asp:TextBox>
+    </td>
+</tr>
+<tr>
+<td>
+    <asp:Label ID="LabelAddressLine3" runat="server" Text="Adres regel 3"></asp:Label>
+    </td>
+<td colspan="5">
+    <asp:TextBox ID="TextBox_AdressLine3" runat="server" Width="90%"></asp:TextBox>
+    </td>
+</tr>
+
+<tr>
+<td>
+    <asp:Label ID="LabelZIPCode" runat="server" Text="Postcode"></asp:Label>
+    </td>
+<td>
+    <asp:TextBox ID="TextBox_ZIPcode" runat="server"></asp:TextBox>
+    </td>
+<td>
+    <asp:Label ID="LabelCity" runat="server" Text="Stad"></asp:Label>
+</td>
+<td>
+    <asp:TextBox ID="TextBox_City" runat="server"></asp:TextBox>
+</td>
+<td>
+    <asp:Label ID="LabelCountry" runat="server" Text="Land"></asp:Label>
+</td>
+<td>
+
+    <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownList_Country_SelectedValue" runat="server">
+    </cc11:ClassComboBox>
+
+    </td>
+</tr>
+
+<tr>
+    <td><asp:Label ID="Label15" runat="server" Text="Opmerkingen"></asp:Label> </td>
+    <td colspan="5"> 
+        <asp:TextBox ID="TextBox_Comments" runat="server" Width="90%" 
+            MaxLength="2000" Rows="4" TextMode="MultiLine" ></asp:TextBox>
+    </td>
+
+
+</tr>
+
+</table>
+<asp:Button ID="ButtonCancel" runat="server" Text="Wijzigingen annuleren" 
+    onclick="ButtonCancel_Click" />
+<asp:Button ID="ButtonSave" runat="server" Text="Wijzigingen opslaan" 
+    onclick="ButtonSave_Click" />
+<asp:Button ID="ButtonDelete" runat="server" onclick="ButtonDelete_Click" OnClientClick="return confirm('Weet u het zeker dat u dit wilt?');"
+    Text="Adres verwijderen" />
+
+
+    
+
+
+
+

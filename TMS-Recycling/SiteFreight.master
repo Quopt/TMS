@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SiteFreight.master.cs" Inherits="TMS_Recycling.SiteFreight" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPath" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderPathLink" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <table width="100%">
+<tr>
+<td width="10%" valign="top">
+    <asp:Menu ID="MenuFreight"  runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" 
+                    ItemWrap="True">
+        <Items>
+            <asp:MenuItem Text="&lt;BR /&gt;Vracht halen&lt;br&gt;(weegbon)" ToolTip="Haal een vracht op met een weegbon en wettelijke papieren." 
+                Value="CollectFreight" ImageUrl="~/Images/TaskHH.bmp" 
+                NavigateUrl="WebFormFreightCollect.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="&lt;BR /&gt;Wegen vrachtwagen &lt;br&gt;(weegbon)" ToolTip="Maak een weegbon aan en wettelijke papieren." 
+                Value="WeighOnly" ImageUrl="~/Images/NewClassModuleHH.bmp" 
+                NavigateUrl="WebFormFreightWeigh.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="&lt;BR /&gt;Nieuwe sorteerbon" Value="SortPrint" 
+                ImageUrl="~/Images/PrintHH.bmp" NavigateUrl="WebFormFreightNew.aspx">
+            </asp:MenuItem>
+            <asp:MenuItem Text="&lt;BR /&gt;Sorteerbon invullen" 
+                Value="SortFillIn" ImageUrl="~/Images/PropertiesHH.bmp" 
+                NavigateUrl="WebFormFreightFinish.aspx">
+            </asp:MenuItem>
+            <asp:MenuItem Text="<BR />Weeg/sorteerbon factureren" Value="Invoice" 
+                ImageUrl="~/Images/PasteHH.bmp" NavigateUrl="WebFormFreightInvoice.aspx"></asp:MenuItem>
+            <asp:MenuItem ImageUrl="~/Images/PrintPreviewHH.bmp" 
+                
+                Text="&lt;BR /&gt;Overzicht (niet verwerkte)&lt;br /&gt;weeg-/sorteerbonnen" 
+                Value="Overview" NavigateUrl="WebFormFreightControl.aspx">
+            </asp:MenuItem>
+        </Items>
+    </asp:Menu>
+    <asp:TreeView ID="TreeViewFreight" runat="server" CssClass="menutree" 
+            NodeWrap="True" ShowLines="True">
+        <Nodes>
+            <asp:TreeNode Text="Beheer" 
+                Value="Maintenance" Expanded="True" SelectAction="None">
+                <asp:TreeNode NavigateUrl="~\WebFormTrucks.aspx" 
+                    Text="Vrachtwagens" Value="CompanyTrucks">
+                </asp:TreeNode>
+            </asp:TreeNode>
+        </Nodes>
+    </asp:TreeView>
+
+</td><td valign="top">
+        <div class="maincondensed">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+</td>
+</tr>
+</table>
+</asp:Content>

@@ -1,0 +1,109 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlFreightNewSorting.ascx.cs" Inherits="TMS_Recycling.WebUserControlFreightNewSorting" %>
+    <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+    <%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc1" %>
+    <%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+    <asp:Panel ID="PanelFirstWeighing" runat="server">
+        <asp:Label ID="LabelFirstWeighing" runat="server" CssClass="SubMenuHeader" 
+            Text="Eerste weging"></asp:Label>
+        <table style="width: 100%;">
+        <tr>
+        <td width="20%">
+            <asp:Label ID="LabelBuyOrSell" runat="server" 
+                Text="Is deze sorteerbon voor de in- of verkoop"></asp:Label>
+            </td>
+        <td>
+            <asp:RadioButtonList ID="RadioButtonListBuyOrSell" runat="server" 
+                AutoPostBack="True" 
+                onselectedindexchanged="RadioButtonListBuyOrSell_SelectedIndexChanged">
+                <asp:ListItem Value="Buy" Selected="True">Sorteerbon tbv inkoop of niet van toepassing</asp:ListItem>
+                <asp:ListItem Value="Sell">Sorteerbon tbv verkoop</asp:ListItem>
+            </asp:RadioButtonList>
+        </td>
+        </tr>
+        <tr>
+        <td width="20%">
+            <asp:Label ID="LabelLocation" runat="server" 
+                Text="Weeglokatie"></asp:Label></td>
+        <td>
+            <cc1:ClassComboBoxLocation ID="ComboBoxWeighingLocation" runat="server" 
+                AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" 
+                DataSourceID="EntityDataSourceLocations" DataTextField="Description" 
+                DataValueField="Id" MaxLength="0" 
+                style="display: inline;" AutoPostBack="True" onselectedindexchanged="DropDownListLocations_SelectedIndexChanged" 
+                ></cc1:ClassComboBoxLocation>
+        </td>
+        </tr>
+            <tr>
+                <td width="20%">
+                    <asp:Label ID="LabelCustomer" runat="server" Text="Klant"></asp:Label>
+                </td>
+                <td>
+                    <cc11:ClassComboBox ID="ComboBoxCustomer" runat="server" AutoCompleteMode="SuggestAppend" 
+                        DropDownStyle="DropDownList" DataSourceID="EntityDataSourceCustomers" 
+                        DataTextField="Description" DataValueField="Id" MaxLength="0" 
+                        style="display: inline;" AutoPostBack="True" 
+                        ></cc11:ClassComboBox>
+                </td>
+            </tr>
+
+        <tr>
+        <td colspan="2">
+        LET OP : Voordat u een sorteerbon aanmaakt! Een eenmaal aangemaakte sorteerbon moet worden ingevuld in het systeem. Print dus alleen een sorteerbon als u deze werkelijk gaat gebruiken.
+        </td>
+        </tr>
+        </table>
+    </asp:Panel>
+
+<asp:Panel ID="PanelInvoice" runat="server">
+<asp:Label ID="LabelInvoice" runat="server" Text="Printvoorbeeld sorteerbon" 
+        CssClass="SubMenuHeader"></asp:Label>
+    <br />
+    <asp:Label ID="LabelExplanation" runat="server" Text="Print deze bon uit en vul hierop met een pen de gewichten en andere gegevens in. Kom vervolgens terug en vul de aangetroffen gewichten in via de keuze 'Vracht/weegbon invullen'. " 
+        ></asp:Label>
+    <br />
+  <iframe id="FrameShowInvoiceA" scrolling="auto" runat="server" height="400px" width="100%">
+  </iframe>
+</asp:Panel>
+
+<table width="100%">
+    <tr>
+    <td>
+    <asp:Button ID="ButtonContinue" runat="server" Text="Volgende stap" 
+        onclick="ButtonContinue_Click" />
+    <asp:Button ID="ButtonDestroy" runat="server" Text="Deze sorteerbon vernietigen" 
+        onclick="ButtonDestroy_Click" />
+    <asp:Button ID="ButtonNew" runat="server" Text="Nieuwe sorteerbon printen" 
+        onclick="ButtonNew_Click" />
+    </td>
+    <td align="right">
+        <asp:Button ID="ButtonFillIn" runat="server" Text="Sorteerbon invullen" 
+                onclick="ButtonFillIn_Click" />
+    </td>
+    </tr>
+    </table>
+<asp:Label ID="LabelCurrentPageNr" runat="server" Text="1" Visible="False"></asp:Label>
+<asp:Label ID="LabelCurrentOrderId" runat="server" Visible="False"></asp:Label>
+<asp:Label ID="LabelCustomerType" runat="server" Text="Creditor" Visible="False"></asp:Label>
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceLocations" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EnableFlattening="False" 
+    EntitySetName="LocationSet" Select="it.[Description], it.[Id], it.[IsActive]" 
+    Where="it.IsActive = true">
+</cc11:ClassEntityDataSource>
+
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceCustomers" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EnableFlattening="False" 
+    EntitySetName="RelationSet" 
+    
+    
+    Where="(it.IsActive = true) and ( (it.CustomerType = @CustomerType) || (it.CustomerType = &quot;Both&quot;)  || (it.CustomerType = &quot;Other&quot;) )" 
+    Select="it.Id, it.Description" OrderBy="it.Description">
+    <WhereParameters>
+        <asp:ControlParameter ControlID="LabelCustomerType" Name="CustomerType" 
+            PropertyName="Text" Type="String" />
+    </WhereParameters>
+</cc11:ClassEntityDataSource>

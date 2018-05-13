@@ -1,0 +1,74 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlFreightInvoice.ascx.cs" Inherits="TMS_Recycling.WebUserControlFreightInvoice" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register src="WebUserControlCashPurchase.ascx" tagname="WebUserControlCashPurchase" tagprefix="uc1" %>
+<%@ Register src="WebUserControlNonCashPurchase.ascx" tagname="WebUserControlNonCashPurchase" tagprefix="uc2" %>
+<%@ Register src="URLPopUpControl.ascx" tagname="URLPopUpControl" tagprefix="uc3" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+    <asp:Panel ID="PanelSecondWeighingOrderNumber" runat="server">
+        <asp:Label ID="LabelSorteerbon" runat="server" CssClass="SubMenuHeader" 
+            Text="Sorteerbonnummer opgeven"></asp:Label>
+        <table style="width: 100%;">
+        <tr>
+        <td width="20%">
+
+            <asp:Label ID="LabelOrderNumber" runat="server" Text="Geef het weegbon nummer"></asp:Label>
+
+        </td>
+        <td>
+            <asp:TextBox ID="TextBoxOrderNumber" runat="server"></asp:TextBox>
+        </td>
+        </tr>
+        </table>
+    </asp:Panel>
+
+    <asp:Panel ID="PanelInvoiceInformation" runat="server">
+        <asp:Label ID="LabelBasicData" runat="server" CssClass="SubMenuHeader" 
+            Text="Factuurtype"></asp:Label>
+        <table style="width: 100%;">
+        <tr>
+        <td width="20%">
+        </td>
+        <td>
+            <uc3:URLPopUpControl ID="URLPopUpControlShowSorting" runat="server" 
+                Text="Weegbon tonen" />
+            </td>
+        </tr>
+        <tr>
+        <td width="20%">
+            <asp:Label ID="LabelInvoiceType" runat="server" 
+                Text="Hoe wilt u factureren?"></asp:Label>
+            </td>
+        <td>
+            <asp:RadioButtonList ID="RadioButtonListInvoiceType" runat="server">
+                <asp:ListItem Value="PayNow" Selected="True">Per kas</asp:ListItem>
+                <asp:ListItem Value="PayLater">Op krediet</asp:ListItem>
+            </asp:RadioButtonList>
+            </td>
+        </tr>
+        </table>
+    </asp:Panel>
+
+    <uc1:WebUserControlCashPurchase ID="WebUserControlCashPurchase1" 
+    runat="server" />
+
+    <uc2:WebUserControlNonCashPurchase ID="WebUserControlNonCashPurchase1" 
+    runat="server" />
+
+<table width="100%">
+<tr>
+<td>
+    <asp:Button ID="ButtonRevert" runat="server" Text="Vorige stap" 
+        onclick="ButtonRevert_Click" />
+    <asp:Button ID="ButtonContinue" runat="server" Text="Volgende stap" 
+        onclick="ButtonContinue_Click" />
+</td>
+<td align="right">
+    &nbsp;</td>
+</tr>
+</table>
+<cc11:ClassEntityDataSource ID="EntityDataSource1" runat="server">
+</cc11:ClassEntityDataSource>
+
+<asp:Label ID="LabelCurrentPageNr" runat="server" Text="1" Visible="False"></asp:Label>
+<asp:Label ID="LabelCurrentOrderId" runat="server" Visible="False"></asp:Label>

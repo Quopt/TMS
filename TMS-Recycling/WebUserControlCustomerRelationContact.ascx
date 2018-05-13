@@ -1,0 +1,98 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlCustomerRelationContact.ascx.cs" Inherits="TMS_Recycling.WebUserControlCustomerRelationContact" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+<table width="100%">
+<tr>
+ <td colspan="4">
+     <asp:Label ID="LabelBasisgegevens" runat="server" 
+         Text="Basisgegevens contact" CssClass="SubMenuHeader"></asp:Label></td>
+ <td>    <asp:Label ID="LabelIsActive" runat="server" Text="Actief"></asp:Label> </td>
+ <td>   
+            <asp:CheckBox ID="CheckBox_IsActive_Checked" Text="" runat="server" 
+                Checked="True" /></td>
+</tr>
+
+<tr>
+<td>
+    <asp:Label ID="LabelName" runat="server" Text="Naam"></asp:Label> </td>
+    <td colspan="3" width="300px"> <asp:TextBox ID="TextBox_Description_Text" runat="server" Width="90%" 
+            MaxLength="250" ></asp:TextBox>
+    </td>
+    <td><asp:Label ID="LabelRelationType" runat="server" Text="Soort contact"></asp:Label> </td>
+        <td>
+
+    <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownList_RelationType_SelectedValue" runat="server">
+    </cc11:ClassComboBox>
+
+    </td>
+</tr>
+
+
+<tr>
+<td>
+    <asp:Label ID="LabelPhone" runat="server" Text="Telefoon"></asp:Label>
+    </td>
+<td>
+    <asp:TextBox ID="TextBox_PhoneNumber" runat="server"></asp:TextBox>
+    </td>
+<td>
+    <asp:Label ID="LabelMobilePhone" runat="server" Text="Mobiele telefoon"></asp:Label>
+</td>
+<td>
+    <asp:TextBox ID="TextBox_MobilePhone" runat="server"></asp:TextBox>
+</td>
+<td>
+    <asp:Label ID="LabelEMail" runat="server" Text="E-mail adres"></asp:Label>
+</td>
+<td>
+    <asp:TextBox ID="TextBox_EMail" runat="server"></asp:TextBox>
+    </td>
+</tr>
+
+<tr>
+<td>
+    <asp:Label ID="LabelHomePhone" runat="server" Text="Telefoon thuis"></asp:Label>
+    </td>
+<td>
+    <asp:TextBox ID="TextBox_HomePhone" runat="server"></asp:TextBox>
+    </td>
+<td>
+    <asp:Label ID="LabelPrivateMobilePhone" runat="server" Text="Privé mobiele telefoon"></asp:Label>
+</td>
+<td>
+    <asp:TextBox ID="TextBox_PrivateMobilePhone" runat="server"></asp:TextBox>
+</td>
+<td>
+    <asp:Label ID="LabelPrivateEMail" runat="server" Text="Privé e-mail adres"></asp:Label>
+</td>
+<td>
+    <asp:TextBox ID="TextBox_PrivateEMail" runat="server"></asp:TextBox>
+    </td>
+</tr>
+
+<tr>
+    <td><asp:Label ID="Label15" runat="server" Text="Opmerkingen"></asp:Label> </td>
+    <td colspan="5"> 
+        <asp:TextBox ID="TextBox_Comments" runat="server" Width="90%" 
+            MaxLength="2000" Rows="4" TextMode="MultiLine" ></asp:TextBox>
+    </td>
+
+
+</tr>
+
+</table>
+<asp:Button ID="ButtonCancel" runat="server" Text="Wijzigingen annuleren" 
+    onclick="ButtonCancel_Click" />
+<asp:Button ID="ButtonSave" runat="server" Text="Wijzigingen opslaan" 
+    onclick="ButtonSave_Click" />
+<asp:Button ID="ButtonDelete" runat="server" onclick="ButtonDelete_Click" OnClientClick="return confirm('Weet u het zeker dat u dit wilt?');"
+    Text="Contact verwijderen" />
+
+
+    
+
+
+
+

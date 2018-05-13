@@ -1,0 +1,183 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlCustomerRelation.ascx.cs" Inherits="TMS_Recycling.WebUserControlCustomerRelation" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+<table width="100%">
+<tr>
+ <td colspan="4"><asp:Label ID="LabelBasisgegevens" runat="server" Text="Basisgegevens" CssClass="SubMenuHeader"></asp:Label></td>
+ <td>    <asp:Label ID="LabelRelationNumber" runat="server" Text="Klantnummer"></asp:Label> </td>
+ <td>   <asp:Label ID="Label_CustomerNumber_Text" runat="server"></asp:Label> </td>
+</tr>
+<tr>
+<td>
+    <asp:Label ID="LabelName" runat="server" Text="Naam"></asp:Label> </td>
+    <td colspan="3"> <asp:TextBox ID="TextBox_Description_Text" runat="server" Width="90%" 
+            MaxLength="250" ></asp:TextBox>
+    </td>
+    <td><asp:Label ID="LabelIsActive" runat="server" Text="Actief"></asp:Label> </td>
+        <td>
+            <asp:CheckBox ID="CheckBox_IsActive_Checked" Text="" runat="server" Checked="True" /></td>
+</tr>
+<tr>
+    <td><asp:Label ID="LabelEMail" runat="server" Text="E-mail adres"></asp:Label> </td>
+    <td> 
+        <asp:TextBox ID="TextBoxEMail_EMail" runat="server" 
+            Width="200px" MaxLength="40" ></asp:TextBox>
+    </td>
+    <td><asp:Label ID="LabelPhoneNumber" runat="server" Text="Telefoon"></asp:Label> </td>
+    <td> 
+        <asp:TextBox ID="TextBox_PhoneNumber" runat="server" Width="200px" 
+            MaxLength="40" ></asp:TextBox>
+    </td>
+    <td><asp:Label ID="LabelFax" runat="server" Text="Fax"></asp:Label> </td>
+    <td> 
+        <asp:TextBox ID="TextBox_FaxNumber" runat="server" Width="200px" 
+            MaxLength="40" ></asp:TextBox>
+    </td>
+
+</tr>
+<tr>
+    <td><asp:Label ID="LabelRelationType" runat="server" Text="Soort klant"></asp:Label> </td>
+    <td> 
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownList_CustomerType_SelectedValue" runat="server">
+            <asp:ListItem Selected="True" Value="Relation">Relatie (afnemer en leverancier)</asp:ListItem>
+            <asp:ListItem>Afnemer/debiteur</asp:ListItem>
+            <asp:ListItem Value="Creditor">Leverancier/crediteur</asp:ListItem>
+            <asp:ListItem Value="Other">Anderssoortige relatie</asp:ListItem>
+        </cc11:ClassComboBox>
+    </td>
+    <td><asp:Label ID="LabelCustomerReference" runat="server" Text="Uw referentie"></asp:Label> </td>
+    <td> 
+        <asp:TextBox ID="TextBox_YourReference" runat="server" Width="200px" 
+            MaxLength="40" ></asp:TextBox>
+    </td>
+    <td><asp:Label ID="LabelPreferredCurrency" runat="server" Text="Voorkeursmunteenheid"></asp:Label> </td>
+    <td> 
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownList_PreferredCurrency_SelectedValue" runat="server">
+        </cc11:ClassComboBox>
+    </td></tr>
+
+<tr>
+<td>
+    <asp:Label ID="LabelVATNumber" runat="server" Text="BTW Nummer"></asp:Label> 
+</td>
+<td>
+        <asp:TextBox ID="TextBox_VATNumber" runat="server" Width="200px" 
+            MaxLength="40" ></asp:TextBox>
+</td>
+<td>
+    <asp:Label ID="LabelCountry" runat="server" Text="Land"></asp:Label> 
+</td>
+<td>
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" 
+        ID="DropDownList_Country_SelectedValue" runat="server">
+        </cc11:ClassComboBox>
+</td>
+<td>
+    <asp:Label ID="LabelPreferredLocation" runat="server" Text="Voorkeurslokatie klant"></asp:Label> 
+</td>
+<td>
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" 
+        ID="DropDownList_PreferredLocation" runat="server" 
+            DataSourceID="EntityDataSourceLocations" DataTextField="Description" 
+            DataValueField="Id">
+        </cc11:ClassComboBox>
+</td>
+</tr>
+
+<tr>
+<td>
+    
+    <asp:Label ID="LabelTransportData" runat="server" CssClass="SubMenuHeader" Text="Gegevens tbv transport"></asp:Label> 
+    
+</td>
+<td>
+       
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+
+<tr>
+<td>
+    
+    <asp:Label ID="LabelTransportContact" runat="server" Text="Contact transporten"></asp:Label> 
+    
+</td>
+<td>
+       
+        <asp:TextBox ID="TextBox_TransportContact" runat="server" 
+            Width="200px" MaxLength="40" ></asp:TextBox>
+       
+</td>
+<td>
+    <asp:Label ID="LabelVIHBNumber" runat="server" Text="VIHB nummer"></asp:Label> 
+</td>
+<td>
+       
+        <asp:TextBox ID="TextBox_TransportVIHB" runat="server" 
+            Width="200px" MaxLength="40" ></asp:TextBox>
+       
+</td>
+<td>
+    &nbsp;</td>
+<td>
+       
+        &nbsp;</td>
+</tr>
+
+<tr>
+<td>
+    
+    
+    <asp:Label ID="LabelTransportAddressLine" runat="server" Text="Transport adresregel"></asp:Label> 
+    
+    
+</td>
+<td colspan="4">
+       
+        <asp:TextBox ID="TextBox_TransportAddressLine" runat="server" 
+            Width="100%" MaxLength="250" ></asp:TextBox>
+       
+</td>
+
+</tr>
+
+<tr>
+<td>
+
+    <asp:Label ID="LabelOtherData" runat="server" CssClass="SubMenuHeader" 
+        Text="Overige gegevens"></asp:Label> 
+    
+</td></tr>
+<tr>
+    <td><asp:Label ID="Label15" runat="server" Text="Opmerkingen"></asp:Label> </td>
+    <td colspan="5"> 
+        <asp:TextBox ID="TextBox_Comments" runat="server" Width="90%" 
+            MaxLength="2000" Rows="4" TextMode="MultiLine" ></asp:TextBox>
+    </td>
+
+
+</tr>
+
+</table>
+<asp:Button ID="ButtonCancel" runat="server" Text="Wijzigingen annuleren" 
+    onclick="ButtonCancel_Click" />
+<asp:Button ID="ButtonSave" runat="server" Text="Wijzigingen opslaan" 
+    onclick="ButtonSave_Click" />
+<asp:Button ID="ButtonDelete" runat="server" onclick="ButtonDelete_Click" OnClientClick="return confirm('Weet u het zeker dat u dit wilt?');"
+    Text="Relatie verwijderen" />
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceLocations" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EntitySetName="LocationSet" 
+    OrderBy="it.Description" Select="it.[Id], it.[Description], it.[IsActive]" 
+    Where="it.IsActive">
+</cc11:ClassEntityDataSource>

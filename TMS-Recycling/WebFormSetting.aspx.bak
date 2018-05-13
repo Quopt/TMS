@@ -1,0 +1,74 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteSetting.master" AutoEventWireup="true" CodeBehind="WebFormSetting.aspx.cs" Inherits="TMS_Recycling.WebFormSetting" %>
+<%@ Register src="WebUserControlStaffMember.ascx" tagname="WebUserControlStaffMember" tagprefix="uc1" %>
+<%@ Register src="ComboBoxLocation.ascx" tagname="ComboBoxLocation" tagprefix="uc2" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderPathLink" runat="server">
+    <asp:Label ID="LabelPath" runat="server" 
+        Text="Systeembeheer \ Gebruikers beheren" CssClass="Header2"></asp:Label>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+    <table width="100%" class="filterpanel">
+    <tr><td><asp:Label ID="LabelFilter" runat="server" Text="Filter" 
+            CssClass="filterheader"></asp:Label></td></tr>
+    <tr><td>
+        <asp:Label ID="Label1" runat="server" Text="Naam"></asp:Label> &nbsp; <asp:TextBox ID="TextBoxFilterName"
+            runat="server"></asp:TextBox></td>
+            <td>
+            <asp:Label ID="LabelLocation" runat="server" Text="Lokatie"></asp:Label>
+            </td>
+            <td>
+                <uc2:ComboBoxLocation ID="ComboBoxLocation1" runat="server" />
+            </td>
+            <td>
+                <asp:CheckBox
+                    ID="CheckBoxFilterIsActive" runat="server" Text="Is actief" 
+                    Checked="True" /></td>
+
+                        <td> 
+                            <asp:Button ID="ButtonSearch" runat="server" Text="Zoeken/verversen" 
+                                CssClass="sleekbutton" onclick="ButtonSearch_Click" /></td>
+                        </tr>
+    </table>
+    <table class="resultspanel"><tr><td>
+        <cc11:ClassGridView ID="GridViewResults" runat="server" AllowPaging="True" 
+            AllowSorting="True" AutoGenerateColumns="False" 
+            DataSourceID="EntityDataSourceStaffMember" DataKeyNames="Id" 
+            DataMember="DefaultView" EmptyDataText="Er zijn geen gegevens beschikbaar" 
+            onselectedindexchanged="GridViewResults_SelectedIndexChanged">
+            <Columns>
+                <asp:CommandField ShowSelectButton="True" />
+                <asp:BoundField DataField="Description" HeaderText="Naam" 
+                    SortExpression="Description" />
+                <asp:BoundField DataField="Location" HeaderText="Lokatie" 
+                    SortExpression="Location" />
+            </Columns>
+        </cc11:ClassGridView>
+        <br />
+        <asp:Button ID="ButtonNew" runat="server" onclick="ButtonNew_Click" 
+            Text="Nieuwe medewerker toevoegen" />
+    </td></tr></table>
+    <table class="detailpanel"><tr><td>
+        <uc1:WebUserControlStaffMember ID="WebUserControlStaffMember1" runat="server" 
+            Visible="False" />
+    </td></tr></table>
+    <asp:EntityDataSource ID="EntityDataSourceStaffMember" runat="server" 
+        ConnectionString="name=ModelTMSContainer" 
+        DefaultContainerName="ModelTMSContainer" 
+        
+        Where="" 
+        CommandText="select it.Id, it.IsActive, it.Description, ls.Description as Location 
+from StaffMemberSet as it inner join LocationSet as ls on it.HomeLocation.Id = ls.Id 
+where 
+(it.Description like &quot;%&quot; + @Description + &quot;%&quot;) 
+and (ls.Description like @LocationDescription ) 
+and (it.IsActive = @IsActive)
+" OrderBy="it.Description">
+        <CommandParameters>
+            <asp:Parameter DefaultValue="" Name="Description" Type="String" />
+            <asp:Parameter DefaultValue="True" Name="IsActive" Type="Boolean" />
+            <asp:Parameter DefaultValue="" Name="LocationDescription" Type="String" />
+        </CommandParameters>
+    </asp:EntityDataSource>
+</asp:Content>

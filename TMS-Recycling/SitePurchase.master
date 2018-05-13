@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SitePurchase.master.cs" Inherits="TMS_Recycling.SitePurchase" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" runat="server" 
+    contentplaceholderid="ContentPlaceHolderPath">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderPathLink" runat="server">
+            </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <table class="submenu"><tr align="left" valign="top"><td width="150px">
+    <asp:TreeView ID="TreeViewPurchase" runat="server" CssClass="menutree" 
+            NodeWrap="True" ShowLines="True">
+        <Nodes>
+            <asp:TreeNode SelectAction="None" Text="Materialen inkopen" Value="Purchase">
+                <asp:TreeNode Selected="True" Text="Inkoop per kas" Value="CashPurchase" 
+                    NavigateUrl="WebFormPurchase.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Inkoop op krediet" Value="CreditPurchase" 
+                    NavigateUrl="WebFormPurchaseCredit.aspx"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode SelectAction="None" Text="Inkoopboek" Value="PurchaseLedger"           >
+                <asp:TreeNode Text="Overzicht" Value="PurchaseLedgerOverview" NavigateUrl="WebFormPurchaseLedger.aspx"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode SelectAction="None" Text="Facturen" Value="PurchaseInvoices">
+                <asp:TreeNode Text="Inkopen factureren" Value="InvoicePurchase" 
+                    NavigateUrl="WebFormPurchaseInvoiceConstruct.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Overzicht" Value="PurchaseInvoiceOverview" 
+                    NavigateUrl="WebFormPurchaseInvoice.aspx"></asp:TreeNode>
+            </asp:TreeNode>
+        </Nodes>
+    </asp:TreeView>
+   </td><td width="100%">
+        <div class="maincondensed">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+   </td></tr>
+   </table>
+</asp:Content>

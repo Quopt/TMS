@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SiteSetting.master.cs" Inherits="TMS_Recycling.SiteSetting" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" runat="server" 
+    contentplaceholderid="ContentPlaceHolderPath">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderPathLink" runat="server">
+            </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <table class="submenu"><tr align="left" valign="top"><td width="180px">
+    <asp:TreeView ID="TreeViewSetting" runat="server" CssClass="menutree" 
+            NodeWrap="True" ShowLines="True">
+        <Nodes>
+            <asp:TreeNode SelectAction="None" Text="Gebruikers" Value="User">
+                <asp:TreeNode Selected="True" Text="Beheren" Value="CashPurchase" NavigateUrl="~\WebFormSetting.aspx"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode SelectAction="None" Text="Gebruikersrollen" Value="UserProfile">
+                <asp:TreeNode Text="Beheren" Value="UserProfile" NavigateUrl="~\WebFormSettingUserProfile.aspx"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode SelectAction="None" Text="Uw instellingen" Value="YourSetting">
+                <asp:TreeNode Text="Wijzig wachtwoord" Value="EditPassword" 
+                    NavigateUrl="~\WebFormSettingChangePassword.aspx"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode SelectAction="None" Text="Bedrijfslokaties" 
+                Value="CompanyLocations">
+                <asp:TreeNode NavigateUrl="~\WebFormCompanyLocations.aspx" Text="Beheren" 
+                    Value="ManageCompanyLocations"></asp:TreeNode>
+            </asp:TreeNode>
+        </Nodes>
+    </asp:TreeView>
+   </td><td width="100%">
+        <div class="maincondensed">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+   </td></tr>
+   </table>
+</asp:Content>

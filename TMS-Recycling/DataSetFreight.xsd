@@ -1,0 +1,910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetFreight" targetNamespace="http://tempuri.org/DataSetFreight.xsd" xmlns:mstns="http://tempuri.org/DataSetFreight.xsd" xmlns="http://tempuri.org/DataSetFreight.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="TMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.TMSConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FreightSetTableAdapter" GeneratorDataComponentClassName="FreightSetTableAdapter" Name="FreightSet" UserDataComponentName="FreightSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FreightSet.Id, FreightSet.CreateDateTime, FreightSet.ModifyDateTime, FreightSet.Description, FreightSet.CreateUser, FreightSet.ModifyUser, 
+                         FreightSet.OurReference, FreightSet.YourReference, FreightSet.FreightDateTime, FreightSet.RequestedFreightEndDateTime, 
+                         FreightSet.RequestedFreightStartDateTime, FreightSet.FreightStatus, FreightSet.FreightType, FreightSet.TotalNetWeight, FreightSet.OurDriverID, 
+                         FreightSet.YourTruckPlate, FreightSet.YourDriverName, FreightSet.FreightDirection, FreightSet.IsActive, FreightSet.OurTruck_Id, 
+                         FreightSet.FromRelationLocation_Id, FreightSet.ToRelationLocation_Id, FreightSet.FromRelation_Id, FreightSet.SourceOrDestinationLocation_Id, 
+                         FreightSet.Order_Id, FreightSet.TransportRole, FreightSet.TransportNotificationTransportType, FreightSet.TransportNotificationRemovalType, 
+                         FreightSet.TransportNotificationApprovedDestructor, FreightSet.TransportPlannedTransports, FreightSet.TransportWrapping, 
+                         FreightSet.TransportSpecialTreatment, FreightSet.TransportDRCode, FreightSet.TransportUsedTechnology, FreightSet.TransportReasonForExport, 
+                         FreightSet.TransportType, FreightSet.TransportDestructionAction, FreightSet.TransportUltimateSourceCustomer_Id, FreightSet.TransportSourceCustomer_Id, 
+                         FreightSet.TransportCompanyCustomer_Id, FreightSet.TransportDestinationCustomer_Id, FreightSet.TransportDestructorCustomer_Id, 
+                         LocationSet.Id AS Expr1, LocationSet.CreateDateTime AS Expr2, LocationSet.ModifyDateTime AS Expr3, LocationSet.Description AS LocationDescription, 
+                         LocationSet.CreateUser AS Expr6, LocationSet.ModifyUser AS Expr7, LocationSet.IsActive AS Expr8, LocationSet.ZIPcode, LocationSet.City, 
+                         LocationSet.Country, LocationSet.VATNumber, LocationSet.PhoneNumber, LocationSet.EMail, LocationSet.PreferredCurrency, LocationSet.LocationNumber, 
+                         LocationSet.AdressLine1, LocationSet.AdressLine2, LocationSet.AdressLine3, LocationSet.InvoiceAddress, LocationSet.InvoiceFooter, 
+                         LocationSet.InvoicePrintLogo, LocationSet.DefaultVATPercentage, LocationSet.DefaultHourlyRate, LocationSet.DefaultWeighingTariff, 
+                         LocationSet.MaterialForDirtId, LocationSet.MaterialForWorkId, LocationSet.CashLedgerId, LocationSet.BankLedgerId, LocationSet.InvoiceFooterPerPage, 
+                         LocationSet.CompanyLogoImage, LocationSet.CompanyMembershipsLogo, LocationSet.DefaultWeighingTariffBookingCode_Id, LocationSet.RelationSale_Id, 
+                         LocationSet.RelationBuy_Id, LocationSet.DefaultBailPriceBookingCode_Id, LocationSet.VIHBCode, MaterialSet.Description AS MaterialDescription, 
+                         MaterialSet.LMECode AS MaterialLMECode, LocationSet.ContactPerson, MaterialSet.BaselCode AS MaterialBaselCode, FreightSet.ToRelation_Id, RelationMaterialCode.LMECode as CustomerMaterialLMECode,
+                         MaterialSet.PhysicalShape as MaterialPhysicalShape
+FROM            FreightSet INNER JOIN
+                         LocationSet ON FreightSet.SourceOrDestinationLocation_Id = LocationSet.Id RIGHT OUTER JOIN
+                         FreightWeighingMaterialSet INNER JOIN
+                         FreightWeighingSet ON FreightWeighingMaterialSet.FreightWeighing_Id = FreightWeighingSet.Id INNER JOIN
+                         MaterialSet ON FreightWeighingMaterialSet.Material_Id = MaterialSet.Id ON FreightSet.Id = FreightWeighingSet.Freight_Id left outer join
+                         (select RelationSet.Id as Id, RelationMaterialSet.MaterialId, RelationMaterialSet.LMECode from RelationSet inner join RelationMaterialSet on RelationSet.Id = RelationMaterialSet.RelationId) as RelationMaterialCode on RelationMaterialCode.Id = FreightSet.FromRelation_Id and RelationMaterialCode.MaterialId = MaterialSet.Id
+
+WHERE        (FreightSet.Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="TMS2.dbo.FreightSet" DataTypeServer="uniqueidentifier" DbType="Guid" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="16" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="CreateDateTime" DataSetColumn="CreateDateTime" />
+              <Mapping SourceColumn="ModifyDateTime" DataSetColumn="ModifyDateTime" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="CreateUser" DataSetColumn="CreateUser" />
+              <Mapping SourceColumn="ModifyUser" DataSetColumn="ModifyUser" />
+              <Mapping SourceColumn="OurReference" DataSetColumn="OurReference" />
+              <Mapping SourceColumn="YourReference" DataSetColumn="YourReference" />
+              <Mapping SourceColumn="FreightDateTime" DataSetColumn="FreightDateTime" />
+              <Mapping SourceColumn="RequestedFreightEndDateTime" DataSetColumn="RequestedFreightEndDateTime" />
+              <Mapping SourceColumn="RequestedFreightStartDateTime" DataSetColumn="RequestedFreightStartDateTime" />
+              <Mapping SourceColumn="FreightStatus" DataSetColumn="FreightStatus" />
+              <Mapping SourceColumn="FreightType" DataSetColumn="FreightType" />
+              <Mapping SourceColumn="TotalNetWeight" DataSetColumn="TotalNetWeight" />
+              <Mapping SourceColumn="OurDriverID" DataSetColumn="OurDriverID" />
+              <Mapping SourceColumn="YourTruckPlate" DataSetColumn="YourTruckPlate" />
+              <Mapping SourceColumn="YourDriverName" DataSetColumn="YourDriverName" />
+              <Mapping SourceColumn="FreightDirection" DataSetColumn="FreightDirection" />
+              <Mapping SourceColumn="IsActive" DataSetColumn="IsActive" />
+              <Mapping SourceColumn="OurTruck_Id" DataSetColumn="OurTruck_Id" />
+              <Mapping SourceColumn="FromRelationLocation_Id" DataSetColumn="FromRelationLocation_Id" />
+              <Mapping SourceColumn="ToRelationLocation_Id" DataSetColumn="ToRelationLocation_Id" />
+              <Mapping SourceColumn="FromRelation_Id" DataSetColumn="FromRelation_Id" />
+              <Mapping SourceColumn="ToRelation_Id" DataSetColumn="ToRelation_Id" />
+              <Mapping SourceColumn="SourceOrDestinationLocation_Id" DataSetColumn="SourceOrDestinationLocation_Id" />
+              <Mapping SourceColumn="Order_Id" DataSetColumn="Order_Id" />
+              <Mapping SourceColumn="TransportRole" DataSetColumn="TransportRole" />
+              <Mapping SourceColumn="TransportNotificationTransportType" DataSetColumn="TransportNotificationTransportType" />
+              <Mapping SourceColumn="TransportNotificationRemovalType" DataSetColumn="TransportNotificationRemovalType" />
+              <Mapping SourceColumn="TransportNotificationApprovedDestructor" DataSetColumn="TransportNotificationApprovedDestructor" />
+              <Mapping SourceColumn="TransportPlannedTransports" DataSetColumn="TransportPlannedTransports" />
+              <Mapping SourceColumn="TransportWrapping" DataSetColumn="TransportWrapping" />
+              <Mapping SourceColumn="TransportSpecialTreatment" DataSetColumn="TransportSpecialTreatment" />
+              <Mapping SourceColumn="TransportDRCode" DataSetColumn="TransportDRCode" />
+              <Mapping SourceColumn="TransportUsedTechnology" DataSetColumn="TransportUsedTechnology" />
+              <Mapping SourceColumn="TransportReasonForExport" DataSetColumn="TransportReasonForExport" />
+              <Mapping SourceColumn="TransportType" DataSetColumn="TransportType" />
+              <Mapping SourceColumn="TransportDestructionAction" DataSetColumn="TransportDestructionAction" />
+              <Mapping SourceColumn="TransportUltimateSourceCustomer_Id" DataSetColumn="TransportUltimateSourceCustomer_Id" />
+              <Mapping SourceColumn="TransportSourceCustomer_Id" DataSetColumn="TransportSourceCustomer_Id" />
+              <Mapping SourceColumn="TransportCompanyCustomer_Id" DataSetColumn="TransportCompanyCustomer_Id" />
+              <Mapping SourceColumn="TransportDestinationCustomer_Id" DataSetColumn="TransportDestinationCustomer_Id" />
+              <Mapping SourceColumn="TransportDestructorCustomer_Id" DataSetColumn="TransportDestructorCustomer_Id" />
+              <Mapping SourceColumn="ZIPcode" DataSetColumn="ZIPcode" />
+              <Mapping SourceColumn="City" DataSetColumn="City" />
+              <Mapping SourceColumn="Country" DataSetColumn="Country" />
+              <Mapping SourceColumn="VATNumber" DataSetColumn="VATNumber" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="EMail" DataSetColumn="EMail" />
+              <Mapping SourceColumn="PreferredCurrency" DataSetColumn="PreferredCurrency" />
+              <Mapping SourceColumn="LocationNumber" DataSetColumn="LocationNumber" />
+              <Mapping SourceColumn="AdressLine1" DataSetColumn="AdressLine1" />
+              <Mapping SourceColumn="AdressLine2" DataSetColumn="AdressLine2" />
+              <Mapping SourceColumn="AdressLine3" DataSetColumn="AdressLine3" />
+              <Mapping SourceColumn="InvoiceAddress" DataSetColumn="InvoiceAddress" />
+              <Mapping SourceColumn="InvoiceFooter" DataSetColumn="InvoiceFooter" />
+              <Mapping SourceColumn="InvoicePrintLogo" DataSetColumn="InvoicePrintLogo" />
+              <Mapping SourceColumn="DefaultVATPercentage" DataSetColumn="DefaultVATPercentage" />
+              <Mapping SourceColumn="DefaultHourlyRate" DataSetColumn="DefaultHourlyRate" />
+              <Mapping SourceColumn="DefaultWeighingTariff" DataSetColumn="DefaultWeighingTariff" />
+              <Mapping SourceColumn="MaterialForDirtId" DataSetColumn="MaterialForDirtId" />
+              <Mapping SourceColumn="MaterialForWorkId" DataSetColumn="MaterialForWorkId" />
+              <Mapping SourceColumn="CashLedgerId" DataSetColumn="CashLedgerId" />
+              <Mapping SourceColumn="BankLedgerId" DataSetColumn="BankLedgerId" />
+              <Mapping SourceColumn="InvoiceFooterPerPage" DataSetColumn="InvoiceFooterPerPage" />
+              <Mapping SourceColumn="CompanyLogoImage" DataSetColumn="CompanyLogoImage" />
+              <Mapping SourceColumn="CompanyMembershipsLogo" DataSetColumn="CompanyMembershipsLogo" />
+              <Mapping SourceColumn="DefaultWeighingTariffBookingCode_Id" DataSetColumn="DefaultWeighingTariffBookingCode_Id" />
+              <Mapping SourceColumn="RelationSale_Id" DataSetColumn="RelationSale_Id" />
+              <Mapping SourceColumn="RelationBuy_Id" DataSetColumn="RelationBuy_Id" />
+              <Mapping SourceColumn="DefaultBailPriceBookingCode_Id" DataSetColumn="DefaultBailPriceBookingCode_Id" />
+              <Mapping SourceColumn="VIHBCode" DataSetColumn="VIHBCode" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="Expr3" DataSetColumn="Expr3" />
+              <Mapping SourceColumn="Expr6" DataSetColumn="Expr6" />
+              <Mapping SourceColumn="Expr7" DataSetColumn="Expr7" />
+              <Mapping SourceColumn="Expr8" DataSetColumn="Expr8" />
+              <Mapping SourceColumn="MaterialDescription" DataSetColumn="MaterialDescription" />
+              <Mapping SourceColumn="MaterialLMECode" DataSetColumn="MaterialLMECode" />
+              <Mapping SourceColumn="ContactPerson" DataSetColumn="ContactPerson" />
+              <Mapping SourceColumn="LocationDescription" DataSetColumn="LocationDescription" />
+              <Mapping SourceColumn="MaterialBaselCode" DataSetColumn="MaterialBaselCode" />
+              <Mapping SourceColumn="CustomerMaterialLMECode" DataSetColumn="CustomerMaterialLMECode" />
+              <Mapping SourceColumn="MaterialPhysicalShape" DataSetColumn="MaterialPhysicalShape" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UltimateSourceCustomerSetTableAdapter" GeneratorDataComponentClassName="UltimateSourceCustomerSetTableAdapter" Name="UltimateSourceCustomerSet" UserDataComponentName="UltimateSourceCustomerSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CASE WHEN FreightSet.TransportUltimateSourceCustomer_Id IS NULL THEN LocationSet.Description ELSE RelationSet.Description END AS Description, 
+                         CASE WHEN FreightSet.TransportUltimateSourceCustomer_Id IS NULL 
+                         THEN LocationSet.PhoneNumber ELSE RelationSet.PhoneNumber END AS PhoneNumber, 
+                         CASE WHEN FreightSet.TransportUltimateSourceCustomer_Id IS NULL 
+                         THEN (LocationSet.AdressLine1 + ',' + CASE WHEN LocationSet.AdressLine2 &lt;&gt; '' THEN LocationSet.AdressLine2 + ',' ELSE '' END + CASE WHEN LocationSet.AdressLine3
+                          &lt;&gt; '' THEN LocationSet.AdressLine3 + ',' ELSE '' END + LocationSet.ZIPcode + ' ' + LocationSet.City + ',' + LocationSet.Country) 
+                         ELSE RelationSet.TransportAddressLine END AS TransportAddressLine, CASE WHEN FreightSet.TransportUltimateSourceCustomer_Id IS NULL 
+                         THEN LocationSet.VIHBCode ELSE RelationSet.TransportVIHB END AS TransportVIHB, CASE WHEN FreightSet.TransportUltimateSourceCustomer_Id IS NULL 
+                         THEN '' ELSE RelationSet.TransportContact END AS TransportContact, CASE WHEN FreightSet.TransportUltimateSourceCustomer_Id IS NULL 
+                         THEN '' ELSE RelationSet.FaxNumber END AS FaxNumber, CASE WHEN FreightSet.TransportUltimateSourceCustomer_Id IS NULL 
+                         THEN LocationSet.EMail ELSE RelationSet.Email END AS EMail
+FROM            FreightSet INNER JOIN
+                         LocationSet ON FreightSet.SourceOrDestinationLocation_Id = LocationSet.Id LEFT OUTER JOIN
+                         RelationSet ON FreightSet.TransportUltimateSourceCustomer_Id = RelationSet.Id
+WHERE        (FreightSet.Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="TMS2.dbo.FreightSet" DataTypeServer="uniqueidentifier" DbType="Guid" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="16" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="EMail" DataSetColumn="EMail" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="TransportAddressLine" DataSetColumn="TransportAddressLine" />
+              <Mapping SourceColumn="TransportVIHB" DataSetColumn="TransportVIHB" />
+              <Mapping SourceColumn="TransportContact" DataSetColumn="TransportContact" />
+              <Mapping SourceColumn="FaxNumber" DataSetColumn="FaxNumber" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SourceCustomerSetTableAdapter" GeneratorDataComponentClassName="SourceCustomerSetTableAdapter" Name="SourceCustomerSet" UserDataComponentName="SourceCustomerSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CASE WHEN FreightSet.TransportSourceCustomer_Id IS NULL THEN LocationSet.Description ELSE RelationSet.Description END AS Description, 
+                         CASE WHEN FreightSet.TransportSourceCustomer_Id IS NULL THEN LocationSet.PhoneNumber ELSE RelationSet.PhoneNumber END AS PhoneNumber, 
+                         CASE WHEN FreightSet.TransportSourceCustomer_Id IS NULL 
+                         THEN (LocationSet.AdressLine1 + ',' + CASE WHEN LocationSet.AdressLine2 &lt;&gt; '' THEN LocationSet.AdressLine2 + ',' ELSE '' END + CASE WHEN LocationSet.AdressLine3
+                          &lt;&gt; '' THEN LocationSet.AdressLine3 + ',' ELSE '' END + LocationSet.ZIPcode + ' ' + LocationSet.City + ',' + LocationSet.Country) 
+                         ELSE RelationSet.TransportAddressLine END AS TransportAddressLine, CASE WHEN FreightSet.TransportSourceCustomer_Id IS NULL 
+                         THEN LocationSet.VIHBCode ELSE RelationSet.TransportVIHB END AS TransportVIHB, CASE WHEN FreightSet.TransportSourceCustomer_Id IS NULL 
+                         THEN '' ELSE RelationSet.TransportContact END AS TransportContact, CASE WHEN FreightSet.TransportSourceCustomer_Id IS NULL 
+                         THEN '' ELSE RelationSet.FaxNumber END AS FaxNumber, CASE WHEN FreightSet.TransportSourceCustomer_Id IS NULL 
+                         THEN LocationSet.EMail ELSE RelationSet.Email END AS EMail, CASE WHEN FreightSet.TransportSourceCustomer_Id IS NULL 
+                         THEN LocationSet.Country ELSE RelationSet.Country END AS Country
+FROM            FreightSet INNER JOIN
+                         LocationSet ON FreightSet.SourceOrDestinationLocation_Id = LocationSet.Id LEFT OUTER JOIN
+                         RelationSet ON FreightSet.TransportSourceCustomer_Id = RelationSet.Id
+WHERE        (FreightSet.Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="TMS2.dbo.FreightSet" DataTypeServer="uniqueidentifier" DbType="Guid" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="16" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="EMail" DataSetColumn="EMail" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="TransportAddressLine" DataSetColumn="TransportAddressLine" />
+              <Mapping SourceColumn="TransportVIHB" DataSetColumn="TransportVIHB" />
+              <Mapping SourceColumn="TransportContact" DataSetColumn="TransportContact" />
+              <Mapping SourceColumn="FaxNumber" DataSetColumn="FaxNumber" />
+              <Mapping SourceColumn="Country" DataSetColumn="Country" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TransportCompanyCustomerSetTableAdapter" GeneratorDataComponentClassName="TransportCompanyCustomerSetTableAdapter" Name="TransportCompanyCustomerSet" UserDataComponentName="TransportCompanyCustomerSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CASE WHEN FreightSet.TransportCompanyCustomer_Id IS NULL THEN LocationSet.Description ELSE RelationSet.Description END AS Description, 
+                         CASE WHEN FreightSet.TransportCompanyCustomer_Id IS NULL THEN LocationSet.PhoneNumber ELSE RelationSet.PhoneNumber END AS PhoneNumber, 
+                         CASE WHEN FreightSet.TransportCompanyCustomer_Id IS NULL 
+                         THEN (LocationSet.AdressLine1 + ',' + CASE WHEN LocationSet.AdressLine2 &lt;&gt; '' THEN LocationSet.AdressLine2 + ',' ELSE '' END + CASE WHEN LocationSet.AdressLine3
+                          &lt;&gt; '' THEN LocationSet.AdressLine3 + ',' ELSE '' END + LocationSet.ZIPcode + ' ' + LocationSet.City + ',' + LocationSet.Country) 
+                         ELSE RelationSet.TransportAddressLine END AS TransportAddressLine, CASE WHEN FreightSet.TransportCompanyCustomer_Id IS NULL 
+                         THEN LocationSet.VIHBCode ELSE RelationSet.TransportVIHB END AS TransportVIHB, CASE WHEN FreightSet.TransportCompanyCustomer_Id IS NULL 
+                         THEN '' ELSE RelationSet.TransportContact END AS TransportContact, CASE WHEN FreightSet.TransportCompanyCustomer_Id IS NULL 
+                         THEN '' ELSE RelationSet.FaxNumber END AS FaxNumber, CASE WHEN FreightSet.TransportCompanyCustomer_Id IS NULL 
+                         THEN LocationSet.EMail ELSE RelationSet.Email END AS EMail
+FROM            FreightSet INNER JOIN
+                         LocationSet ON FreightSet.SourceOrDestinationLocation_Id = LocationSet.Id LEFT OUTER JOIN
+                         RelationSet ON FreightSet.TransportCompanyCustomer_Id = RelationSet.Id
+WHERE        (FreightSet.Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="TMS2.dbo.FreightSet" DataTypeServer="uniqueidentifier" DbType="Guid" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="16" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="EMail" DataSetColumn="EMail" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="TransportAddressLine" DataSetColumn="TransportAddressLine" />
+              <Mapping SourceColumn="TransportVIHB" DataSetColumn="TransportVIHB" />
+              <Mapping SourceColumn="TransportContact" DataSetColumn="TransportContact" />
+              <Mapping SourceColumn="FaxNumber" DataSetColumn="FaxNumber" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DestinationCustomerSetTableAdapter" GeneratorDataComponentClassName="DestinationCustomerSetTableAdapter" Name="DestinationCustomerSet" UserDataComponentName="DestinationCustomerSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CASE WHEN FreightSet.TransportDestinationCustomer_Id IS NULL THEN LocationSet.Description ELSE RelationSet.Description END AS Description, 
+                         CASE WHEN FreightSet.TransportDestinationCustomer_Id IS NULL THEN LocationSet.PhoneNumber ELSE RelationSet.PhoneNumber END AS PhoneNumber, 
+                         CASE WHEN FreightSet.TransportDestinationCustomer_Id IS NULL 
+                         THEN (LocationSet.AdressLine1 + ',' + CASE WHEN LocationSet.AdressLine2 &lt;&gt; '' THEN LocationSet.AdressLine2 + ',' ELSE '' END + CASE WHEN LocationSet.AdressLine3
+                          &lt;&gt; '' THEN LocationSet.AdressLine3 + ',' ELSE '' END + LocationSet.ZIPcode + ' ' + LocationSet.City + ',' + LocationSet.Country) 
+                         ELSE RelationSet.TransportAddressLine END AS TransportAddressLine, CASE WHEN FreightSet.TransportDestinationCustomer_Id IS NULL 
+                         THEN LocationSet.VIHBCode ELSE RelationSet.TransportVIHB END AS TransportVIHB, CASE WHEN FreightSet.TransportDestinationCustomer_Id IS NULL 
+                         THEN '' ELSE RelationSet.TransportContact END AS TransportContact, CASE WHEN FreightSet.TransportDestinationCustomer_Id IS NULL 
+                         THEN '' ELSE RelationSet.FaxNumber END AS FaxNumber, CASE WHEN FreightSet.TransportDestinationCustomer_Id IS NULL 
+                         THEN LocationSet.EMail ELSE RelationSet.Email END AS EMail, CASE WHEN FreightSet.TransportSourceCustomer_Id IS NULL 
+                         THEN LocationSet.Country ELSE RelationSet.Country END AS Country
+FROM            FreightSet INNER JOIN
+                         LocationSet ON FreightSet.SourceOrDestinationLocation_Id = LocationSet.Id LEFT OUTER JOIN
+                         RelationSet ON FreightSet.TransportDestinationCustomer_Id = RelationSet.Id
+WHERE        (FreightSet.Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="TMS2.dbo.FreightSet" DataTypeServer="uniqueidentifier" DbType="Guid" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="16" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="EMail" DataSetColumn="EMail" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="TransportAddressLine" DataSetColumn="TransportAddressLine" />
+              <Mapping SourceColumn="TransportVIHB" DataSetColumn="TransportVIHB" />
+              <Mapping SourceColumn="TransportContact" DataSetColumn="TransportContact" />
+              <Mapping SourceColumn="FaxNumber" DataSetColumn="FaxNumber" />
+              <Mapping SourceColumn="Country" DataSetColumn="Country" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DestructorCustomerSetTableAdapter" GeneratorDataComponentClassName="DestructorCustomerSetTableAdapter" Name="DestructorCustomerSet" UserDataComponentName="DestructorCustomerSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CASE WHEN FreightSet.TransportDestructorCustomer_Id IS NULL THEN LocationSet.Description ELSE RelationSet.Description END AS Description, 
+                         CASE WHEN FreightSet.TransportDestructorCustomer_Id IS NULL THEN LocationSet.PhoneNumber ELSE RelationSet.PhoneNumber END AS PhoneNumber, 
+                         CASE WHEN FreightSet.TransportDestructorCustomer_Id IS NULL 
+                         THEN (LocationSet.AdressLine1 + ',' + CASE WHEN LocationSet.AdressLine2 &lt;&gt; '' THEN LocationSet.AdressLine2 + ',' ELSE '' END + CASE WHEN LocationSet.AdressLine3
+                          &lt;&gt; '' THEN LocationSet.AdressLine3 + ',' ELSE '' END + LocationSet.ZIPcode + ' ' + LocationSet.City + ',' + LocationSet.Country) 
+                         ELSE RelationSet.TransportAddressLine END AS TransportAddressLine, CASE WHEN FreightSet.TransportDestructorCustomer_Id IS NULL 
+                         THEN LocationSet.VIHBCode ELSE RelationSet.TransportVIHB END AS TransportVIHB, CASE WHEN FreightSet.TransportDestructorCustomer_Id IS NULL 
+                         THEN '' ELSE RelationSet.TransportContact END AS TransportContact, CASE WHEN FreightSet.TransportDestructorCustomer_Id IS NULL 
+                         THEN '' ELSE RelationSet.FaxNumber END AS FaxNumber, CASE WHEN FreightSet.TransportDestructorCustomer_Id IS NULL 
+                         THEN LocationSet.EMail ELSE RelationSet.Email END AS EMail
+FROM            FreightSet INNER JOIN
+                         LocationSet ON FreightSet.SourceOrDestinationLocation_Id = LocationSet.Id LEFT OUTER JOIN
+                         RelationSet ON FreightSet.TransportDestructorCustomer_Id = RelationSet.Id
+WHERE        (FreightSet.Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="TMS2.dbo.FreightSet" DataTypeServer="uniqueidentifier" DbType="Guid" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="16" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="EMail" DataSetColumn="EMail" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="TransportAddressLine" DataSetColumn="TransportAddressLine" />
+              <Mapping SourceColumn="TransportVIHB" DataSetColumn="TransportVIHB" />
+              <Mapping SourceColumn="TransportContact" DataSetColumn="TransportContact" />
+              <Mapping SourceColumn="FaxNumber" DataSetColumn="FaxNumber" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetFreight" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetFreight" msprop:Generator_UserDSName="DataSetFreight">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FreightSet" msprop:Generator_TableClassName="FreightSetDataTable" msprop:Generator_TableVarName="tableFreightSet" msprop:Generator_TablePropName="FreightSet" msprop:Generator_RowDeletingName="FreightSetRowDeleting" msprop:Generator_UserTableName="FreightSet" msprop:Generator_RowChangingName="FreightSetRowChanging" msprop:Generator_RowEvHandlerName="FreightSetRowChangeEventHandler" msprop:Generator_RowDeletedName="FreightSetRowDeleted" msprop:Generator_RowEvArgName="FreightSetRowChangeEvent" msprop:Generator_RowChangedName="FreightSetRowChanged" msprop:Generator_RowClassName="FreightSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateDateTime" msprop:Generator_ColumnVarNameInTable="columnCreateDateTime" msprop:Generator_ColumnPropNameInRow="CreateDateTime" msprop:Generator_ColumnPropNameInTable="CreateDateTimeColumn" msprop:Generator_UserColumnName="CreateDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ModifyDateTime" msprop:Generator_ColumnVarNameInTable="columnModifyDateTime" msprop:Generator_ColumnPropNameInRow="ModifyDateTime" msprop:Generator_ColumnPropNameInTable="ModifyDateTimeColumn" msprop:Generator_UserColumnName="ModifyDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateUser" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCreateUser" msprop:Generator_ColumnPropNameInRow="CreateUser" msprop:Generator_ColumnPropNameInTable="CreateUserColumn" msprop:Generator_UserColumnName="CreateUser" type="xs:string" minOccurs="0" />
+              <xs:element name="ModifyUser" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnModifyUser" msprop:Generator_ColumnPropNameInRow="ModifyUser" msprop:Generator_ColumnPropNameInTable="ModifyUserColumn" msprop:Generator_UserColumnName="ModifyUser" type="xs:string" minOccurs="0" />
+              <xs:element name="OurReference" msprop:Generator_ColumnVarNameInTable="columnOurReference" msprop:Generator_ColumnPropNameInRow="OurReference" msprop:Generator_ColumnPropNameInTable="OurReferenceColumn" msprop:Generator_UserColumnName="OurReference" type="xs:long" minOccurs="0" />
+              <xs:element name="YourReference" msprop:Generator_ColumnVarNameInTable="columnYourReference" msprop:Generator_ColumnPropNameInRow="YourReference" msprop:Generator_ColumnPropNameInTable="YourReferenceColumn" msprop:Generator_UserColumnName="YourReference" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FreightDateTime" msprop:Generator_ColumnVarNameInTable="columnFreightDateTime" msprop:Generator_ColumnPropNameInRow="FreightDateTime" msprop:Generator_ColumnPropNameInTable="FreightDateTimeColumn" msprop:Generator_UserColumnName="FreightDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RequestedFreightEndDateTime" msprop:Generator_ColumnVarNameInTable="columnRequestedFreightEndDateTime" msprop:Generator_ColumnPropNameInRow="RequestedFreightEndDateTime" msprop:Generator_ColumnPropNameInTable="RequestedFreightEndDateTimeColumn" msprop:Generator_UserColumnName="RequestedFreightEndDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RequestedFreightStartDateTime" msprop:Generator_ColumnVarNameInTable="columnRequestedFreightStartDateTime" msprop:Generator_ColumnPropNameInRow="RequestedFreightStartDateTime" msprop:Generator_ColumnPropNameInTable="RequestedFreightStartDateTimeColumn" msprop:Generator_UserColumnName="RequestedFreightStartDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FreightStatus" msprop:Generator_ColumnVarNameInTable="columnFreightStatus" msprop:Generator_ColumnPropNameInRow="FreightStatus" msprop:Generator_ColumnPropNameInTable="FreightStatusColumn" msprop:Generator_UserColumnName="FreightStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FreightType" msprop:Generator_ColumnVarNameInTable="columnFreightType" msprop:Generator_ColumnPropNameInRow="FreightType" msprop:Generator_ColumnPropNameInTable="FreightTypeColumn" msprop:Generator_UserColumnName="FreightType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalNetWeight" msprop:Generator_ColumnVarNameInTable="columnTotalNetWeight" msprop:Generator_ColumnPropNameInRow="TotalNetWeight" msprop:Generator_ColumnPropNameInTable="TotalNetWeightColumn" msprop:Generator_UserColumnName="TotalNetWeight" type="xs:double" minOccurs="0" />
+              <xs:element name="OurDriverID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnOurDriverID" msprop:Generator_ColumnPropNameInRow="OurDriverID" msprop:Generator_ColumnPropNameInTable="OurDriverIDColumn" msprop:Generator_UserColumnName="OurDriverID" type="xs:string" minOccurs="0" />
+              <xs:element name="YourTruckPlate" msprop:Generator_ColumnVarNameInTable="columnYourTruckPlate" msprop:Generator_ColumnPropNameInRow="YourTruckPlate" msprop:Generator_ColumnPropNameInTable="YourTruckPlateColumn" msprop:Generator_UserColumnName="YourTruckPlate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YourDriverName" msprop:Generator_ColumnVarNameInTable="columnYourDriverName" msprop:Generator_ColumnPropNameInRow="YourDriverName" msprop:Generator_ColumnPropNameInTable="YourDriverNameColumn" msprop:Generator_UserColumnName="YourDriverName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FreightDirection" msprop:Generator_ColumnVarNameInTable="columnFreightDirection" msprop:Generator_ColumnPropNameInRow="FreightDirection" msprop:Generator_ColumnPropNameInTable="FreightDirectionColumn" msprop:Generator_UserColumnName="FreightDirection" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_UserColumnName="IsActive" type="xs:boolean" minOccurs="0" />
+              <xs:element name="OurTruck_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnOurTruck_Id" msprop:Generator_ColumnPropNameInRow="OurTruck_Id" msprop:Generator_ColumnPropNameInTable="OurTruck_IdColumn" msprop:Generator_UserColumnName="OurTruck_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="FromRelationLocation_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnFromRelationLocation_Id" msprop:Generator_ColumnPropNameInRow="FromRelationLocation_Id" msprop:Generator_ColumnPropNameInTable="FromRelationLocation_IdColumn" msprop:Generator_UserColumnName="FromRelationLocation_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="ToRelationLocation_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnToRelationLocation_Id" msprop:Generator_ColumnPropNameInRow="ToRelationLocation_Id" msprop:Generator_ColumnPropNameInTable="ToRelationLocation_IdColumn" msprop:Generator_UserColumnName="ToRelationLocation_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="FromRelation_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnFromRelation_Id" msprop:Generator_ColumnPropNameInRow="FromRelation_Id" msprop:Generator_ColumnPropNameInTable="FromRelation_IdColumn" msprop:Generator_UserColumnName="FromRelation_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="ToRelation_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnToRelation_Id" msprop:Generator_ColumnPropNameInRow="ToRelation_Id" msprop:Generator_ColumnPropNameInTable="ToRelation_IdColumn" msprop:Generator_UserColumnName="ToRelation_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="SourceOrDestinationLocation_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnSourceOrDestinationLocation_Id" msprop:Generator_ColumnPropNameInRow="SourceOrDestinationLocation_Id" msprop:Generator_ColumnPropNameInTable="SourceOrDestinationLocation_IdColumn" msprop:Generator_UserColumnName="SourceOrDestinationLocation_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="Order_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnOrder_Id" msprop:Generator_ColumnPropNameInRow="Order_Id" msprop:Generator_ColumnPropNameInTable="Order_IdColumn" msprop:Generator_UserColumnName="Order_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="TransportRole" msprop:Generator_ColumnVarNameInTable="columnTransportRole" msprop:Generator_ColumnPropNameInRow="TransportRole" msprop:Generator_ColumnPropNameInTable="TransportRoleColumn" msprop:Generator_UserColumnName="TransportRole" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportNotificationTransportType" msprop:Generator_ColumnVarNameInTable="columnTransportNotificationTransportType" msprop:Generator_ColumnPropNameInRow="TransportNotificationTransportType" msprop:Generator_ColumnPropNameInTable="TransportNotificationTransportTypeColumn" msprop:Generator_UserColumnName="TransportNotificationTransportType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportNotificationRemovalType" msprop:Generator_ColumnVarNameInTable="columnTransportNotificationRemovalType" msprop:Generator_ColumnPropNameInRow="TransportNotificationRemovalType" msprop:Generator_ColumnPropNameInTable="TransportNotificationRemovalTypeColumn" msprop:Generator_UserColumnName="TransportNotificationRemovalType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportNotificationApprovedDestructor" msprop:Generator_ColumnVarNameInTable="columnTransportNotificationApprovedDestructor" msprop:Generator_ColumnPropNameInRow="TransportNotificationApprovedDestructor" msprop:Generator_ColumnPropNameInTable="TransportNotificationApprovedDestructorColumn" msprop:Generator_UserColumnName="TransportNotificationApprovedDestructor" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TransportPlannedTransports" msprop:Generator_ColumnVarNameInTable="columnTransportPlannedTransports" msprop:Generator_ColumnPropNameInRow="TransportPlannedTransports" msprop:Generator_ColumnPropNameInTable="TransportPlannedTransportsColumn" msprop:Generator_UserColumnName="TransportPlannedTransports" type="xs:long" minOccurs="0" />
+              <xs:element name="TransportWrapping" msprop:Generator_ColumnVarNameInTable="columnTransportWrapping" msprop:Generator_ColumnPropNameInRow="TransportWrapping" msprop:Generator_ColumnPropNameInTable="TransportWrappingColumn" msprop:Generator_UserColumnName="TransportWrapping" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportSpecialTreatment" msprop:Generator_ColumnVarNameInTable="columnTransportSpecialTreatment" msprop:Generator_ColumnPropNameInRow="TransportSpecialTreatment" msprop:Generator_ColumnPropNameInTable="TransportSpecialTreatmentColumn" msprop:Generator_UserColumnName="TransportSpecialTreatment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportDRCode" msprop:Generator_ColumnVarNameInTable="columnTransportDRCode" msprop:Generator_ColumnPropNameInRow="TransportDRCode" msprop:Generator_ColumnPropNameInTable="TransportDRCodeColumn" msprop:Generator_UserColumnName="TransportDRCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportUsedTechnology" msprop:Generator_ColumnVarNameInTable="columnTransportUsedTechnology" msprop:Generator_ColumnPropNameInRow="TransportUsedTechnology" msprop:Generator_ColumnPropNameInTable="TransportUsedTechnologyColumn" msprop:Generator_UserColumnName="TransportUsedTechnology" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportReasonForExport" msprop:Generator_ColumnVarNameInTable="columnTransportReasonForExport" msprop:Generator_ColumnPropNameInRow="TransportReasonForExport" msprop:Generator_ColumnPropNameInTable="TransportReasonForExportColumn" msprop:Generator_UserColumnName="TransportReasonForExport" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportType" msprop:Generator_ColumnVarNameInTable="columnTransportType" msprop:Generator_ColumnPropNameInRow="TransportType" msprop:Generator_ColumnPropNameInTable="TransportTypeColumn" msprop:Generator_UserColumnName="TransportType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportDestructionAction" msprop:Generator_ColumnVarNameInTable="columnTransportDestructionAction" msprop:Generator_ColumnPropNameInRow="TransportDestructionAction" msprop:Generator_ColumnPropNameInTable="TransportDestructionActionColumn" msprop:Generator_UserColumnName="TransportDestructionAction" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportUltimateSourceCustomer_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnTransportUltimateSourceCustomer_Id" msprop:Generator_ColumnPropNameInRow="TransportUltimateSourceCustomer_Id" msprop:Generator_ColumnPropNameInTable="TransportUltimateSourceCustomer_IdColumn" msprop:Generator_UserColumnName="TransportUltimateSourceCustomer_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="TransportSourceCustomer_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnTransportSourceCustomer_Id" msprop:Generator_ColumnPropNameInRow="TransportSourceCustomer_Id" msprop:Generator_ColumnPropNameInTable="TransportSourceCustomer_IdColumn" msprop:Generator_UserColumnName="TransportSourceCustomer_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="TransportCompanyCustomer_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnTransportCompanyCustomer_Id" msprop:Generator_ColumnPropNameInRow="TransportCompanyCustomer_Id" msprop:Generator_ColumnPropNameInTable="TransportCompanyCustomer_IdColumn" msprop:Generator_UserColumnName="TransportCompanyCustomer_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="TransportDestinationCustomer_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnTransportDestinationCustomer_Id" msprop:Generator_ColumnPropNameInRow="TransportDestinationCustomer_Id" msprop:Generator_ColumnPropNameInTable="TransportDestinationCustomer_IdColumn" msprop:Generator_UserColumnName="TransportDestinationCustomer_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="TransportDestructorCustomer_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnTransportDestructorCustomer_Id" msprop:Generator_ColumnPropNameInRow="TransportDestructorCustomer_Id" msprop:Generator_ColumnPropNameInTable="TransportDestructorCustomer_IdColumn" msprop:Generator_UserColumnName="TransportDestructorCustomer_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="ZIPcode" msprop:Generator_ColumnVarNameInTable="columnZIPcode" msprop:Generator_ColumnPropNameInRow="ZIPcode" msprop:Generator_ColumnPropNameInTable="ZIPcodeColumn" msprop:Generator_UserColumnName="ZIPcode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Country" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_UserColumnName="Country" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VATNumber" msprop:Generator_ColumnVarNameInTable="columnVATNumber" msprop:Generator_ColumnPropNameInRow="VATNumber" msprop:Generator_ColumnPropNameInTable="VATNumberColumn" msprop:Generator_UserColumnName="VATNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMail" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PreferredCurrency" msprop:Generator_ColumnVarNameInTable="columnPreferredCurrency" msprop:Generator_ColumnPropNameInRow="PreferredCurrency" msprop:Generator_ColumnPropNameInTable="PreferredCurrencyColumn" msprop:Generator_UserColumnName="PreferredCurrency" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LocationNumber" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnLocationNumber" msprop:Generator_ColumnPropNameInRow="LocationNumber" msprop:Generator_ColumnPropNameInTable="LocationNumberColumn" msprop:Generator_UserColumnName="LocationNumber" type="xs:long" minOccurs="0" />
+              <xs:element name="AdressLine1" msprop:Generator_ColumnVarNameInTable="columnAdressLine1" msprop:Generator_ColumnPropNameInRow="AdressLine1" msprop:Generator_ColumnPropNameInTable="AdressLine1Column" msprop:Generator_UserColumnName="AdressLine1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdressLine2" msprop:Generator_ColumnVarNameInTable="columnAdressLine2" msprop:Generator_ColumnPropNameInRow="AdressLine2" msprop:Generator_ColumnPropNameInTable="AdressLine2Column" msprop:Generator_UserColumnName="AdressLine2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdressLine3" msprop:Generator_ColumnVarNameInTable="columnAdressLine3" msprop:Generator_ColumnPropNameInRow="AdressLine3" msprop:Generator_ColumnPropNameInTable="AdressLine3Column" msprop:Generator_UserColumnName="AdressLine3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceAddress" msprop:Generator_ColumnVarNameInTable="columnInvoiceAddress" msprop:Generator_ColumnPropNameInRow="InvoiceAddress" msprop:Generator_ColumnPropNameInTable="InvoiceAddressColumn" msprop:Generator_UserColumnName="InvoiceAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceFooter" msprop:Generator_ColumnVarNameInTable="columnInvoiceFooter" msprop:Generator_ColumnPropNameInRow="InvoiceFooter" msprop:Generator_ColumnPropNameInTable="InvoiceFooterColumn" msprop:Generator_UserColumnName="InvoiceFooter" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoicePrintLogo" msprop:Generator_ColumnVarNameInTable="columnInvoicePrintLogo" msprop:Generator_ColumnPropNameInRow="InvoicePrintLogo" msprop:Generator_ColumnPropNameInTable="InvoicePrintLogoColumn" msprop:Generator_UserColumnName="InvoicePrintLogo" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DefaultVATPercentage" msprop:Generator_ColumnVarNameInTable="columnDefaultVATPercentage" msprop:Generator_ColumnPropNameInRow="DefaultVATPercentage" msprop:Generator_ColumnPropNameInTable="DefaultVATPercentageColumn" msprop:Generator_UserColumnName="DefaultVATPercentage" type="xs:double" minOccurs="0" />
+              <xs:element name="DefaultHourlyRate" msprop:Generator_ColumnVarNameInTable="columnDefaultHourlyRate" msprop:Generator_ColumnPropNameInRow="DefaultHourlyRate" msprop:Generator_ColumnPropNameInTable="DefaultHourlyRateColumn" msprop:Generator_UserColumnName="DefaultHourlyRate" type="xs:double" minOccurs="0" />
+              <xs:element name="DefaultWeighingTariff" msprop:Generator_ColumnVarNameInTable="columnDefaultWeighingTariff" msprop:Generator_ColumnPropNameInRow="DefaultWeighingTariff" msprop:Generator_ColumnPropNameInTable="DefaultWeighingTariffColumn" msprop:Generator_UserColumnName="DefaultWeighingTariff" type="xs:double" minOccurs="0" />
+              <xs:element name="MaterialForDirtId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnMaterialForDirtId" msprop:Generator_ColumnPropNameInRow="MaterialForDirtId" msprop:Generator_ColumnPropNameInTable="MaterialForDirtIdColumn" msprop:Generator_UserColumnName="MaterialForDirtId" type="xs:string" minOccurs="0" />
+              <xs:element name="MaterialForWorkId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnMaterialForWorkId" msprop:Generator_ColumnPropNameInRow="MaterialForWorkId" msprop:Generator_ColumnPropNameInTable="MaterialForWorkIdColumn" msprop:Generator_UserColumnName="MaterialForWorkId" type="xs:string" minOccurs="0" />
+              <xs:element name="CashLedgerId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCashLedgerId" msprop:Generator_ColumnPropNameInRow="CashLedgerId" msprop:Generator_ColumnPropNameInTable="CashLedgerIdColumn" msprop:Generator_UserColumnName="CashLedgerId" type="xs:string" minOccurs="0" />
+              <xs:element name="BankLedgerId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnBankLedgerId" msprop:Generator_ColumnPropNameInRow="BankLedgerId" msprop:Generator_ColumnPropNameInTable="BankLedgerIdColumn" msprop:Generator_UserColumnName="BankLedgerId" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceFooterPerPage" msprop:Generator_ColumnVarNameInTable="columnInvoiceFooterPerPage" msprop:Generator_ColumnPropNameInRow="InvoiceFooterPerPage" msprop:Generator_ColumnPropNameInTable="InvoiceFooterPerPageColumn" msprop:Generator_UserColumnName="InvoiceFooterPerPage" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CompanyLogoImage" msprop:Generator_ColumnVarNameInTable="columnCompanyLogoImage" msprop:Generator_ColumnPropNameInRow="CompanyLogoImage" msprop:Generator_ColumnPropNameInTable="CompanyLogoImageColumn" msprop:Generator_UserColumnName="CompanyLogoImage" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CompanyMembershipsLogo" msprop:Generator_ColumnVarNameInTable="columnCompanyMembershipsLogo" msprop:Generator_ColumnPropNameInRow="CompanyMembershipsLogo" msprop:Generator_ColumnPropNameInTable="CompanyMembershipsLogoColumn" msprop:Generator_UserColumnName="CompanyMembershipsLogo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="DefaultWeighingTariffBookingCode_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnDefaultWeighingTariffBookingCode_Id" msprop:Generator_ColumnPropNameInRow="DefaultWeighingTariffBookingCode_Id" msprop:Generator_ColumnPropNameInTable="DefaultWeighingTariffBookingCode_IdColumn" msprop:Generator_UserColumnName="DefaultWeighingTariffBookingCode_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="RelationSale_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRelationSale_Id" msprop:Generator_ColumnPropNameInRow="RelationSale_Id" msprop:Generator_ColumnPropNameInTable="RelationSale_IdColumn" msprop:Generator_UserColumnName="RelationSale_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="RelationBuy_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRelationBuy_Id" msprop:Generator_ColumnPropNameInRow="RelationBuy_Id" msprop:Generator_ColumnPropNameInTable="RelationBuy_IdColumn" msprop:Generator_UserColumnName="RelationBuy_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="DefaultBailPriceBookingCode_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnDefaultBailPriceBookingCode_Id" msprop:Generator_ColumnPropNameInRow="DefaultBailPriceBookingCode_Id" msprop:Generator_ColumnPropNameInTable="DefaultBailPriceBookingCode_IdColumn" msprop:Generator_UserColumnName="DefaultBailPriceBookingCode_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="VIHBCode" msprop:Generator_ColumnVarNameInTable="columnVIHBCode" msprop:Generator_ColumnPropNameInRow="VIHBCode" msprop:Generator_ColumnPropNameInTable="VIHBCodeColumn" msprop:Generator_UserColumnName="VIHBCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr1" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:string" minOccurs="0" />
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Expr3" msprop:Generator_ColumnVarNameInTable="columnExpr3" msprop:Generator_ColumnPropNameInRow="Expr3" msprop:Generator_ColumnPropNameInTable="Expr3Column" msprop:Generator_UserColumnName="Expr3" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Expr6" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnExpr6" msprop:Generator_ColumnPropNameInRow="Expr6" msprop:Generator_ColumnPropNameInTable="Expr6Column" msprop:Generator_UserColumnName="Expr6" type="xs:string" minOccurs="0" />
+              <xs:element name="Expr7" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnExpr7" msprop:Generator_ColumnPropNameInRow="Expr7" msprop:Generator_ColumnPropNameInTable="Expr7Column" msprop:Generator_UserColumnName="Expr7" type="xs:string" minOccurs="0" />
+              <xs:element name="Expr8" msprop:Generator_ColumnVarNameInTable="columnExpr8" msprop:Generator_ColumnPropNameInRow="Expr8" msprop:Generator_ColumnPropNameInTable="Expr8Column" msprop:Generator_UserColumnName="Expr8" type="xs:boolean" minOccurs="0" />
+              <xs:element name="MaterialDescription" msprop:Generator_ColumnVarNameInTable="columnMaterialDescription" msprop:Generator_ColumnPropNameInRow="MaterialDescription" msprop:Generator_ColumnPropNameInTable="MaterialDescriptionColumn" msprop:Generator_UserColumnName="MaterialDescription">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaterialLMECode" msprop:Generator_ColumnVarNameInTable="columnMaterialLMECode" msprop:Generator_ColumnPropNameInRow="MaterialLMECode" msprop:Generator_ColumnPropNameInTable="MaterialLMECodeColumn" msprop:Generator_UserColumnName="MaterialLMECode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContactPerson" msprop:Generator_ColumnVarNameInTable="columnContactPerson" msprop:Generator_ColumnPropNameInRow="ContactPerson" msprop:Generator_ColumnPropNameInTable="ContactPersonColumn" msprop:Generator_UserColumnName="ContactPerson" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LocationDescription" msprop:Generator_ColumnVarNameInTable="columnLocationDescription" msprop:Generator_ColumnPropNameInRow="LocationDescription" msprop:Generator_ColumnPropNameInTable="LocationDescriptionColumn" msprop:Generator_UserColumnName="LocationDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaterialBaselCode" msprop:Generator_ColumnVarNameInTable="columnMaterialBaselCode" msprop:Generator_ColumnPropNameInRow="MaterialBaselCode" msprop:Generator_ColumnPropNameInTable="MaterialBaselCodeColumn" msprop:Generator_UserColumnName="MaterialBaselCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerMaterialLMECode" msprop:Generator_ColumnVarNameInTable="columnCustomerMaterialLMECode" msprop:Generator_ColumnPropNameInRow="CustomerMaterialLMECode" msprop:Generator_ColumnPropNameInTable="CustomerMaterialLMECodeColumn" msprop:Generator_UserColumnName="CustomerMaterialLMECode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaterialPhysicalShape" msprop:Generator_ColumnVarNameInTable="columnMaterialPhysicalShape" msprop:Generator_ColumnPropNameInRow="MaterialPhysicalShape" msprop:Generator_ColumnPropNameInTable="MaterialPhysicalShapeColumn" msprop:Generator_UserColumnName="MaterialPhysicalShape">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UltimateSourceCustomerSet" msprop:Generator_TableClassName="UltimateSourceCustomerSetDataTable" msprop:Generator_TableVarName="tableUltimateSourceCustomerSet" msprop:Generator_TablePropName="UltimateSourceCustomerSet" msprop:Generator_RowDeletingName="UltimateSourceCustomerSetRowDeleting" msprop:Generator_UserTableName="UltimateSourceCustomerSet" msprop:Generator_RowChangingName="UltimateSourceCustomerSetRowChanging" msprop:Generator_RowEvHandlerName="UltimateSourceCustomerSetRowChangeEventHandler" msprop:Generator_RowDeletedName="UltimateSourceCustomerSetRowDeleted" msprop:Generator_RowEvArgName="UltimateSourceCustomerSetRowChangeEvent" msprop:Generator_RowChangedName="UltimateSourceCustomerSetRowChanged" msprop:Generator_RowClassName="UltimateSourceCustomerSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMail" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportAddressLine" msprop:Generator_ColumnVarNameInTable="columnTransportAddressLine" msprop:Generator_ColumnPropNameInRow="TransportAddressLine" msprop:Generator_ColumnPropNameInTable="TransportAddressLineColumn" msprop:Generator_UserColumnName="TransportAddressLine" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportVIHB" msprop:Generator_ColumnVarNameInTable="columnTransportVIHB" msprop:Generator_ColumnPropNameInRow="TransportVIHB" msprop:Generator_ColumnPropNameInTable="TransportVIHBColumn" msprop:Generator_UserColumnName="TransportVIHB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportContact" msprop:Generator_ColumnVarNameInTable="columnTransportContact" msprop:Generator_ColumnPropNameInRow="TransportContact" msprop:Generator_ColumnPropNameInTable="TransportContactColumn" msprop:Generator_UserColumnName="TransportContact" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FaxNumber" msprop:Generator_ColumnVarNameInTable="columnFaxNumber" msprop:Generator_ColumnPropNameInRow="FaxNumber" msprop:Generator_ColumnPropNameInTable="FaxNumberColumn" msprop:Generator_UserColumnName="FaxNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SourceCustomerSet" msprop:Generator_TableClassName="SourceCustomerSetDataTable" msprop:Generator_TableVarName="tableSourceCustomerSet" msprop:Generator_TablePropName="SourceCustomerSet" msprop:Generator_RowDeletingName="SourceCustomerSetRowDeleting" msprop:Generator_UserTableName="SourceCustomerSet" msprop:Generator_RowChangingName="SourceCustomerSetRowChanging" msprop:Generator_RowEvHandlerName="SourceCustomerSetRowChangeEventHandler" msprop:Generator_RowDeletedName="SourceCustomerSetRowDeleted" msprop:Generator_RowEvArgName="SourceCustomerSetRowChangeEvent" msprop:Generator_RowChangedName="SourceCustomerSetRowChanged" msprop:Generator_RowClassName="SourceCustomerSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMail" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportAddressLine" msprop:Generator_ColumnVarNameInTable="columnTransportAddressLine" msprop:Generator_ColumnPropNameInRow="TransportAddressLine" msprop:Generator_ColumnPropNameInTable="TransportAddressLineColumn" msprop:Generator_UserColumnName="TransportAddressLine" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportVIHB" msprop:Generator_ColumnVarNameInTable="columnTransportVIHB" msprop:Generator_ColumnPropNameInRow="TransportVIHB" msprop:Generator_ColumnPropNameInTable="TransportVIHBColumn" msprop:Generator_UserColumnName="TransportVIHB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportContact" msprop:Generator_ColumnVarNameInTable="columnTransportContact" msprop:Generator_ColumnPropNameInRow="TransportContact" msprop:Generator_ColumnPropNameInTable="TransportContactColumn" msprop:Generator_UserColumnName="TransportContact" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FaxNumber" msprop:Generator_ColumnVarNameInTable="columnFaxNumber" msprop:Generator_ColumnPropNameInRow="FaxNumber" msprop:Generator_ColumnPropNameInTable="FaxNumberColumn" msprop:Generator_UserColumnName="FaxNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Country" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_UserColumnName="Country" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TransportCompanyCustomerSet" msprop:Generator_TableClassName="TransportCompanyCustomerSetDataTable" msprop:Generator_TableVarName="tableTransportCompanyCustomerSet" msprop:Generator_TablePropName="TransportCompanyCustomerSet" msprop:Generator_RowDeletingName="TransportCompanyCustomerSetRowDeleting" msprop:Generator_UserTableName="TransportCompanyCustomerSet" msprop:Generator_RowChangingName="TransportCompanyCustomerSetRowChanging" msprop:Generator_RowEvHandlerName="TransportCompanyCustomerSetRowChangeEventHandler" msprop:Generator_RowDeletedName="TransportCompanyCustomerSetRowDeleted" msprop:Generator_RowEvArgName="TransportCompanyCustomerSetRowChangeEvent" msprop:Generator_RowChangedName="TransportCompanyCustomerSetRowChanged" msprop:Generator_RowClassName="TransportCompanyCustomerSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="EMail" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail" type="xs:string" minOccurs="0" />
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="TransportAddressLine" msprop:Generator_ColumnVarNameInTable="columnTransportAddressLine" msprop:Generator_ColumnPropNameInRow="TransportAddressLine" msprop:Generator_ColumnPropNameInTable="TransportAddressLineColumn" msprop:Generator_UserColumnName="TransportAddressLine" type="xs:string" minOccurs="0" />
+              <xs:element name="TransportVIHB" msprop:Generator_ColumnVarNameInTable="columnTransportVIHB" msprop:Generator_ColumnPropNameInRow="TransportVIHB" msprop:Generator_ColumnPropNameInTable="TransportVIHBColumn" msprop:Generator_UserColumnName="TransportVIHB" type="xs:string" minOccurs="0" />
+              <xs:element name="TransportContact" msprop:Generator_ColumnVarNameInTable="columnTransportContact" msprop:Generator_ColumnPropNameInRow="TransportContact" msprop:Generator_ColumnPropNameInTable="TransportContactColumn" msprop:Generator_UserColumnName="TransportContact" type="xs:string" minOccurs="0" />
+              <xs:element name="FaxNumber" msprop:Generator_ColumnVarNameInTable="columnFaxNumber" msprop:Generator_ColumnPropNameInRow="FaxNumber" msprop:Generator_ColumnPropNameInTable="FaxNumberColumn" msprop:Generator_UserColumnName="FaxNumber" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DestinationCustomerSet" msprop:Generator_TableClassName="DestinationCustomerSetDataTable" msprop:Generator_TableVarName="tableDestinationCustomerSet" msprop:Generator_TablePropName="DestinationCustomerSet" msprop:Generator_RowDeletingName="DestinationCustomerSetRowDeleting" msprop:Generator_UserTableName="DestinationCustomerSet" msprop:Generator_RowChangingName="DestinationCustomerSetRowChanging" msprop:Generator_RowEvHandlerName="DestinationCustomerSetRowChangeEventHandler" msprop:Generator_RowDeletedName="DestinationCustomerSetRowDeleted" msprop:Generator_RowEvArgName="DestinationCustomerSetRowChangeEvent" msprop:Generator_RowChangedName="DestinationCustomerSetRowChanged" msprop:Generator_RowClassName="DestinationCustomerSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMail" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportAddressLine" msprop:Generator_ColumnVarNameInTable="columnTransportAddressLine" msprop:Generator_ColumnPropNameInRow="TransportAddressLine" msprop:Generator_ColumnPropNameInTable="TransportAddressLineColumn" msprop:Generator_UserColumnName="TransportAddressLine" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportVIHB" msprop:Generator_ColumnVarNameInTable="columnTransportVIHB" msprop:Generator_ColumnPropNameInRow="TransportVIHB" msprop:Generator_ColumnPropNameInTable="TransportVIHBColumn" msprop:Generator_UserColumnName="TransportVIHB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportContact" msprop:Generator_ColumnVarNameInTable="columnTransportContact" msprop:Generator_ColumnPropNameInRow="TransportContact" msprop:Generator_ColumnPropNameInTable="TransportContactColumn" msprop:Generator_UserColumnName="TransportContact" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FaxNumber" msprop:Generator_ColumnVarNameInTable="columnFaxNumber" msprop:Generator_ColumnPropNameInRow="FaxNumber" msprop:Generator_ColumnPropNameInTable="FaxNumberColumn" msprop:Generator_UserColumnName="FaxNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Country" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_UserColumnName="Country" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DestructorCustomerSet" msprop:Generator_TableClassName="DestructorCustomerSetDataTable" msprop:Generator_TableVarName="tableDestructorCustomerSet" msprop:Generator_TablePropName="DestructorCustomerSet" msprop:Generator_RowDeletingName="DestructorCustomerSetRowDeleting" msprop:Generator_UserTableName="DestructorCustomerSet" msprop:Generator_RowChangingName="DestructorCustomerSetRowChanging" msprop:Generator_RowEvHandlerName="DestructorCustomerSetRowChangeEventHandler" msprop:Generator_RowDeletedName="DestructorCustomerSetRowDeleted" msprop:Generator_RowEvArgName="DestructorCustomerSetRowChangeEvent" msprop:Generator_RowChangedName="DestructorCustomerSetRowChanged" msprop:Generator_RowClassName="DestructorCustomerSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMail" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportAddressLine" msprop:Generator_ColumnVarNameInTable="columnTransportAddressLine" msprop:Generator_ColumnPropNameInRow="TransportAddressLine" msprop:Generator_ColumnPropNameInTable="TransportAddressLineColumn" msprop:Generator_UserColumnName="TransportAddressLine" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportVIHB" msprop:Generator_ColumnVarNameInTable="columnTransportVIHB" msprop:Generator_ColumnPropNameInRow="TransportVIHB" msprop:Generator_ColumnPropNameInTable="TransportVIHBColumn" msprop:Generator_UserColumnName="TransportVIHB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportContact" msprop:Generator_ColumnVarNameInTable="columnTransportContact" msprop:Generator_ColumnPropNameInRow="TransportContact" msprop:Generator_ColumnPropNameInTable="TransportContactColumn" msprop:Generator_UserColumnName="TransportContact" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FaxNumber" msprop:Generator_ColumnVarNameInTable="columnFaxNumber" msprop:Generator_ColumnPropNameInRow="FaxNumber" msprop:Generator_ColumnPropNameInTable="FaxNumberColumn" msprop:Generator_UserColumnName="FaxNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FreightSet" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetRelationContracts" targetNamespace="http://tempuri.org/DataSetRelationContracts.xsd" xmlns:mstns="http://tempuri.org/DataSetRelationContracts.xsd" xmlns="http://tempuri.org/DataSetRelationContracts.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="TMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.TMSConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LocationSetTableAdapter" GeneratorDataComponentClassName="LocationSetTableAdapter" Name="LocationSet" UserDataComponentName="LocationSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="TMS2.dbo.LocationSet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT top 1       LocationSet.Id, LocationSet.CreateDateTime, LocationSet.ModifyDateTime, LocationSet.Description, LocationSet.CreateUser, LocationSet.ModifyUser, 
+                         LocationSet.IsActive, LocationSet.ZIPcode, LocationSet.City, LocationSet.Country, LocationSet.VATNumber, LocationSet.PhoneNumber, LocationSet.EMail, 
+                         LocationSet.PreferredCurrency, LocationSet.LocationNumber, LocationSet.AdressLine1, LocationSet.AdressLine2, LocationSet.AdressLine3, 
+                         LocationSet.InvoiceAddress, LocationSet.InvoiceFooter, LocationSet.InvoicePrintLogo, LocationSet.DefaultVATPercentage, LocationSet.DefaultHourlyRate, 
+                         LocationSet.DefaultWeighingTariff, LocationSet.MaterialForDirtId, LocationSet.MaterialForWorkId, LocationSet.CashLedgerId, LocationSet.BankLedgerId, 
+                         LocationSet.InvoiceFooterPerPage, LocationSet.CompanyLogoImage, LocationSet.CompanyMembershipsLogo, LocationSet.DefaultWeighingTariffBookingCode_Id, 
+                         LocationSet.RelationSale_Id, LocationSet.RelationBuy_Id, LocationSet.DefaultBailPriceBookingCode_Id, LocationSet.VIHBCode, LocationSet.ContactPerson
+FROM            LocationSet INNER JOIN
+                         RelationSet ON LocationSet.Id = RelationSet.PreferredLocation_Id INNER JOIN
+                         RelationContractSet ON RelationSet.Id = RelationContractSet.Relation_Id
+where LocationSet.IsActive = 1
+order by LocationNumber</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="CreateDateTime" DataSetColumn="CreateDateTime" />
+              <Mapping SourceColumn="ModifyDateTime" DataSetColumn="ModifyDateTime" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="CreateUser" DataSetColumn="CreateUser" />
+              <Mapping SourceColumn="ModifyUser" DataSetColumn="ModifyUser" />
+              <Mapping SourceColumn="IsActive" DataSetColumn="IsActive" />
+              <Mapping SourceColumn="ZIPcode" DataSetColumn="ZIPcode" />
+              <Mapping SourceColumn="City" DataSetColumn="City" />
+              <Mapping SourceColumn="Country" DataSetColumn="Country" />
+              <Mapping SourceColumn="VATNumber" DataSetColumn="VATNumber" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="EMail" DataSetColumn="EMail" />
+              <Mapping SourceColumn="PreferredCurrency" DataSetColumn="PreferredCurrency" />
+              <Mapping SourceColumn="LocationNumber" DataSetColumn="LocationNumber" />
+              <Mapping SourceColumn="AdressLine1" DataSetColumn="AdressLine1" />
+              <Mapping SourceColumn="AdressLine2" DataSetColumn="AdressLine2" />
+              <Mapping SourceColumn="AdressLine3" DataSetColumn="AdressLine3" />
+              <Mapping SourceColumn="InvoiceAddress" DataSetColumn="InvoiceAddress" />
+              <Mapping SourceColumn="InvoiceFooter" DataSetColumn="InvoiceFooter" />
+              <Mapping SourceColumn="InvoicePrintLogo" DataSetColumn="InvoicePrintLogo" />
+              <Mapping SourceColumn="DefaultVATPercentage" DataSetColumn="DefaultVATPercentage" />
+              <Mapping SourceColumn="DefaultHourlyRate" DataSetColumn="DefaultHourlyRate" />
+              <Mapping SourceColumn="DefaultWeighingTariff" DataSetColumn="DefaultWeighingTariff" />
+              <Mapping SourceColumn="MaterialForDirtId" DataSetColumn="MaterialForDirtId" />
+              <Mapping SourceColumn="MaterialForWorkId" DataSetColumn="MaterialForWorkId" />
+              <Mapping SourceColumn="CashLedgerId" DataSetColumn="CashLedgerId" />
+              <Mapping SourceColumn="BankLedgerId" DataSetColumn="BankLedgerId" />
+              <Mapping SourceColumn="InvoiceFooterPerPage" DataSetColumn="InvoiceFooterPerPage" />
+              <Mapping SourceColumn="CompanyLogoImage" DataSetColumn="CompanyLogoImage" />
+              <Mapping SourceColumn="CompanyMembershipsLogo" DataSetColumn="CompanyMembershipsLogo" />
+              <Mapping SourceColumn="DefaultWeighingTariffBookingCode_Id" DataSetColumn="DefaultWeighingTariffBookingCode_Id" />
+              <Mapping SourceColumn="RelationSale_Id" DataSetColumn="RelationSale_Id" />
+              <Mapping SourceColumn="RelationBuy_Id" DataSetColumn="RelationBuy_Id" />
+              <Mapping SourceColumn="DefaultBailPriceBookingCode_Id" DataSetColumn="DefaultBailPriceBookingCode_Id" />
+              <Mapping SourceColumn="VIHBCode" DataSetColumn="VIHBCode" />
+              <Mapping SourceColumn="ContactPerson" DataSetColumn="ContactPerson" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RelationAddressSetTableAdapter" GeneratorDataComponentClassName="RelationAddressSetTableAdapter" Name="RelationAddressSet" UserDataComponentName="RelationAddressSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="TMS2.dbo.RelationAddressSet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RelationAddressSet.Id, RelationAddressSet.CreateDateTime, RelationAddressSet.ModifyDateTime, RelationAddressSet.Description, RelationAddressSet.CreateUser, 
+                         RelationAddressSet.ModifyUser, RelationAddressSet.AdressLine1, RelationAddressSet.AdressLine2, RelationAddressSet.AdressLine3, RelationAddressSet.ZIPcode, 
+                         RelationAddressSet.City, RelationAddressSet.Country, RelationAddressSet.IsActive, RelationAddressSet.Relation_Id, RelationAddressSet.AdressType
+FROM            RelationAddressSet INNER JOIN
+                         RelationSet ON RelationAddressSet.Relation_Id = RelationSet.Id INNER JOIN
+                         RelationContractSet ON RelationSet.Id = RelationContractSet.Relation_Id
+WHERE        (RelationAddressSet.AdressType = 'Invoice') AND (RelationContractSet.Id = @CustomerId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="CustomerId" ColumnName="Id" DataSourceName="TMS2.dbo.RelationContractSet" DataTypeServer="uniqueidentifier" DbType="Guid" Direction="Input" ParameterName="@CustomerId" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="16" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="CreateDateTime" DataSetColumn="CreateDateTime" />
+              <Mapping SourceColumn="ModifyDateTime" DataSetColumn="ModifyDateTime" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="CreateUser" DataSetColumn="CreateUser" />
+              <Mapping SourceColumn="ModifyUser" DataSetColumn="ModifyUser" />
+              <Mapping SourceColumn="AdressLine1" DataSetColumn="AdressLine1" />
+              <Mapping SourceColumn="AdressLine2" DataSetColumn="AdressLine2" />
+              <Mapping SourceColumn="AdressLine3" DataSetColumn="AdressLine3" />
+              <Mapping SourceColumn="ZIPcode" DataSetColumn="ZIPcode" />
+              <Mapping SourceColumn="City" DataSetColumn="City" />
+              <Mapping SourceColumn="Country" DataSetColumn="Country" />
+              <Mapping SourceColumn="IsActive" DataSetColumn="IsActive" />
+              <Mapping SourceColumn="Relation_Id" DataSetColumn="Relation_Id" />
+              <Mapping SourceColumn="AdressType" DataSetColumn="AdressType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RelationContractSetTableAdapter" GeneratorDataComponentClassName="RelationContractSetTableAdapter" Name="RelationContractSet" UserDataComponentName="RelationContractSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RelationContractSet.Description, RelationSet.Description AS RelationSetDescription, 
+                         RelationContractMaterialSet.Description AS RelationContractMaterialSetDescription, MaterialSet.Description AS MaterialSetDescription, 
+                         RelationContractSet.OurReference, RelationContractSet.ContractDate, RelationContractSet.ContractStartDate, RelationContractSet.ContractEndDate, 
+                         RelationContractSet.ContractType, RelationContractSet.HasContractGuidance, RelationContractSet.ContractPriority, RelationContractSet.ContractStatus, 
+                         RelationContractMaterialSet.MinAmount, RelationContractMaterialSet.MaxAmount, RelationContractMaterialSet.PricePerUnit, 
+                         RelationContractMaterialSet.AvgStockPrice, RelationContractMaterialSet.AvgStockUnits, RelationContractMaterialSet.DeliveredAmount, 
+                         RelationContractMaterialSet.DeliveredTotalPrice, RelationContractMaterialSet.AvgRequiredProfitPerUnit, LocationSet.Description AS LocationSetDescription
+FROM            RelationSet INNER JOIN
+                         RelationContractSet ON RelationSet.Id = RelationContractSet.Relation_Id INNER JOIN
+                         RelationContractMaterialSet ON RelationContractSet.Id = RelationContractMaterialSet.RelationContract_Id INNER JOIN
+                         MaterialSet ON RelationContractMaterialSet.Material_Id = MaterialSet.Id INNER JOIN
+                         LocationSet ON RelationSet.PreferredLocation_Id = LocationSet.Id
+WHERE        (RelationSet.Id = @CustomerId OR
+                         @CustomerId = '00000000-0000-0000-0000-000000000000') AND (RelationContractSet.ContractType = @ContractType OR
+                         @ContractType = '') AND (RelationContractSet.ContractStatus = @ContractStatus OR
+                         @ContractStatus = '') AND (RelationContractSet.ContractStartDate BETWEEN @StartDate AND @EndDate OR
+                         RelationContractSet.ContractEndDate BETWEEN @StartDate AND @EndDate) AND (LocationSet.Description = @LocationName OR
+                         @LocationName = '')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="CustomerId" ColumnName="Id" DataSourceName="TMS2.dbo.RelationSet" DataTypeServer="uniqueidentifier" DbType="Guid" Direction="Input" ParameterName="@CustomerId" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="16" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ContractType" ColumnName="ContractType" DataSourceName="TMS2.dbo.RelationContractSet" DataTypeServer="varchar(5)" DbType="AnsiString" Direction="Input" ParameterName="@ContractType" Precision="0" ProviderType="VarChar" Scale="0" Size="5" SourceColumn="ContractType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ContractStatus" ColumnName="ContractStatus" DataSourceName="TMS2.dbo.RelationContractSet" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@ContractStatus" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="ContractStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="StartDate" ColumnName="ContractStartDate" DataSourceName="TMS2.dbo.RelationContractSet" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="ContractStartDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EndDate" ColumnName="ContractStartDate" DataSourceName="TMS2.dbo.RelationContractSet" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="ContractStartDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="LocationName" ColumnName="Description" DataSourceName="TMS2.dbo.LocationSet" DataTypeServer="nvarchar(250)" DbType="String" Direction="Input" ParameterName="@LocationName" Precision="0" ProviderType="NVarChar" Scale="0" Size="250" SourceColumn="LocationSetDescription" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="RelationSetDescription" DataSetColumn="RelationSetDescription" />
+              <Mapping SourceColumn="RelationContractMaterialSetDescription" DataSetColumn="RelationContractMaterialSetDescription" />
+              <Mapping SourceColumn="MaterialSetDescription" DataSetColumn="MaterialSetDescription" />
+              <Mapping SourceColumn="OurReference" DataSetColumn="OurReference" />
+              <Mapping SourceColumn="ContractDate" DataSetColumn="ContractDate" />
+              <Mapping SourceColumn="ContractStartDate" DataSetColumn="ContractStartDate" />
+              <Mapping SourceColumn="ContractEndDate" DataSetColumn="ContractEndDate" />
+              <Mapping SourceColumn="ContractType" DataSetColumn="ContractType" />
+              <Mapping SourceColumn="HasContractGuidance" DataSetColumn="HasContractGuidance" />
+              <Mapping SourceColumn="ContractPriority" DataSetColumn="ContractPriority" />
+              <Mapping SourceColumn="ContractStatus" DataSetColumn="ContractStatus" />
+              <Mapping SourceColumn="MinAmount" DataSetColumn="MinAmount" />
+              <Mapping SourceColumn="MaxAmount" DataSetColumn="MaxAmount" />
+              <Mapping SourceColumn="PricePerUnit" DataSetColumn="PricePerUnit" />
+              <Mapping SourceColumn="AvgStockPrice" DataSetColumn="AvgStockPrice" />
+              <Mapping SourceColumn="AvgStockUnits" DataSetColumn="AvgStockUnits" />
+              <Mapping SourceColumn="DeliveredAmount" DataSetColumn="DeliveredAmount" />
+              <Mapping SourceColumn="DeliveredTotalPrice" DataSetColumn="DeliveredTotalPrice" />
+              <Mapping SourceColumn="AvgRequiredProfitPerUnit" DataSetColumn="AvgRequiredProfitPerUnit" />
+              <Mapping SourceColumn="LocationSetDescription" DataSetColumn="LocationSetDescription" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetRelationContracts" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetRelationContracts" msprop:Generator_UserDSName="DataSetRelationContracts">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LocationSet" msprop:Generator_TableClassName="LocationSetDataTable" msprop:Generator_TableVarName="tableLocationSet" msprop:Generator_TablePropName="LocationSet" msprop:Generator_RowDeletingName="LocationSetRowDeleting" msprop:Generator_UserTableName="LocationSet" msprop:Generator_RowChangingName="LocationSetRowChanging" msprop:Generator_RowEvHandlerName="LocationSetRowChangeEventHandler" msprop:Generator_RowDeletedName="LocationSetRowDeleted" msprop:Generator_RowEvArgName="LocationSetRowChangeEvent" msprop:Generator_RowChangedName="LocationSetRowChanged" msprop:Generator_RowClassName="LocationSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:string" />
+              <xs:element name="CreateDateTime" msprop:Generator_ColumnVarNameInTable="columnCreateDateTime" msprop:Generator_ColumnPropNameInRow="CreateDateTime" msprop:Generator_ColumnPropNameInTable="CreateDateTimeColumn" msprop:Generator_UserColumnName="CreateDateTime" type="xs:dateTime" />
+              <xs:element name="ModifyDateTime" msprop:Generator_ColumnVarNameInTable="columnModifyDateTime" msprop:Generator_ColumnPropNameInRow="ModifyDateTime" msprop:Generator_ColumnPropNameInTable="ModifyDateTimeColumn" msprop:Generator_UserColumnName="ModifyDateTime" type="xs:dateTime" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateUser" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCreateUser" msprop:Generator_ColumnPropNameInRow="CreateUser" msprop:Generator_ColumnPropNameInTable="CreateUserColumn" msprop:Generator_UserColumnName="CreateUser" type="xs:string" />
+              <xs:element name="ModifyUser" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnModifyUser" msprop:Generator_ColumnPropNameInRow="ModifyUser" msprop:Generator_ColumnPropNameInTable="ModifyUserColumn" msprop:Generator_UserColumnName="ModifyUser" type="xs:string" />
+              <xs:element name="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_UserColumnName="IsActive" type="xs:boolean" />
+              <xs:element name="ZIPcode" msprop:Generator_ColumnVarNameInTable="columnZIPcode" msprop:Generator_ColumnPropNameInRow="ZIPcode" msprop:Generator_ColumnPropNameInTable="ZIPcodeColumn" msprop:Generator_UserColumnName="ZIPcode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Country" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_UserColumnName="Country">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VATNumber" msprop:Generator_ColumnVarNameInTable="columnVATNumber" msprop:Generator_ColumnPropNameInRow="VATNumber" msprop:Generator_ColumnPropNameInTable="VATNumberColumn" msprop:Generator_UserColumnName="VATNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMail" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PreferredCurrency" msprop:Generator_ColumnVarNameInTable="columnPreferredCurrency" msprop:Generator_ColumnPropNameInRow="PreferredCurrency" msprop:Generator_ColumnPropNameInTable="PreferredCurrencyColumn" msprop:Generator_UserColumnName="PreferredCurrency">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LocationNumber" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnLocationNumber" msprop:Generator_ColumnPropNameInRow="LocationNumber" msprop:Generator_ColumnPropNameInTable="LocationNumberColumn" msprop:Generator_UserColumnName="LocationNumber" type="xs:long" />
+              <xs:element name="AdressLine1" msprop:Generator_ColumnVarNameInTable="columnAdressLine1" msprop:Generator_ColumnPropNameInRow="AdressLine1" msprop:Generator_ColumnPropNameInTable="AdressLine1Column" msprop:Generator_UserColumnName="AdressLine1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdressLine2" msprop:Generator_ColumnVarNameInTable="columnAdressLine2" msprop:Generator_ColumnPropNameInRow="AdressLine2" msprop:Generator_ColumnPropNameInTable="AdressLine2Column" msprop:Generator_UserColumnName="AdressLine2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdressLine3" msprop:Generator_ColumnVarNameInTable="columnAdressLine3" msprop:Generator_ColumnPropNameInRow="AdressLine3" msprop:Generator_ColumnPropNameInTable="AdressLine3Column" msprop:Generator_UserColumnName="AdressLine3">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceAddress" msprop:Generator_ColumnVarNameInTable="columnInvoiceAddress" msprop:Generator_ColumnPropNameInRow="InvoiceAddress" msprop:Generator_ColumnPropNameInTable="InvoiceAddressColumn" msprop:Generator_UserColumnName="InvoiceAddress">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceFooter" msprop:Generator_ColumnVarNameInTable="columnInvoiceFooter" msprop:Generator_ColumnPropNameInRow="InvoiceFooter" msprop:Generator_ColumnPropNameInTable="InvoiceFooterColumn" msprop:Generator_UserColumnName="InvoiceFooter">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoicePrintLogo" msprop:Generator_ColumnVarNameInTable="columnInvoicePrintLogo" msprop:Generator_ColumnPropNameInRow="InvoicePrintLogo" msprop:Generator_ColumnPropNameInTable="InvoicePrintLogoColumn" msprop:Generator_UserColumnName="InvoicePrintLogo" type="xs:boolean" />
+              <xs:element name="DefaultVATPercentage" msprop:Generator_ColumnVarNameInTable="columnDefaultVATPercentage" msprop:Generator_ColumnPropNameInRow="DefaultVATPercentage" msprop:Generator_ColumnPropNameInTable="DefaultVATPercentageColumn" msprop:Generator_UserColumnName="DefaultVATPercentage" type="xs:double" />
+              <xs:element name="DefaultHourlyRate" msprop:Generator_ColumnVarNameInTable="columnDefaultHourlyRate" msprop:Generator_ColumnPropNameInRow="DefaultHourlyRate" msprop:Generator_ColumnPropNameInTable="DefaultHourlyRateColumn" msprop:Generator_UserColumnName="DefaultHourlyRate" type="xs:double" />
+              <xs:element name="DefaultWeighingTariff" msprop:Generator_ColumnVarNameInTable="columnDefaultWeighingTariff" msprop:Generator_ColumnPropNameInRow="DefaultWeighingTariff" msprop:Generator_ColumnPropNameInTable="DefaultWeighingTariffColumn" msprop:Generator_UserColumnName="DefaultWeighingTariff" type="xs:double" />
+              <xs:element name="MaterialForDirtId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnMaterialForDirtId" msprop:Generator_ColumnPropNameInRow="MaterialForDirtId" msprop:Generator_ColumnPropNameInTable="MaterialForDirtIdColumn" msprop:Generator_UserColumnName="MaterialForDirtId" type="xs:string" minOccurs="0" />
+              <xs:element name="MaterialForWorkId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnMaterialForWorkId" msprop:Generator_ColumnPropNameInRow="MaterialForWorkId" msprop:Generator_ColumnPropNameInTable="MaterialForWorkIdColumn" msprop:Generator_UserColumnName="MaterialForWorkId" type="xs:string" minOccurs="0" />
+              <xs:element name="CashLedgerId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCashLedgerId" msprop:Generator_ColumnPropNameInRow="CashLedgerId" msprop:Generator_ColumnPropNameInTable="CashLedgerIdColumn" msprop:Generator_UserColumnName="CashLedgerId" type="xs:string" minOccurs="0" />
+              <xs:element name="BankLedgerId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnBankLedgerId" msprop:Generator_ColumnPropNameInRow="BankLedgerId" msprop:Generator_ColumnPropNameInTable="BankLedgerIdColumn" msprop:Generator_UserColumnName="BankLedgerId" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceFooterPerPage" msprop:Generator_ColumnVarNameInTable="columnInvoiceFooterPerPage" msprop:Generator_ColumnPropNameInRow="InvoiceFooterPerPage" msprop:Generator_ColumnPropNameInTable="InvoiceFooterPerPageColumn" msprop:Generator_UserColumnName="InvoiceFooterPerPage">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CompanyLogoImage" msprop:Generator_ColumnVarNameInTable="columnCompanyLogoImage" msprop:Generator_ColumnPropNameInRow="CompanyLogoImage" msprop:Generator_ColumnPropNameInTable="CompanyLogoImageColumn" msprop:Generator_UserColumnName="CompanyLogoImage" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CompanyMembershipsLogo" msprop:Generator_ColumnVarNameInTable="columnCompanyMembershipsLogo" msprop:Generator_ColumnPropNameInRow="CompanyMembershipsLogo" msprop:Generator_ColumnPropNameInTable="CompanyMembershipsLogoColumn" msprop:Generator_UserColumnName="CompanyMembershipsLogo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="DefaultWeighingTariffBookingCode_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnDefaultWeighingTariffBookingCode_Id" msprop:Generator_ColumnPropNameInRow="DefaultWeighingTariffBookingCode_Id" msprop:Generator_ColumnPropNameInTable="DefaultWeighingTariffBookingCode_IdColumn" msprop:Generator_UserColumnName="DefaultWeighingTariffBookingCode_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="RelationSale_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRelationSale_Id" msprop:Generator_ColumnPropNameInRow="RelationSale_Id" msprop:Generator_ColumnPropNameInTable="RelationSale_IdColumn" msprop:Generator_UserColumnName="RelationSale_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="RelationBuy_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRelationBuy_Id" msprop:Generator_ColumnPropNameInRow="RelationBuy_Id" msprop:Generator_ColumnPropNameInTable="RelationBuy_IdColumn" msprop:Generator_UserColumnName="RelationBuy_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="DefaultBailPriceBookingCode_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnDefaultBailPriceBookingCode_Id" msprop:Generator_ColumnPropNameInRow="DefaultBailPriceBookingCode_Id" msprop:Generator_ColumnPropNameInTable="DefaultBailPriceBookingCode_IdColumn" msprop:Generator_UserColumnName="DefaultBailPriceBookingCode_Id" type="xs:string" />
+              <xs:element name="VIHBCode" msprop:Generator_ColumnVarNameInTable="columnVIHBCode" msprop:Generator_ColumnPropNameInRow="VIHBCode" msprop:Generator_ColumnPropNameInTable="VIHBCodeColumn" msprop:Generator_UserColumnName="VIHBCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContactPerson" msprop:Generator_ColumnVarNameInTable="columnContactPerson" msprop:Generator_ColumnPropNameInRow="ContactPerson" msprop:Generator_ColumnPropNameInTable="ContactPersonColumn" msprop:Generator_UserColumnName="ContactPerson">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RelationAddressSet" msprop:Generator_TableClassName="RelationAddressSetDataTable" msprop:Generator_TableVarName="tableRelationAddressSet" msprop:Generator_TablePropName="RelationAddressSet" msprop:Generator_RowDeletingName="RelationAddressSetRowDeleting" msprop:Generator_UserTableName="RelationAddressSet" msprop:Generator_RowChangingName="RelationAddressSetRowChanging" msprop:Generator_RowEvHandlerName="RelationAddressSetRowChangeEventHandler" msprop:Generator_RowDeletedName="RelationAddressSetRowDeleted" msprop:Generator_RowEvArgName="RelationAddressSetRowChangeEvent" msprop:Generator_RowChangedName="RelationAddressSetRowChanged" msprop:Generator_RowClassName="RelationAddressSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:string" />
+              <xs:element name="CreateDateTime" msprop:Generator_ColumnVarNameInTable="columnCreateDateTime" msprop:Generator_ColumnPropNameInRow="CreateDateTime" msprop:Generator_ColumnPropNameInTable="CreateDateTimeColumn" msprop:Generator_UserColumnName="CreateDateTime" type="xs:dateTime" />
+              <xs:element name="ModifyDateTime" msprop:Generator_ColumnVarNameInTable="columnModifyDateTime" msprop:Generator_ColumnPropNameInRow="ModifyDateTime" msprop:Generator_ColumnPropNameInTable="ModifyDateTimeColumn" msprop:Generator_UserColumnName="ModifyDateTime" type="xs:dateTime" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateUser" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCreateUser" msprop:Generator_ColumnPropNameInRow="CreateUser" msprop:Generator_ColumnPropNameInTable="CreateUserColumn" msprop:Generator_UserColumnName="CreateUser" type="xs:string" />
+              <xs:element name="ModifyUser" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnModifyUser" msprop:Generator_ColumnPropNameInRow="ModifyUser" msprop:Generator_ColumnPropNameInTable="ModifyUserColumn" msprop:Generator_UserColumnName="ModifyUser" type="xs:string" />
+              <xs:element name="AdressLine1" msprop:Generator_ColumnVarNameInTable="columnAdressLine1" msprop:Generator_ColumnPropNameInRow="AdressLine1" msprop:Generator_ColumnPropNameInTable="AdressLine1Column" msprop:Generator_UserColumnName="AdressLine1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdressLine2" msprop:Generator_ColumnVarNameInTable="columnAdressLine2" msprop:Generator_ColumnPropNameInRow="AdressLine2" msprop:Generator_ColumnPropNameInTable="AdressLine2Column" msprop:Generator_UserColumnName="AdressLine2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdressLine3" msprop:Generator_ColumnVarNameInTable="columnAdressLine3" msprop:Generator_ColumnPropNameInRow="AdressLine3" msprop:Generator_ColumnPropNameInTable="AdressLine3Column" msprop:Generator_UserColumnName="AdressLine3">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZIPcode" msprop:Generator_ColumnVarNameInTable="columnZIPcode" msprop:Generator_ColumnPropNameInRow="ZIPcode" msprop:Generator_ColumnPropNameInTable="ZIPcodeColumn" msprop:Generator_UserColumnName="ZIPcode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Country" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_UserColumnName="Country">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_UserColumnName="IsActive" type="xs:boolean" />
+              <xs:element name="Relation_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRelation_Id" msprop:Generator_ColumnPropNameInRow="Relation_Id" msprop:Generator_ColumnPropNameInTable="Relation_IdColumn" msprop:Generator_UserColumnName="Relation_Id" type="xs:string" />
+              <xs:element name="AdressType" msprop:Generator_ColumnVarNameInTable="columnAdressType" msprop:Generator_ColumnPropNameInRow="AdressType" msprop:Generator_ColumnPropNameInTable="AdressTypeColumn" msprop:Generator_UserColumnName="AdressType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RelationContractSet" msprop:Generator_TableClassName="RelationContractSetDataTable" msprop:Generator_TableVarName="tableRelationContractSet" msprop:Generator_TablePropName="RelationContractSet" msprop:Generator_RowDeletingName="RelationContractSetRowDeleting" msprop:Generator_UserTableName="RelationContractSet" msprop:Generator_RowChangingName="RelationContractSetRowChanging" msprop:Generator_RowEvHandlerName="RelationContractSetRowChangeEventHandler" msprop:Generator_RowDeletedName="RelationContractSetRowDeleted" msprop:Generator_RowEvArgName="RelationContractSetRowChangeEvent" msprop:Generator_RowChangedName="RelationContractSetRowChanged" msprop:Generator_RowClassName="RelationContractSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RelationSetDescription" msprop:Generator_ColumnVarNameInTable="columnRelationSetDescription" msprop:Generator_ColumnPropNameInRow="RelationSetDescription" msprop:Generator_ColumnPropNameInTable="RelationSetDescriptionColumn" msprop:Generator_UserColumnName="RelationSetDescription">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RelationContractMaterialSetDescription" msprop:Generator_ColumnVarNameInTable="columnRelationContractMaterialSetDescription" msprop:Generator_ColumnPropNameInRow="RelationContractMaterialSetDescription" msprop:Generator_ColumnPropNameInTable="RelationContractMaterialSetDescriptionColumn" msprop:Generator_UserColumnName="RelationContractMaterialSetDescription">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaterialSetDescription" msprop:Generator_ColumnVarNameInTable="columnMaterialSetDescription" msprop:Generator_ColumnPropNameInRow="MaterialSetDescription" msprop:Generator_ColumnPropNameInTable="MaterialSetDescriptionColumn" msprop:Generator_UserColumnName="MaterialSetDescription">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OurReference" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnOurReference" msprop:Generator_ColumnPropNameInRow="OurReference" msprop:Generator_ColumnPropNameInTable="OurReferenceColumn" msprop:Generator_UserColumnName="OurReference" type="xs:long" />
+              <xs:element name="ContractDate" msprop:Generator_ColumnVarNameInTable="columnContractDate" msprop:Generator_ColumnPropNameInRow="ContractDate" msprop:Generator_ColumnPropNameInTable="ContractDateColumn" msprop:Generator_UserColumnName="ContractDate" type="xs:dateTime" />
+              <xs:element name="ContractStartDate" msprop:Generator_ColumnVarNameInTable="columnContractStartDate" msprop:Generator_ColumnPropNameInRow="ContractStartDate" msprop:Generator_ColumnPropNameInTable="ContractStartDateColumn" msprop:Generator_UserColumnName="ContractStartDate" type="xs:dateTime" />
+              <xs:element name="ContractEndDate" msprop:Generator_ColumnVarNameInTable="columnContractEndDate" msprop:Generator_ColumnPropNameInRow="ContractEndDate" msprop:Generator_ColumnPropNameInTable="ContractEndDateColumn" msprop:Generator_UserColumnName="ContractEndDate" type="xs:dateTime" />
+              <xs:element name="ContractType" msprop:Generator_ColumnVarNameInTable="columnContractType" msprop:Generator_ColumnPropNameInRow="ContractType" msprop:Generator_ColumnPropNameInTable="ContractTypeColumn" msprop:Generator_UserColumnName="ContractType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HasContractGuidance" msprop:Generator_ColumnVarNameInTable="columnHasContractGuidance" msprop:Generator_ColumnPropNameInRow="HasContractGuidance" msprop:Generator_ColumnPropNameInTable="HasContractGuidanceColumn" msprop:Generator_UserColumnName="HasContractGuidance" type="xs:boolean" />
+              <xs:element name="ContractPriority" msprop:Generator_ColumnVarNameInTable="columnContractPriority" msprop:Generator_ColumnPropNameInRow="ContractPriority" msprop:Generator_ColumnPropNameInTable="ContractPriorityColumn" msprop:Generator_UserColumnName="ContractPriority" type="xs:unsignedByte" />
+              <xs:element name="ContractStatus" msprop:Generator_ColumnVarNameInTable="columnContractStatus" msprop:Generator_ColumnPropNameInRow="ContractStatus" msprop:Generator_ColumnPropNameInTable="ContractStatusColumn" msprop:Generator_UserColumnName="ContractStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MinAmount" msprop:Generator_ColumnVarNameInTable="columnMinAmount" msprop:Generator_ColumnPropNameInRow="MinAmount" msprop:Generator_ColumnPropNameInTable="MinAmountColumn" msprop:Generator_UserColumnName="MinAmount" type="xs:double" />
+              <xs:element name="MaxAmount" msprop:Generator_ColumnVarNameInTable="columnMaxAmount" msprop:Generator_ColumnPropNameInRow="MaxAmount" msprop:Generator_ColumnPropNameInTable="MaxAmountColumn" msprop:Generator_UserColumnName="MaxAmount" type="xs:double" />
+              <xs:element name="PricePerUnit" msprop:Generator_ColumnVarNameInTable="columnPricePerUnit" msprop:Generator_ColumnPropNameInRow="PricePerUnit" msprop:Generator_ColumnPropNameInTable="PricePerUnitColumn" msprop:Generator_UserColumnName="PricePerUnit" type="xs:double" />
+              <xs:element name="AvgStockPrice" msprop:Generator_ColumnVarNameInTable="columnAvgStockPrice" msprop:Generator_ColumnPropNameInRow="AvgStockPrice" msprop:Generator_ColumnPropNameInTable="AvgStockPriceColumn" msprop:Generator_UserColumnName="AvgStockPrice" type="xs:double" />
+              <xs:element name="AvgStockUnits" msprop:Generator_ColumnVarNameInTable="columnAvgStockUnits" msprop:Generator_ColumnPropNameInRow="AvgStockUnits" msprop:Generator_ColumnPropNameInTable="AvgStockUnitsColumn" msprop:Generator_UserColumnName="AvgStockUnits" type="xs:double" />
+              <xs:element name="DeliveredAmount" msprop:Generator_ColumnVarNameInTable="columnDeliveredAmount" msprop:Generator_ColumnPropNameInRow="DeliveredAmount" msprop:Generator_ColumnPropNameInTable="DeliveredAmountColumn" msprop:Generator_UserColumnName="DeliveredAmount" type="xs:double" />
+              <xs:element name="DeliveredTotalPrice" msprop:Generator_ColumnVarNameInTable="columnDeliveredTotalPrice" msprop:Generator_ColumnPropNameInRow="DeliveredTotalPrice" msprop:Generator_ColumnPropNameInTable="DeliveredTotalPriceColumn" msprop:Generator_UserColumnName="DeliveredTotalPrice" type="xs:double" />
+              <xs:element name="AvgRequiredProfitPerUnit" msprop:Generator_ColumnVarNameInTable="columnAvgRequiredProfitPerUnit" msprop:Generator_ColumnPropNameInRow="AvgRequiredProfitPerUnit" msprop:Generator_ColumnPropNameInTable="AvgRequiredProfitPerUnitColumn" msprop:Generator_UserColumnName="AvgRequiredProfitPerUnit" type="xs:double" />
+              <xs:element name="LocationSetDescription" msprop:Generator_ColumnVarNameInTable="columnLocationSetDescription" msprop:Generator_ColumnPropNameInRow="LocationSetDescription" msprop:Generator_ColumnPropNameInTable="LocationSetDescriptionColumn" msprop:Generator_UserColumnName="LocationSetDescription">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LocationSet" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="RelationAddressSet_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RelationAddressSet" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

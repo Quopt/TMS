@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetProfitAndLoss" targetNamespace="http://tempuri.org/DataSetProfitAndLoss.xsd" xmlns:mstns="http://tempuri.org/DataSetProfitAndLoss.xsd" xmlns="http://tempuri.org/DataSetProfitAndLoss.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="TMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.TMSConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LocationSetTableAdapter" GeneratorDataComponentClassName="LocationSetTableAdapter" Name="LocationSet" UserDataComponentName="LocationSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="TMS2.dbo.LocationSet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT top 1       LocationSet.Id, LocationSet.CreateDateTime, LocationSet.ModifyDateTime, LocationSet.Description, LocationSet.CreateUser, LocationSet.ModifyUser, 
+                         LocationSet.IsActive, LocationSet.ZIPcode, LocationSet.City, LocationSet.Country, LocationSet.VATNumber, LocationSet.PhoneNumber, LocationSet.EMail, 
+                         LocationSet.PreferredCurrency, LocationSet.LocationNumber, LocationSet.AdressLine1, LocationSet.AdressLine2, LocationSet.AdressLine3, 
+                         LocationSet.InvoiceAddress, LocationSet.InvoiceFooter, LocationSet.InvoicePrintLogo, LocationSet.DefaultVATPercentage, LocationSet.DefaultHourlyRate, 
+                         LocationSet.DefaultWeighingTariff, LocationSet.MaterialForDirtId, LocationSet.MaterialForWorkId, LocationSet.CashLedgerId, LocationSet.BankLedgerId, 
+                         LocationSet.InvoiceFooterPerPage, LocationSet.CompanyLogoImage, LocationSet.CompanyMembershipsLogo, LocationSet.DefaultWeighingTariffBookingCode_Id, 
+                         LocationSet.RelationSale_Id, LocationSet.RelationBuy_Id, LocationSet.DefaultBailPriceBookingCode_Id, LocationSet.VIHBCode, LocationSet.ContactPerson
+FROM            LocationSet 
+where LocationSet.IsActive = 1
+order by LocationNumber</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="CreateDateTime" DataSetColumn="CreateDateTime" />
+              <Mapping SourceColumn="ModifyDateTime" DataSetColumn="ModifyDateTime" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="CreateUser" DataSetColumn="CreateUser" />
+              <Mapping SourceColumn="ModifyUser" DataSetColumn="ModifyUser" />
+              <Mapping SourceColumn="IsActive" DataSetColumn="IsActive" />
+              <Mapping SourceColumn="ZIPcode" DataSetColumn="ZIPcode" />
+              <Mapping SourceColumn="City" DataSetColumn="City" />
+              <Mapping SourceColumn="Country" DataSetColumn="Country" />
+              <Mapping SourceColumn="VATNumber" DataSetColumn="VATNumber" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="EMail" DataSetColumn="EMail" />
+              <Mapping SourceColumn="PreferredCurrency" DataSetColumn="PreferredCurrency" />
+              <Mapping SourceColumn="LocationNumber" DataSetColumn="LocationNumber" />
+              <Mapping SourceColumn="AdressLine1" DataSetColumn="AdressLine1" />
+              <Mapping SourceColumn="AdressLine2" DataSetColumn="AdressLine2" />
+              <Mapping SourceColumn="AdressLine3" DataSetColumn="AdressLine3" />
+              <Mapping SourceColumn="InvoiceAddress" DataSetColumn="InvoiceAddress" />
+              <Mapping SourceColumn="InvoiceFooter" DataSetColumn="InvoiceFooter" />
+              <Mapping SourceColumn="InvoicePrintLogo" DataSetColumn="InvoicePrintLogo" />
+              <Mapping SourceColumn="DefaultVATPercentage" DataSetColumn="DefaultVATPercentage" />
+              <Mapping SourceColumn="DefaultHourlyRate" DataSetColumn="DefaultHourlyRate" />
+              <Mapping SourceColumn="DefaultWeighingTariff" DataSetColumn="DefaultWeighingTariff" />
+              <Mapping SourceColumn="MaterialForDirtId" DataSetColumn="MaterialForDirtId" />
+              <Mapping SourceColumn="MaterialForWorkId" DataSetColumn="MaterialForWorkId" />
+              <Mapping SourceColumn="CashLedgerId" DataSetColumn="CashLedgerId" />
+              <Mapping SourceColumn="BankLedgerId" DataSetColumn="BankLedgerId" />
+              <Mapping SourceColumn="InvoiceFooterPerPage" DataSetColumn="InvoiceFooterPerPage" />
+              <Mapping SourceColumn="CompanyLogoImage" DataSetColumn="CompanyLogoImage" />
+              <Mapping SourceColumn="CompanyMembershipsLogo" DataSetColumn="CompanyMembershipsLogo" />
+              <Mapping SourceColumn="DefaultWeighingTariffBookingCode_Id" DataSetColumn="DefaultWeighingTariffBookingCode_Id" />
+              <Mapping SourceColumn="RelationSale_Id" DataSetColumn="RelationSale_Id" />
+              <Mapping SourceColumn="RelationBuy_Id" DataSetColumn="RelationBuy_Id" />
+              <Mapping SourceColumn="DefaultBailPriceBookingCode_Id" DataSetColumn="DefaultBailPriceBookingCode_Id" />
+              <Mapping SourceColumn="VIHBCode" DataSetColumn="VIHBCode" />
+              <Mapping SourceColumn="ContactPerson" DataSetColumn="ContactPerson" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrderSetTableAdapter" GeneratorDataComponentClassName="OrderSetTableAdapter" Name="OrderSet" UserDataComponentName="OrderSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="TMS2.dbo.OrderSet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        OrderSet.OrderType, OrderSet.OrderStatus, SUM(OrderSet.TotalPrice) AS TotalPrice, SUM(OrderSet.TotalAmount) AS TotalAmount
+FROM            OrderSet INNER JOIN
+                         LocationSet ON OrderSet.Location_Id = LocationSet.Id LEFT OUTER JOIN
+                         InvoiceSet ON OrderSet.Invoice_Id = InvoiceSet.Id
+WHERE        (OrderSet.BookingDateTime BETWEEN @StartDate AND @EndDate) and 
+(LocationSet.Description = @LocationName or @LocationName = '') and 
+(OrderSet.IsCorrected = 0) AND (InvoiceSet.Id IS NULL)
+GROUP BY OrderSet.OrderType, OrderSet.OrderStatus, InvoiceSet.Id</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="StartDate" ColumnName="BookingDateTime" DataSourceName="TMS2.dbo.OrderSet" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="BookingDateTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EndDate" ColumnName="BookingDateTime" DataSourceName="TMS2.dbo.OrderSet" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="BookingDateTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="LocationName" ColumnName="Description" DataSourceName="TMS2.dbo.LocationSet" DataTypeServer="nvarchar(250)" DbType="String" Direction="Input" ParameterName="@LocationName" Precision="0" ProviderType="NVarChar" Scale="0" Size="250" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OrderType" DataSetColumn="OrderType" />
+              <Mapping SourceColumn="OrderStatus" DataSetColumn="OrderStatus" />
+              <Mapping SourceColumn="TotalPrice" DataSetColumn="TotalPrice" />
+              <Mapping SourceColumn="TotalAmount" DataSetColumn="TotalAmount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InvoiceSetTableAdapter" GeneratorDataComponentClassName="InvoiceSetTableAdapter" Name="InvoiceSet" UserDataComponentName="InvoiceSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        InvoiceSet.InvoiceType, InvoiceSet.InvoiceStatus, LedgerSet.Description AS Ledger, SUM(InvoiceSet.VATPrice) AS VATPrice, SUM(InvoiceSet.Price) AS Price, 
+                         SUM(InvoiceSet.TotalPrice) AS TotalPrice, SUM(InvoiceSet.AlreadyPaid) AS AlreadyPaid
+FROM            InvoiceSet INNER JOIN
+                         LedgerSet ON InvoiceSet.Ledger_Id = LedgerSet.Id INNER JOIN
+                         LocationSet ON InvoiceSet.Location_Id = LocationSet.Id
+WHERE        (InvoiceSet.BookingDateTime BETWEEN @StartDate AND @EndDate) and (LocationSet.Description = @LocationName or @LocationName = '') and (InvoiceSet.IsCorrected = 0)
+GROUP BY InvoiceSet.InvoiceType, InvoiceSet.InvoiceStatus, LedgerSet.Description</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="StartDate" ColumnName="BookingDateTime" DataSourceName="TMS2.dbo.InvoiceSet" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="BookingDateTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EndDate" ColumnName="BookingDateTime" DataSourceName="TMS2.dbo.InvoiceSet" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="BookingDateTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="LocationName" ColumnName="Description" DataSourceName="TMS2.dbo.LocationSet" DataTypeServer="nvarchar(250)" DbType="String" Direction="Input" ParameterName="@LocationName" Precision="0" ProviderType="NVarChar" Scale="0" Size="250" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="InvoiceType" DataSetColumn="InvoiceType" />
+              <Mapping SourceColumn="InvoiceStatus" DataSetColumn="InvoiceStatus" />
+              <Mapping SourceColumn="Ledger" DataSetColumn="Ledger" />
+              <Mapping SourceColumn="VATPrice" DataSetColumn="VATPrice" />
+              <Mapping SourceColumn="Price" DataSetColumn="Price" />
+              <Mapping SourceColumn="TotalPrice" DataSetColumn="TotalPrice" />
+              <Mapping SourceColumn="AlreadyPaid" DataSetColumn="AlreadyPaid" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MaterialClosureSetTableAdapter" GeneratorDataComponentClassName="MaterialClosureSetTableAdapter" Name="MaterialClosureSet" UserDataComponentName="MaterialClosureSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="TMS2.dbo.MaterialClosureSet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (1) MaterialClosureSet.ClosureDateTime, SUM(MaterialClosureSet.MaterialStockLevel * MaterialClosureSet.PurchasePrice) AS TotalPurchasePrice, 
+                         SUM(MaterialClosureSet.MaterialStockLevel * MaterialClosureSet.SalesPrice) AS TotalSalesPrice
+FROM            MaterialClosureSet INNER JOIN
+                         MaterialSet ON MaterialClosureSet.Material_Id = MaterialSet.Id INNER JOIN
+                         LocationSet ON MaterialSet.Location_Id = LocationSet.Id
+WHERE        (MaterialClosureSet.ClosureDateTime BETWEEN @StartDate AND @EndDate) AND (LocationSet.Description = @LocationName OR @LocationName = '')
+GROUP BY MaterialClosureSet.ClosureDateTime
+ORDER BY MaterialClosureSet.ClosureDateTime DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="StartDate" ColumnName="ClosureDateTime" DataSourceName="TMS2.dbo.MaterialClosureSet" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="ClosureDateTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EndDate" ColumnName="ClosureDateTime" DataSourceName="TMS2.dbo.MaterialClosureSet" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="ClosureDateTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="LocationName" ColumnName="Description" DataSourceName="TMS2.dbo.LocationSet" DataTypeServer="nvarchar(250)" DbType="String" Direction="Input" ParameterName="@LocationName" Precision="0" ProviderType="NVarChar" Scale="0" Size="250" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ClosureDateTime" DataSetColumn="ClosureDateTime" />
+              <Mapping SourceColumn="TotalPurchasePrice" DataSetColumn="TotalPurchasePrice" />
+              <Mapping SourceColumn="TotalSalesPrice" DataSetColumn="TotalSalesPrice" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LedgerSetTableAdapter" GeneratorDataComponentClassName="LedgerSetTableAdapter" Name="LedgerSet" UserDataComponentName="LedgerSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        LedgerClosureSet.ClosureDate, LedgerSet.Description, LedgerClosureSet.LedgerLevel, LocationSet.Description AS Location
+FROM            LedgerSet INNER JOIN
+                         LedgerClosureSet ON LedgerSet.Id = LedgerClosureSet.Ledger_Id LEFT OUTER JOIN
+                         LocationSet ON LedgerSet.LimitToLocationId = LocationSet.Id
+WHERE        (LedgerClosureSet.ClosureDate = (select max(ClosureDate) from LedgerClosureSet where ClosureDate BETWEEN @StartDate AND @EndDate)) and (LocationSet.Description = @LocationName or @LocationName = '' or LocationSet.Description is null)
+ORDER BY LedgerClosureSet.ClosureDate DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="LocationName" ColumnName="Description" DataSourceName="TMS2.dbo.LocationSet" DataTypeServer="nvarchar(250)" DbType="String" Direction="Input" ParameterName="@LocationName" Precision="0" ProviderType="NVarChar" Scale="0" Size="250" SourceColumn="Location" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="StartDate" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@StartDate" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EndDate" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@EndDate" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ClosureDate" DataSetColumn="ClosureDate" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="LedgerLevel" DataSetColumn="LedgerLevel" />
+              <Mapping SourceColumn="Location" DataSetColumn="Location" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AllTotalsTableAdapter" GeneratorDataComponentClassName="AllTotalsTableAdapter" Name="AllTotals" UserDataComponentName="AllTotalsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select sum(TotalPrice) as TotalPrice 
+from 
+(
+SELECT        SUM(OrderSet.TotalPrice) AS TotalPrice
+FROM            OrderSet INNER JOIN
+                         LocationSet ON OrderSet.Location_Id = LocationSet.Id LEFT OUTER JOIN
+                         InvoiceSet ON OrderSet.Invoice_Id = InvoiceSet.Id
+WHERE        (OrderSet.BookingDateTime BETWEEN @StartDate AND @EndDate) and 
+(LocationSet.Description = @LocationName or @LocationName = '') and 
+(OrderSet.IsCorrected = 0) AND (InvoiceSet.Id IS NULL) and (OrderType = 'Sell')
+
+
+union all
+
+SELECT        -SUM(OrderSet.TotalPrice) AS TotalPrice
+FROM            OrderSet INNER JOIN
+                         LocationSet ON OrderSet.Location_Id = LocationSet.Id LEFT OUTER JOIN
+                         InvoiceSet ON OrderSet.Invoice_Id = InvoiceSet.Id
+WHERE        (OrderSet.BookingDateTime BETWEEN @StartDate AND @EndDate) and 
+(LocationSet.Description = @LocationName or @LocationName = '') and 
+(OrderSet.IsCorrected = 0) AND (InvoiceSet.Id IS NULL) and (OrderType = 'Buy')
+
+
+union all
+
+SELECT         SUM(InvoiceSet.TotalPrice) AS TotalPrice
+FROM            InvoiceSet INNER JOIN
+                         LedgerSet ON InvoiceSet.Ledger_Id = LedgerSet.Id INNER JOIN
+                         LocationSet ON InvoiceSet.Location_Id = LocationSet.Id
+WHERE        (InvoiceSet.BookingDateTime BETWEEN @StartDate AND @EndDate) and (LocationSet.Description = @LocationName or @LocationName = '') and (InvoiceSet.IsCorrected = 0) and 
+(InvoiceSet.InvoiceType = 'Sell')
+
+
+union all
+
+SELECT         -SUM(InvoiceSet.TotalPrice) AS TotalPrice
+FROM            InvoiceSet INNER JOIN
+                         LedgerSet ON InvoiceSet.Ledger_Id = LedgerSet.Id INNER JOIN
+                         LocationSet ON InvoiceSet.Location_Id = LocationSet.Id
+WHERE        (InvoiceSet.BookingDateTime BETWEEN @StartDate AND @EndDate) and (LocationSet.Description = @LocationName or @LocationName = '') and (InvoiceSet.IsCorrected = 0) and 
+(InvoiceSet.InvoiceType = 'Buy')
+
+union all 
+
+SELECT        SUM(MaterialClosureSet.MaterialStockLevel * MaterialClosureSet.PurchasePrice) AS TotalPurchasePrice
+FROM            MaterialClosureSet INNER JOIN
+                         MaterialSet ON MaterialClosureSet.Material_Id = MaterialSet.Id INNER JOIN
+                         LocationSet ON MaterialSet.Location_Id = LocationSet.Id
+WHERE        (MaterialClosureSet.ClosureDateTime = (select max(ClosureDateTime) from MaterialClosureSet where ClosureDateTime BETWEEN @StartDate AND @EndDate)) AND (LocationSet.Description = @LocationName OR @LocationName = '')
+
+union all
+
+SELECT        sum(LedgerClosureSet.LedgerLevel) As TotalPrice
+FROM            LedgerSet INNER JOIN
+                         LedgerClosureSet ON LedgerSet.Id = LedgerClosureSet.Ledger_Id LEFT OUTER JOIN
+                         LocationSet ON LedgerSet.LimitToLocationId = LocationSet.Id
+WHERE        (LedgerClosureSet.ClosureDate = (select max(ClosureDate) from LedgerClosureSet where ClosureDate BETWEEN @StartDate AND @EndDate)) and (LocationSet.Description = @LocationName or @LocationName = '' or LocationSet.Description is null)
+
+) as AllTotals</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="StartDate" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@StartDate" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EndDate" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@EndDate" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="LocationName" ColumnName="" DataSourceName="" DataTypeServer="nvarchar(250)" DbType="String" Direction="Input" ParameterName="@LocationName" Precision="0" Scale="0" Size="250" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TotalPrice" DataSetColumn="TotalPrice" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetProfitAndLoss" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetProfitAndLoss" msprop:Generator_UserDSName="DataSetProfitAndLoss">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LocationSet" msprop:Generator_TableClassName="LocationSetDataTable" msprop:Generator_TableVarName="tableLocationSet" msprop:Generator_TablePropName="LocationSet" msprop:Generator_RowDeletingName="LocationSetRowDeleting" msprop:Generator_UserTableName="LocationSet" msprop:Generator_RowChangingName="LocationSetRowChanging" msprop:Generator_RowEvHandlerName="LocationSetRowChangeEventHandler" msprop:Generator_RowDeletedName="LocationSetRowDeleted" msprop:Generator_RowEvArgName="LocationSetRowChangeEvent" msprop:Generator_RowChangedName="LocationSetRowChanged" msprop:Generator_RowClassName="LocationSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:string" />
+              <xs:element name="CreateDateTime" msprop:Generator_ColumnVarNameInTable="columnCreateDateTime" msprop:Generator_ColumnPropNameInRow="CreateDateTime" msprop:Generator_ColumnPropNameInTable="CreateDateTimeColumn" msprop:Generator_UserColumnName="CreateDateTime" type="xs:dateTime" />
+              <xs:element name="ModifyDateTime" msprop:Generator_ColumnVarNameInTable="columnModifyDateTime" msprop:Generator_ColumnPropNameInRow="ModifyDateTime" msprop:Generator_ColumnPropNameInTable="ModifyDateTimeColumn" msprop:Generator_UserColumnName="ModifyDateTime" type="xs:dateTime" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateUser" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCreateUser" msprop:Generator_ColumnPropNameInRow="CreateUser" msprop:Generator_ColumnPropNameInTable="CreateUserColumn" msprop:Generator_UserColumnName="CreateUser" type="xs:string" />
+              <xs:element name="ModifyUser" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnModifyUser" msprop:Generator_ColumnPropNameInRow="ModifyUser" msprop:Generator_ColumnPropNameInTable="ModifyUserColumn" msprop:Generator_UserColumnName="ModifyUser" type="xs:string" />
+              <xs:element name="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_UserColumnName="IsActive" type="xs:boolean" />
+              <xs:element name="ZIPcode" msprop:Generator_ColumnVarNameInTable="columnZIPcode" msprop:Generator_ColumnPropNameInRow="ZIPcode" msprop:Generator_ColumnPropNameInTable="ZIPcodeColumn" msprop:Generator_UserColumnName="ZIPcode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Country" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_UserColumnName="Country">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VATNumber" msprop:Generator_ColumnVarNameInTable="columnVATNumber" msprop:Generator_ColumnPropNameInRow="VATNumber" msprop:Generator_ColumnPropNameInTable="VATNumberColumn" msprop:Generator_UserColumnName="VATNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMail" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PreferredCurrency" msprop:Generator_ColumnVarNameInTable="columnPreferredCurrency" msprop:Generator_ColumnPropNameInRow="PreferredCurrency" msprop:Generator_ColumnPropNameInTable="PreferredCurrencyColumn" msprop:Generator_UserColumnName="PreferredCurrency">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LocationNumber" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnLocationNumber" msprop:Generator_ColumnPropNameInRow="LocationNumber" msprop:Generator_ColumnPropNameInTable="LocationNumberColumn" msprop:Generator_UserColumnName="LocationNumber" type="xs:long" />
+              <xs:element name="AdressLine1" msprop:Generator_ColumnVarNameInTable="columnAdressLine1" msprop:Generator_ColumnPropNameInRow="AdressLine1" msprop:Generator_ColumnPropNameInTable="AdressLine1Column" msprop:Generator_UserColumnName="AdressLine1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdressLine2" msprop:Generator_ColumnVarNameInTable="columnAdressLine2" msprop:Generator_ColumnPropNameInRow="AdressLine2" msprop:Generator_ColumnPropNameInTable="AdressLine2Column" msprop:Generator_UserColumnName="AdressLine2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdressLine3" msprop:Generator_ColumnVarNameInTable="columnAdressLine3" msprop:Generator_ColumnPropNameInRow="AdressLine3" msprop:Generator_ColumnPropNameInTable="AdressLine3Column" msprop:Generator_UserColumnName="AdressLine3">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceAddress" msprop:Generator_ColumnVarNameInTable="columnInvoiceAddress" msprop:Generator_ColumnPropNameInRow="InvoiceAddress" msprop:Generator_ColumnPropNameInTable="InvoiceAddressColumn" msprop:Generator_UserColumnName="InvoiceAddress">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceFooter" msprop:Generator_ColumnVarNameInTable="columnInvoiceFooter" msprop:Generator_ColumnPropNameInRow="InvoiceFooter" msprop:Generator_ColumnPropNameInTable="InvoiceFooterColumn" msprop:Generator_UserColumnName="InvoiceFooter">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoicePrintLogo" msprop:Generator_ColumnVarNameInTable="columnInvoicePrintLogo" msprop:Generator_ColumnPropNameInRow="InvoicePrintLogo" msprop:Generator_ColumnPropNameInTable="InvoicePrintLogoColumn" msprop:Generator_UserColumnName="InvoicePrintLogo" type="xs:boolean" />
+              <xs:element name="DefaultVATPercentage" msprop:Generator_ColumnVarNameInTable="columnDefaultVATPercentage" msprop:Generator_ColumnPropNameInRow="DefaultVATPercentage" msprop:Generator_ColumnPropNameInTable="DefaultVATPercentageColumn" msprop:Generator_UserColumnName="DefaultVATPercentage" type="xs:double" />
+              <xs:element name="DefaultHourlyRate" msprop:Generator_ColumnVarNameInTable="columnDefaultHourlyRate" msprop:Generator_ColumnPropNameInRow="DefaultHourlyRate" msprop:Generator_ColumnPropNameInTable="DefaultHourlyRateColumn" msprop:Generator_UserColumnName="DefaultHourlyRate" type="xs:double" />
+              <xs:element name="DefaultWeighingTariff" msprop:Generator_ColumnVarNameInTable="columnDefaultWeighingTariff" msprop:Generator_ColumnPropNameInRow="DefaultWeighingTariff" msprop:Generator_ColumnPropNameInTable="DefaultWeighingTariffColumn" msprop:Generator_UserColumnName="DefaultWeighingTariff" type="xs:double" />
+              <xs:element name="MaterialForDirtId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnMaterialForDirtId" msprop:Generator_ColumnPropNameInRow="MaterialForDirtId" msprop:Generator_ColumnPropNameInTable="MaterialForDirtIdColumn" msprop:Generator_UserColumnName="MaterialForDirtId" type="xs:string" minOccurs="0" />
+              <xs:element name="MaterialForWorkId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnMaterialForWorkId" msprop:Generator_ColumnPropNameInRow="MaterialForWorkId" msprop:Generator_ColumnPropNameInTable="MaterialForWorkIdColumn" msprop:Generator_UserColumnName="MaterialForWorkId" type="xs:string" minOccurs="0" />
+              <xs:element name="CashLedgerId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCashLedgerId" msprop:Generator_ColumnPropNameInRow="CashLedgerId" msprop:Generator_ColumnPropNameInTable="CashLedgerIdColumn" msprop:Generator_UserColumnName="CashLedgerId" type="xs:string" minOccurs="0" />
+              <xs:element name="BankLedgerId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnBankLedgerId" msprop:Generator_ColumnPropNameInRow="BankLedgerId" msprop:Generator_ColumnPropNameInTable="BankLedgerIdColumn" msprop:Generator_UserColumnName="BankLedgerId" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceFooterPerPage" msprop:Generator_ColumnVarNameInTable="columnInvoiceFooterPerPage" msprop:Generator_ColumnPropNameInRow="InvoiceFooterPerPage" msprop:Generator_ColumnPropNameInTable="InvoiceFooterPerPageColumn" msprop:Generator_UserColumnName="InvoiceFooterPerPage">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CompanyLogoImage" msprop:Generator_ColumnVarNameInTable="columnCompanyLogoImage" msprop:Generator_ColumnPropNameInRow="CompanyLogoImage" msprop:Generator_ColumnPropNameInTable="CompanyLogoImageColumn" msprop:Generator_UserColumnName="CompanyLogoImage" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CompanyMembershipsLogo" msprop:Generator_ColumnVarNameInTable="columnCompanyMembershipsLogo" msprop:Generator_ColumnPropNameInRow="CompanyMembershipsLogo" msprop:Generator_ColumnPropNameInTable="CompanyMembershipsLogoColumn" msprop:Generator_UserColumnName="CompanyMembershipsLogo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="DefaultWeighingTariffBookingCode_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnDefaultWeighingTariffBookingCode_Id" msprop:Generator_ColumnPropNameInRow="DefaultWeighingTariffBookingCode_Id" msprop:Generator_ColumnPropNameInTable="DefaultWeighingTariffBookingCode_IdColumn" msprop:Generator_UserColumnName="DefaultWeighingTariffBookingCode_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="RelationSale_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRelationSale_Id" msprop:Generator_ColumnPropNameInRow="RelationSale_Id" msprop:Generator_ColumnPropNameInTable="RelationSale_IdColumn" msprop:Generator_UserColumnName="RelationSale_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="RelationBuy_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRelationBuy_Id" msprop:Generator_ColumnPropNameInRow="RelationBuy_Id" msprop:Generator_ColumnPropNameInTable="RelationBuy_IdColumn" msprop:Generator_UserColumnName="RelationBuy_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="DefaultBailPriceBookingCode_Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnDefaultBailPriceBookingCode_Id" msprop:Generator_ColumnPropNameInRow="DefaultBailPriceBookingCode_Id" msprop:Generator_ColumnPropNameInTable="DefaultBailPriceBookingCode_IdColumn" msprop:Generator_UserColumnName="DefaultBailPriceBookingCode_Id" type="xs:string" />
+              <xs:element name="VIHBCode" msprop:Generator_ColumnVarNameInTable="columnVIHBCode" msprop:Generator_ColumnPropNameInRow="VIHBCode" msprop:Generator_ColumnPropNameInTable="VIHBCodeColumn" msprop:Generator_UserColumnName="VIHBCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContactPerson" msprop:Generator_ColumnVarNameInTable="columnContactPerson" msprop:Generator_ColumnPropNameInRow="ContactPerson" msprop:Generator_ColumnPropNameInTable="ContactPersonColumn" msprop:Generator_UserColumnName="ContactPerson">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrderSet" msprop:Generator_TableClassName="OrderSetDataTable" msprop:Generator_TableVarName="tableOrderSet" msprop:Generator_TablePropName="OrderSet" msprop:Generator_RowDeletingName="OrderSetRowDeleting" msprop:Generator_UserTableName="OrderSet" msprop:Generator_RowChangingName="OrderSetRowChanging" msprop:Generator_RowEvHandlerName="OrderSetRowChangeEventHandler" msprop:Generator_RowDeletedName="OrderSetRowDeleted" msprop:Generator_RowEvArgName="OrderSetRowChangeEvent" msprop:Generator_RowChangedName="OrderSetRowChanged" msprop:Generator_RowClassName="OrderSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OrderType" msprop:Generator_ColumnVarNameInTable="columnOrderType" msprop:Generator_ColumnPropNameInRow="OrderType" msprop:Generator_ColumnPropNameInTable="OrderTypeColumn" msprop:Generator_UserColumnName="OrderType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrderStatus" msprop:Generator_ColumnVarNameInTable="columnOrderStatus" msprop:Generator_ColumnPropNameInRow="OrderStatus" msprop:Generator_ColumnPropNameInTable="OrderStatusColumn" msprop:Generator_UserColumnName="OrderStatus">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalPrice" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalPrice" msprop:Generator_ColumnPropNameInRow="TotalPrice" msprop:Generator_ColumnPropNameInTable="TotalPriceColumn" msprop:Generator_UserColumnName="TotalPrice" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalAmount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalAmount" msprop:Generator_ColumnPropNameInRow="TotalAmount" msprop:Generator_ColumnPropNameInTable="TotalAmountColumn" msprop:Generator_UserColumnName="TotalAmount" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InvoiceSet" msprop:Generator_TableClassName="InvoiceSetDataTable" msprop:Generator_TableVarName="tableInvoiceSet" msprop:Generator_TablePropName="InvoiceSet" msprop:Generator_RowDeletingName="InvoiceSetRowDeleting" msprop:Generator_UserTableName="InvoiceSet" msprop:Generator_RowChangingName="InvoiceSetRowChanging" msprop:Generator_RowEvHandlerName="InvoiceSetRowChangeEventHandler" msprop:Generator_RowDeletedName="InvoiceSetRowDeleted" msprop:Generator_RowEvArgName="InvoiceSetRowChangeEvent" msprop:Generator_RowChangedName="InvoiceSetRowChanged" msprop:Generator_RowClassName="InvoiceSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InvoiceType" msprop:Generator_ColumnVarNameInTable="columnInvoiceType" msprop:Generator_ColumnPropNameInRow="InvoiceType" msprop:Generator_ColumnPropNameInTable="InvoiceTypeColumn" msprop:Generator_UserColumnName="InvoiceType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceStatus" msprop:Generator_ColumnVarNameInTable="columnInvoiceStatus" msprop:Generator_ColumnPropNameInRow="InvoiceStatus" msprop:Generator_ColumnPropNameInTable="InvoiceStatusColumn" msprop:Generator_UserColumnName="InvoiceStatus">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ledger" msprop:Generator_ColumnVarNameInTable="columnLedger" msprop:Generator_ColumnPropNameInRow="Ledger" msprop:Generator_ColumnPropNameInTable="LedgerColumn" msprop:Generator_UserColumnName="Ledger">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VATPrice" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVATPrice" msprop:Generator_ColumnPropNameInRow="VATPrice" msprop:Generator_ColumnPropNameInTable="VATPriceColumn" msprop:Generator_UserColumnName="VATPrice" type="xs:double" minOccurs="0" />
+              <xs:element name="Price" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_UserColumnName="Price" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalPrice" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalPrice" msprop:Generator_ColumnPropNameInRow="TotalPrice" msprop:Generator_ColumnPropNameInTable="TotalPriceColumn" msprop:Generator_UserColumnName="TotalPrice" type="xs:double" minOccurs="0" />
+              <xs:element name="AlreadyPaid" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAlreadyPaid" msprop:Generator_ColumnPropNameInRow="AlreadyPaid" msprop:Generator_ColumnPropNameInTable="AlreadyPaidColumn" msprop:Generator_UserColumnName="AlreadyPaid" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MaterialClosureSet" msprop:Generator_TableClassName="MaterialClosureSetDataTable" msprop:Generator_TableVarName="tableMaterialClosureSet" msprop:Generator_TablePropName="MaterialClosureSet" msprop:Generator_RowDeletingName="MaterialClosureSetRowDeleting" msprop:Generator_UserTableName="MaterialClosureSet" msprop:Generator_RowChangingName="MaterialClosureSetRowChanging" msprop:Generator_RowEvHandlerName="MaterialClosureSetRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialClosureSetRowDeleted" msprop:Generator_RowEvArgName="MaterialClosureSetRowChangeEvent" msprop:Generator_RowChangedName="MaterialClosureSetRowChanged" msprop:Generator_RowClassName="MaterialClosureSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClosureDateTime" msprop:Generator_ColumnVarNameInTable="columnClosureDateTime" msprop:Generator_ColumnPropNameInRow="ClosureDateTime" msprop:Generator_ColumnPropNameInTable="ClosureDateTimeColumn" msprop:Generator_UserColumnName="ClosureDateTime" type="xs:dateTime" />
+              <xs:element name="TotalPurchasePrice" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalPurchasePrice" msprop:Generator_ColumnPropNameInRow="TotalPurchasePrice" msprop:Generator_ColumnPropNameInTable="TotalPurchasePriceColumn" msprop:Generator_UserColumnName="TotalPurchasePrice" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalSalesPrice" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalSalesPrice" msprop:Generator_ColumnPropNameInRow="TotalSalesPrice" msprop:Generator_ColumnPropNameInTable="TotalSalesPriceColumn" msprop:Generator_UserColumnName="TotalSalesPrice" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LedgerSet" msprop:Generator_TableClassName="LedgerSetDataTable" msprop:Generator_TableVarName="tableLedgerSet" msprop:Generator_TablePropName="LedgerSet" msprop:Generator_RowDeletingName="LedgerSetRowDeleting" msprop:Generator_UserTableName="LedgerSet" msprop:Generator_RowChangingName="LedgerSetRowChanging" msprop:Generator_RowEvHandlerName="LedgerSetRowChangeEventHandler" msprop:Generator_RowDeletedName="LedgerSetRowDeleted" msprop:Generator_RowEvArgName="LedgerSetRowChangeEvent" msprop:Generator_RowChangedName="LedgerSetRowChanged" msprop:Generator_RowClassName="LedgerSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClosureDate" msprop:Generator_ColumnVarNameInTable="columnClosureDate" msprop:Generator_ColumnPropNameInRow="ClosureDate" msprop:Generator_ColumnPropNameInTable="ClosureDateColumn" msprop:Generator_UserColumnName="ClosureDate" type="xs:dateTime" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LedgerLevel" msprop:Generator_ColumnVarNameInTable="columnLedgerLevel" msprop:Generator_ColumnPropNameInRow="LedgerLevel" msprop:Generator_ColumnPropNameInTable="LedgerLevelColumn" msprop:Generator_UserColumnName="LedgerLevel" type="xs:double" />
+              <xs:element name="Location" msprop:Generator_ColumnVarNameInTable="columnLocation" msprop:Generator_ColumnPropNameInRow="Location" msprop:Generator_ColumnPropNameInTable="LocationColumn" msprop:Generator_UserColumnName="Location" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AllTotals" msprop:Generator_TableClassName="AllTotalsDataTable" msprop:Generator_TableVarName="tableAllTotals" msprop:Generator_TablePropName="AllTotals" msprop:Generator_RowDeletingName="AllTotalsRowDeleting" msprop:Generator_UserTableName="AllTotals" msprop:Generator_RowChangingName="AllTotalsRowChanging" msprop:Generator_RowEvHandlerName="AllTotalsRowChangeEventHandler" msprop:Generator_RowDeletedName="AllTotalsRowDeleted" msprop:Generator_RowEvArgName="AllTotalsRowChangeEvent" msprop:Generator_RowChangedName="AllTotalsRowChanged" msprop:Generator_RowClassName="AllTotalsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalPrice" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalPrice" msprop:Generator_ColumnPropNameInRow="TotalPrice" msprop:Generator_ColumnPropNameInTable="TotalPriceColumn" msprop:Generator_UserColumnName="TotalPrice" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LocationSet" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

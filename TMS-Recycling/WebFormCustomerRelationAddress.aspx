@@ -1,0 +1,88 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteCustomerRelation.master" AutoEventWireup="true" CodeBehind="WebFormCustomerRelationAddress.aspx.cs" Inherits="TMS_Recycling.WebFormCustomerRelationAddress" %>
+<%@ MasterType virtualpath="SiteCustomerRelation.master" %>
+<%@ Register src="WebUserControlCustomerRelationAddress.ascx" tagname="WebUserControlCustomerRelationAddress" tagprefix="uc1" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderPathLink" runat="server">
+    <span class="Header2">
+        <asp:Label ID="LabelPath" runat="server" Text="Relaties \ Relatie \ Adressen"></asp:Label></span>
+</asp:Content>
+<asp:Content ID="MainContentSection" ContentPlaceHolderID="MainContent" 
+    runat="server">
+    <asp:Label ID="LabelObjectName" runat="server" Text="..." 
+        CssClass="SubMenuHeader"></asp:Label>
+
+    <table width="100%" class="filterpanel">
+    <tr><td><asp:Label ID="LabelFilter" runat="server" Text="Filter" 
+            CssClass="filterheader"></asp:Label></td></tr>
+    <tr><td>
+        <asp:Label ID="Label1" runat="server" Text="Naam"></asp:Label> &nbsp; <asp:TextBox ID="TextBoxFilterName"
+            runat="server"></asp:TextBox></td><td>
+                <asp:CheckBox
+                    ID="CheckBoxFilterIsActive" runat="server" Text="Is actief" 
+                    Checked="True" /></td>
+
+                        <td> 
+                            <asp:Button ID="ButtonSearch" runat="server" Text="Zoeken/verversen" 
+                                CssClass="sleekbutton" onclick="ButtonSearch_Click" /></td>
+                        </tr>
+    </table>
+    <table class="resultspanel"><tr><td>
+        <cc11:ClassGridView ID="GridViewResults" runat="server" AllowPaging="True" 
+            AllowSorting="True" AutoGenerateColumns="False" 
+            DataSourceID="EntityDataSourceRelation" 
+            DataMember="DefaultView" EmptyDataText="Er zijn geen gegevens beschikbaar" 
+            onselectedindexchanged="GridViewResults_SelectedIndexChanged" 
+            DataKeyNames="Id">
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="Id" 
+                    SortExpression="Id" ReadOnly="True" Visible="False" />
+                <asp:CommandField SelectText="Bewerk" ShowSelectButton="True" />
+                <asp:BoundField DataField="Description" HeaderText="Toelichting" ReadOnly="True" 
+                    SortExpression="Description" />
+                <asp:CheckBoxField DataField="IsActive" HeaderText="IsActive" ReadOnly="True" 
+                    SortExpression="IsActive" />
+                <asp:BoundField DataField="AdressType" HeaderText="Adres soort" ReadOnly="True" 
+                    SortExpression="AdressType" />
+                <asp:BoundField DataField="AdressLine1" HeaderText="Adresregel 1" 
+                    ReadOnly="True" SortExpression="AdressLine1" />
+                <asp:BoundField DataField="AdressLine2" HeaderText="Adresregel 2" 
+                    ReadOnly="True" SortExpression="AdressLine2" />
+                <asp:BoundField DataField="AdressLine3" HeaderText="Adresregel 3" 
+                    ReadOnly="True" SortExpression="AdressLine3" />
+                <asp:BoundField DataField="ZIPcode" HeaderText="Postcode" ReadOnly="True" 
+                    SortExpression="ZIPcode" />
+                <asp:BoundField DataField="City" HeaderText="Stad" ReadOnly="True" 
+                    SortExpression="City" />
+                <asp:BoundField DataField="Country" HeaderText="Land" ReadOnly="True" 
+                    SortExpression="Country" />
+            </Columns>
+        </cc11:ClassGridView>
+        <br />
+        <asp:Button ID="ButtonNew" runat="server" onclick="ButtonNew_Click" 
+            Text="Nieuw adres toevoegen" />
+    </td></tr></table>
+    <table class="detailpanel"><tr><td>
+        <uc1:WebUserControlCustomerRelationAddress ID="WebUserControlCustomerRelationAddress1" Visible="false"
+            runat="server" />
+        </td></tr></table>
+    <cc11:ClassEntityDataSource ID="EntityDataSourceRelation" runat="server" 
+        ConnectionString="name=ModelTMSContainer" 
+        DefaultContainerName="ModelTMSContainer" EntitySetName="RelationAddressSet" 
+        
+    Where="(it.[Description] like &quot;%&quot; + @Description + &quot;%&quot;) and (it.[IsActive] = @IsActive) and (it.[Relation].[Id] = @Id )" 
+    
+        Select="it.[Id], it.[Description], it.[IsActive], it.AdressType, it.AdressLine1, it.AdressLine2, it.AdressLine3,  it.ZIPcode, it.City, it.Country" 
+        OrderBy="it.[Description]" EntityTypeFilter="">
+        <WhereParameters>
+            <asp:ControlParameter ControlID="TextBoxFilterName" DefaultValue="%" 
+                Name="Description" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="CheckBoxFilterIsActive" DefaultValue="True" 
+                Name="IsActive" PropertyName="Checked" Type="Boolean" />
+            <asp:QueryStringParameter DbType="Guid" 
+                DefaultValue="00000000-0000-0000-0000-000000000000" Name="Id" 
+                QueryStringField="Id" />
+        </WhereParameters>
+    </cc11:ClassEntityDataSource>
+
+    </asp:Content>

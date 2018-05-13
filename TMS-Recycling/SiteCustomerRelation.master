@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SiteCustomerRelation.master.cs" Inherits="TMS_Recycling.SiteCustomerRelation" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" runat="server" 
+    contentplaceholderid="ContentPlaceHolderPath">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderPathLink" runat="server">
+            </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <table class="submenu"><tr align="left" valign="top"><td width="150px">
+    <asp:TreeView ID="TreeViewCustomerRelation" runat="server" CssClass="menutree" 
+            NodeWrap="True" ShowLines="True">
+        <Nodes>
+            <asp:TreeNode SelectAction="None" Text="Relaties" Value="CustomerRelation" 
+                Expanded="True">
+                <asp:TreeNode Expanded="True" NavigateUrl="WebFormCustomerRelation.aspx" 
+                    Selected="True" Text="Relatie overzicht" Value="RelationsOverview_Landing">
+                    <asp:TreeNode SelectAction="None" Text="Voorschotten" Value="RelationsOverview_AdvancePayment" NavigateUrl="WebFormCustomerRelationAdvancePayment.aspx" ></asp:TreeNode>
+                    <asp:TreeNode SelectAction="None" Text="Werk derden" Value="RelationsOverview_AdditionalWork" NavigateUrl="WebFormCustomerRelationWork.aspx" ></asp:TreeNode>
+                    <asp:TreeNode SelectAction="None" Text="Lokaties" Value="RelationsOverview_Locations" NavigateUrl="WebFormCustomerRelationLocations.aspx" ></asp:TreeNode>
+                    <asp:TreeNode SelectAction="None" Text="Projecten" Value="RelationsOverview_Projects" NavigateUrl="WebFormCustomerRelationProjects.aspx" ></asp:TreeNode>
+                    <asp:TreeNode SelectAction="None" Text="Contracten" Value="RelationsOverview_Contracts" NavigateUrl="WebFormCustomerRelationContracts.aspx" >
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="Prijsafspraken" SelectAction="None" 
+                        Value="RelationsOverview_PriceAgreements" NavigateUrl="WebFormCustomerRelationPriceAgreement.aspx" >
+                    </asp:TreeNode>
+                    <asp:TreeNode SelectAction="None" Text="Adressen" Value="RelationsOverview_Adresses"  NavigateUrl="WebFormCustomerRelationAddress.aspx" ></asp:TreeNode>
+                    <asp:TreeNode SelectAction="None" Text="Contacten" Value="RelationsOverview_ContactLog"  NavigateUrl="WebFormCustomerRelationContacts.aspx" ></asp:TreeNode>
+                    <asp:TreeNode SelectAction="None" Text="Materialen" Value="RelationsOverview_LinkedMaterials"  NavigateUrl="WebFormCustomerRelationMaterials.aspx" ></asp:TreeNode>
+                </asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Text="Rapportages" 
+                Value="Reports" Expanded="True" SelectAction="None">
+                <asp:TreeNode Text="Overzicht adreslabels" Value="CustomerLabels" NavigateUrl="WebFormCustomerReportLabels.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Klantoverzicht" Value="CustomerReport" NavigateUrl="WebFormCustomerReport.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Omzetoverzicht" Value="RevenueReport" NavigateUrl="WebFormCustomerReportRevenue.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Projectoverzicht" Value="ProjectReport" NavigateUrl="WebFormCustomerReportProjectRevenue.aspx"></asp:TreeNode>
+                <asp:TreeNode Text="Contractoverzicht" Value="ContractReport" NavigateUrl="WebFormCustomerReportContract.aspx"></asp:TreeNode>
+            </asp:TreeNode>
+        </Nodes>
+    </asp:TreeView>
+   </td><td width="100%">
+        <div class="maincondensed">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+   </td></tr>
+   </table>
+</asp:Content>

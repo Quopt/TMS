@@ -1,0 +1,183 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlStockMutationsOverview.ascx.cs" Inherits="TMS_Recycling.WebUserControlStockMutationsOverview" %>
+    <%@ Register src="WebUserControlStockMutationsBase.ascx" tagname="WebUserControlStockMutationsBase" tagprefix="uc4" %>
+    <asp:Label ID="LabelObjectName" runat="server" Text="..." 
+        CssClass="SubMenuHeader"></asp:Label>
+<%@ Register src="~/CalendarControl.ascx" tagname="CalendarControl" tagprefix="uc1" %><%@ Register src="~/WebUserControlOrderBase.ascx" tagname="WebUserControlOrderBase" tagprefix="uc2" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<%@ Register src="ComboBoxLocation.ascx" tagname="ComboBoxLocation" tagprefix="uc3" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+    <table width="100%" class="filterpanel">
+    <tr><td><asp:Label ID="LabelFilter" runat="server" Text="Filter" 
+            CssClass="filterheader"></asp:Label></td></tr>
+            <tr>
+            <td>
+                <asp:Label ID="LabelOrderNo" runat="server" Text="Volgnummer"></asp:Label>
+            </td><td>
+                <asp:TextBox ID="TextBoxOrderNo" runat="server" MaxLength="15" Width="50%"></asp:TextBox>
+            </td>
+            <td>
+                <asp:Label ID="LabelStartDate" runat="server" Text="Startdatum selectie"></asp:Label>
+            </td><td>
+                    <uc1:CalendarControl ID="CalendarControlStartDate" runat="server" />
+                </td>
+            <td>
+                <asp:Label ID="LabelEndDate" runat="server" Text="Einddatum selectie"></asp:Label>
+            </td>
+            <td>
+                <uc1:CalendarControl ID="CalendarControlEndDate" runat="server" />
+                </td>
+            </tr>
+
+<tr>
+<td>
+    <asp:Label ID="LabelBookingType" runat="server" Text="Soort boeking"></asp:Label>
+</td>
+<td>
+    <asp:ComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownListBookingType" runat="server">
+        
+ <asp:ListItem Selected="True" Value="%">-nvt-</asp:ListItem>
+        
+ <asp:ListItem Value="Buy">Inkoop</asp:ListItem>
+        
+ <asp:ListItem Value="Sell">Verkoop</asp:ListItem>
+        
+ </asp:ComboBox>
+</td>
+<td>
+    <asp:Label ID="LabelCorrected" runat="server" Text="Gecorrigeerd"></asp:Label>
+</td>
+<td>
+    <asp:ComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownListCorrected" runat="server">
+        
+ <asp:ListItem Value="%" >-nvt-</asp:ListItem>
+        
+ <asp:ListItem Value="1">Ja</asp:ListItem>
+ <asp:ListItem Value="0">Nee</asp:ListItem>
+        
+ </asp:ComboBox>
+</td>
+<td>
+    <asp:Label ID="LabelPerson" runat="server" Text="Aangemaakt door"></asp:Label>
+</td>
+<td>
+        <asp:TextBox ID="TextBoxUserName" runat="server" MaxLength="40" Width="90%"></asp:TextBox>
+</td>
+</tr>
+
+<tr>
+<td>
+        <asp:Label ID="LabelName" runat="server" Text="Toelichting"></asp:Label> 
+</td>
+<td>
+        <asp:TextBox ID="TextBoxFilterName" runat="server" MaxLength="255" Width="90%"></asp:TextBox>
+</td>
+<td>
+    <asp:Label ID="LabelCustomer" runat="server" Text="Leverancier/Afnemer"></asp:Label>
+</td>
+<td>
+        <asp:TextBox ID="TextBoxCustomer" runat="server" MaxLength="40" Width="90%"></asp:TextBox>
+</td>
+<td>
+        <asp:Label ID="LabelLocation" runat="server" Text="In-/Verkooplokatie"></asp:Label>    
+</td>
+<td>
+                            <uc3:ComboBoxLocation ID="ComboBoxLocationSelection" runat="server" />
+</td>
+</tr>
+    <tr><td>
+        &nbsp;</td><td> 
+            &nbsp;</td><td>
+            &nbsp;</td>
+    <td>
+        &nbsp;</td>
+        <td>
+            &nbsp;</td>
+                        <td> 
+                            <asp:Button ID="ButtonSearch" runat="server" Text="Zoeken/verversen" 
+                                CssClass="sleekbutton" onclick="ButtonSearch_Click" />
+        </td>
+                        </tr>
+
+    </table>
+
+<table class="resultspanel"><tr><td>
+<cc11:ClassGridView ID="GridViewSelectedMutations" runat="server" 
+        DataSourceID="EntityDataSourceStockMutationLedger" 
+        onselectedindexchanged="GridViewSelectedMutations_SelectedIndexChanged" 
+        AutoGenerateColumns="False" DataKeyNames="Id" AllowPaging="True" 
+        AllowSorting="True">
+    <Columns>
+        <asp:CommandField SelectText="Selecteer" ShowSelectButton="True" />
+        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" 
+            SortExpression="Id" Visible="False" />
+        <asp:BoundField DataField="Description" HeaderText="Beschrijving" 
+            ReadOnly="True" SortExpression="Description" />
+        <asp:BoundField DataField="MutationNumber" HeaderText="Mutatienummer" 
+            ReadOnly="True" SortExpression="MutationNumber" />
+        <asp:BoundField DataField="MutationDateTime" HeaderText="Mutatietijd" 
+            ReadOnly="True" SortExpression="MutationDateTime" />
+        <asp:BoundField DataField="MutationType" HeaderText="Soort" ReadOnly="True" 
+            SortExpression="MutationType" />
+        <asp:CheckBoxField DataField="IsCorrection" HeaderText="Gecorrigeerd" 
+            ReadOnly="True" SortExpression="IsCorrection" />
+        <asp:BoundField DataField="Amount" HeaderText="Hoeveelheid" ReadOnly="True" 
+            SortExpression="Amount" />
+        <asp:BoundField DataField="AmountInKg" HeaderText="Hoeveelheid in kg" 
+            ReadOnly="True" SortExpression="AmountInKg" />
+        <asp:BoundField DataField="TotalPrice" HeaderText="Prijs" ReadOnly="True" 
+            SortExpression="TotalPrice" />
+        <asp:BoundField DataField="RelationName" HeaderText="Relatie" ReadOnly="True" 
+            SortExpression="RelationName" />
+        <asp:BoundField DataField="EmployeeName" HeaderText="Medewerker" 
+            ReadOnly="True" SortExpression="EmployeeName" />
+        <asp:BoundField DataField="LocationName" HeaderText="Lokatie" ReadOnly="True" 
+            SortExpression="LocationName" />
+    </Columns>
+    </cc11:ClassGridView>
+&nbsp;</td></tr></table>
+
+
+<table class="detailpanel"><tr><td>
+<uc4:WebUserControlStockMutationsBase ID="WebUserControlStockMutationsBase1" Visible="false"
+        runat="server" />
+</td></tr></table>
+
+
+    <cc11:ClassEntityDataSource ID="EntityDataSourceStockMutationLedger" runat="server" 
+        ConnectionString="name=ModelTMSContainer" 
+        DefaultContainerName="ModelTMSContainer" Where="" CommandText="select distinct it.Id, it.Description, it.MutationNumber, it.MutationDateTime, it.MutationType, 
+	it.IsCorrection, it.Amount, it.AmountInKg, it.TotalPrice, rs.Description as RelationName, 
+	es.Description as EmployeeName, ls.Description as LocationName
+from MaterialMutationSet as it inner join 
+     MaterialSet as ms on it.Material.Id = ms.Id left join 
+     OrderSet as os on it.Order.Id = os.Id left join 
+     StaffMemberSet as es on it.CreateUser = es.Id left join 
+     LocationSet as ls on os.Location.Id = ls.Id left join 
+     RelationSet as rs on os.Relation.Id = rs.Id
+where (it.MutationType LIKE @MutationType) and
+      (it.Description LIKE  @Description  ) and 
+      (cast(it.MutationNumber as System.String) LIKE  @MutationNumber ) and 
+      (it.MutationDateTime BETWEEN @StartDate and @EndDate) and 
+      ((es.Description LIKE @EmployeeName) or (es.Description IS NULL)) and 
+      ((rs.Description LIKE @RelationDescription) or (rs.Description IS NULL) ) and 
+      ((ls.Description like @LocationDescription) or (ls.Description IS NULL) ) and
+      (cast(it.IsCorrection as System.String) LIKE @CorrectedStatus) and
+      ((ms.Id = @Id) or (cast(@Id as System.String) = &quot;00000000-0000-0000-0000-000000000000&quot;))" 
+        OrderBy="it.MutationNumber desc">
+        <CommandParameters>
+            <asp:Parameter Name="Id" DbType="Guid"  />
+            <asp:Parameter Name="Description" Type="String" />
+            <asp:Parameter Name="MutationNumber" Type="String" />
+            <asp:Parameter Name="StartDate" Type="DateTime" />
+            <asp:Parameter Name="EndDate"  Type="DateTime" />
+            <asp:Parameter Name="MutationType" Type="String" />
+            <asp:Parameter Name="EmployeeName" Type="String" />
+            <asp:Parameter Name="RelationDescription" Type="String" />
+            <asp:Parameter Name="CorrectedStatus" Type="String" />
+            <asp:Parameter Name="LocationDescription" Type="String" />
+        </CommandParameters>
+    </cc11:ClassEntityDataSource>
+    
+

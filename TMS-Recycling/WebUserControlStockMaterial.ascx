@@ -1,0 +1,218 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlStockMaterial.ascx.cs" Inherits="TMS_Recycling.WebUserControlStockMaterial" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc2" %>
+<%@ Register src="URLPopUpControl.ascx" tagname="URLPopUpControl" tagprefix="uc1" %>
+<%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
+
+<table width="100%">
+<tr>
+ <td colspan="2"><asp:Label ID="LabelBasicData" runat="server" Text="Basisgegevens materiaal" CssClass="SubMenuHeader"></asp:Label></td>
+ <td>    &nbsp;</td>
+ <td>    
+        &nbsp;</td>
+ <td>    &nbsp;</td>
+ <td>    <asp:Label ID="LabelMaterialNumber" runat="server" Text="Materiaalnummer"></asp:Label>  &nbsp; <asp:Label ID="Label_MaterialNumber_Text" runat="server" Text=""></asp:Label> 
+     <br />
+            <asp:CheckBox ID="CheckBox_IsActive_Checked" Text="Actief" runat="server" 
+                Checked="True" />
+                <br />
+            <asp:CheckBox ID="CheckBox_StockMayBeNegative_Checked" 
+                Text="Negatieve voorraad toestaan" runat="server" Checked="True" 
+         />
+    </td>
+</tr>
+
+<tr>
+<td>
+    <asp:Label ID="LabelName" runat="server" Text="Materiaalnaam"></asp:Label> </td>
+    <td> <asp:TextBox ID="TextBox_Description_Text" runat="server" Width="200px" 
+            MaxLength="250" ></asp:TextBox>
+    </td>
+    <td><asp:Label ID="LabelStorageCode" runat="server" Text="Opslag code"></asp:Label> </td>
+        <td>
+            <asp:TextBox ID="TextBox_StorageCode" runat="server" Width="200px" 
+            MaxLength="250" ></asp:TextBox>
+    </td>
+    <td>    <asp:Label ID="LabelMaterialLocation" runat="server" Text="Materiaal voor lokatie"></asp:Label> </td>
+        <td>
+        <cc2:ClassComboBoxLocation AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownList_Location" runat="server" 
+            DataSourceID="EntityDataSourceLocations" DataTextField="Description" 
+            DataValueField="Id">
+        </cc2:ClassComboBoxLocation> 
+            <br />
+        </td>
+</tr>
+
+<tr>
+    <td><asp:Label ID="LabelVATPercentage" runat="server" Text="BTW percentage"></asp:Label> </td>
+    <td><asp:TextBox ID="TextBox_VATPercentage" runat="server" Width="50px" MaxLength="5" ></asp:TextBox></td>
+    <td><asp:Label ID="LabelMaterialUnit" runat="server" Text="Materiaal eenheid"></asp:Label> </td>
+    <td> 
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownList_MaterialUnit" runat="server" 
+            DataSourceID="EntityDataSourceMaterialUnits" DataTextField="Description" 
+            DataValueField="Id">
+        </cc11:ClassComboBox> </td>
+    <td><asp:Label ID="LabelCurrentStockLevel" runat="server" Text="Huidig voorraad niveau"></asp:Label> </td>
+    <td>
+        <asp:Label ID="Label_CurrentStockLevel" runat="server" 
+            Text="Label_CurrentStockLevel"></asp:Label>
+    &nbsp;<uc1:URLPopUpControl ID="URLPopUpControlCorrectStockLevel" runat="server" 
+            Text="Corrigeer voorraad niveau" OnPopUpClosed="URLPopUpControlCorrectStockLevel_OnPopupClosed" OnBeforePopUpOpened="URLPopUpControlCorrectStockLevel_OnBeforePopUpOpened" />
+    </td>
+</tr>
+
+<tr>
+<td>
+    <asp:Label ID="LabelLME" runat="server" Text="LME Code"></asp:Label> 
+</td>
+<td>
+    <asp:TextBox ID="TextBox_LMECode" runat="server" Width="200px" 
+            MaxLength="40" ></asp:TextBox>
+</td>
+<td>
+    <asp:Label ID="LabelMaterialInvoiceType" runat="server" Text="Materiaal factuur richting"></asp:Label> 
+</td>
+<td>
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownList_InvoiceType_SelectedValue" runat="server">
+        </cc11:ClassComboBox> 
+</td>
+<td>
+    <asp:Label ID="LabelAlternativeStockPosition" runat="server" Text="Gebruik dit materiaal voor voorraadpositie"></asp:Label></td>
+<td>
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownListMaterialStockPosition" runat="server" 
+            DataSourceID="EntityDataSourceMaterialIncludingInactive" DataTextField="Description" 
+            DataValueField="Id">
+        </cc11:ClassComboBox> 
+</td>
+</tr>
+
+<tr>
+<td>
+    <asp:Label ID="LabelH" runat="server" Text="H Code"></asp:Label> 
+</td>
+<td>
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" 
+        ID="DropDownList_HCode_SelectedValue" runat="server">
+        </cc11:ClassComboBox> 
+</td>
+<td>
+    <asp:Label ID="LabelBaselCode" runat="server" Text="Baselcode"></asp:Label> 
+</td>
+<td>
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" 
+        ID="DropDownList_BaselCode_SelectedValue" runat="server">
+        </cc11:ClassComboBox> 
+</td>
+<td>
+    <asp:Label ID="LabelPhysicalShape" runat="server" Text="Fysieke vorm"></asp:Label> 
+</td>
+<td>
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" 
+        ID="DropDownList_PhysicalShape_SelectedValue" runat="server">
+        </cc11:ClassComboBox> 
+</td>
+</tr>
+
+<tr valign="top">
+    <td><asp:Label ID="LabelMaterialCategory" runat="server" Text="Categorie"></asp:Label> </td>
+    <td>
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="DropDownList_Category_SelectedValue" runat="server">
+        </cc11:ClassComboBox> 
+    </td>
+    <td><asp:Label ID="LabelMaterialGroup" runat="server" Text="Materiaal groep"></asp:Label> </td>
+    <td><asp:TextBox ID="TextBox_Group_Text" runat="server" Width="200px" MaxLength="40" ></asp:TextBox></td>
+    <td><asp:Label ID="LabelIsWorkInsteadOfMAterial" runat="server" Text="Uren ipv voorraad"></asp:Label> </td>
+    <td> <asp:CheckBox ID="CheckBox_IsWorkInsteadOfMaterial_Checked" Text="" runat="server" Checked="True" /> </td>
+</tr>
+
+<tr>
+    <td><asp:Label ID="LabelPurchasePrice" runat="server" Text="Inkoopsprijs"></asp:Label> </td>
+    <td><asp:TextBox ID="TextBox_PurchasePrice_Text" runat="server" Width="200px" MaxLength="25" ></asp:TextBox></td>
+    <td><asp:CheckBox ID="CheckBox_UseAvgPurchasePriceAsActualPrice_Checked" Text="Gebruik gem. inkoopsprijs" runat="server" Checked="True" /> </td>
+    <td><asp:Label ID="LabelAvgPurchasePrice" runat="server" Text="Gem. inkoopsprijs"></asp:Label> </td>
+    <td><asp:TextBox ID="TextBox_AvgPurchasePrice" runat="server" Width="200px" 
+            MaxLength="25" Enabled="False" ></asp:TextBox> </td>
+    <td><asp:Button ID="ButtonResetAvgPurchasePrice" runat="server" 
+            Text="Opnieuw berekenen" onclick="ButtonResetAvgPurchasePrice_Click" OnClientClick="return confirm('De gemiddelde inkoopsprijzen worden op nul ingesteld. Hierdoor worden deze prijzen opnieuw berekend. De huidige gemiddelde prijs blijft gelden. U kunt een nieuwe prijs aangeven in het vakje inkoopsprijs. Weet u het zeker dat u dit wilt?');" /> </td>
+</tr>
+
+<tr>
+    <td><asp:Label ID="LabelSalesPrice" runat="server" Text="Verkoopsprijs"></asp:Label> </td>
+    <td><asp:TextBox ID="TextBox_SalesPrice_Text" runat="server" Width="200px" MaxLength="25" ></asp:TextBox></td>
+    <td><asp:CheckBox ID="CheckBox_UseAvgSalesPriceAsActualPrice_Checked" Text="Gebruik gem. verkoopsprijs" runat="server" Checked="True" /> </td>
+    <td><asp:Label ID="LabelAvgSalesPrice" runat="server" Text="Gem. verkoopsprijs"></asp:Label> </td>
+    <td><asp:TextBox ID="TextBox_AvgSalesPrice" runat="server" Width="200px" 
+            MaxLength="25" Enabled="False" ></asp:TextBox> </td>
+    <td><asp:Button ID="ButtonResetAvgSalesPrice" runat="server" 
+            Text="Opnieuw berekenen" onclick="ButtonResetAvgSalesPrice_Click" OnClientClick="return confirm('De gemiddelde verkoopsprijzen worden op nul ingesteld. Hierdoor worden deze prijzen opnieuw berekend. De huidige gemiddelde prijs blijft gelden. U kunt een nieuwe prijs aangeven in het vakje verkoopsprijs. Weet u het zeker dat u dit wilt?');" /> </td>
+</tr>
+
+<tr>
+    <td colspan="2"><asp:Label ID="LabelPurchaseBookingCode" runat="server" Text="Boekingscode voor inkopen"></asp:Label> </td>
+    <td> 
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="ComboBox_PurchaseLedgerBookingCode" runat="server" 
+            DataSourceID="EntityDataSourceBookingCodes" DataTextField="Description" 
+            DataValueField="Id">
+        </cc11:ClassComboBox> </td>
+    <td colspan="2"><asp:Label ID="LabelSalesBookingCode" runat="server" Text="Boekingscode voor verkopen"></asp:Label> </td>
+    <td> 
+        <cc11:ClassComboBox AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList" ID="ComboBox_SalesLedgerBookingCode" runat="server" 
+            DataSourceID="EntityDataSourceBookingCodes" DataTextField="Description" 
+            DataValueField="Id">
+        </cc11:ClassComboBox> </td>
+
+</tr>
+
+<tr>
+    <td><asp:Label ID="LabelComments" runat="server" Text="Opmerkingen"></asp:Label> </td>
+    <td colspan=5> 
+        <asp:TextBox ID="TextBox_Comments" runat="server" Width="95%" 
+            MaxLength="2000" Rows="4" TextMode="MultiLine" ></asp:TextBox>
+    </td>
+
+</tr>
+</table>
+
+<asp:Button ID="ButtonCancel" runat="server" Text="Wijzigingen annuleren" 
+    onclick="ButtonCancel_Click" />
+<asp:Button ID="ButtonSave" runat="server" Text="Wijzigingen opslaan" 
+    onclick="ButtonSave_Click" />
+<asp:Button ID="ButtonDelete" runat="server" Text="Materiaal verwijderen" OnClientClick="return confirm('Weet u het zeker dat u dit wilt?');"
+    onclick="ButtonDelete_Click" />
+
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceData" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EnableDelete="True" 
+    EnableInsert="True" EnableUpdate="True" EntitySetName="MaterialSet">
+</cc11:ClassEntityDataSource>
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceLocations" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EnableFlattening="False" 
+    EntitySetName="LocationSet" Select="it.[Description], it.[Id], it.IsActive" 
+    Where="it.IsActive">
+</cc11:ClassEntityDataSource>
+<cc11:ClassEntityDataSource ID="EntityDataSourceMaterialUnits" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EnableFlattening="False" 
+    EntitySetName="MaterialUnitSet" Select="it.[Id], it.[Description], it.IsActive" 
+    Where="it.IsActive">
+</cc11:ClassEntityDataSource>
+<cc11:ClassEntityDataSource ID="EntityDataSourceBookingCodes" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EnableFlattening="False" 
+    EntitySetName="LedgerBookingCodeSet" 
+    Select="it.[Id], it.[Description], it.[IsActive], it.[IsDebugLedgerCode]" 
+    Where="it.IsActive">
+</cc11:ClassEntityDataSource>
+
+<cc11:ClassEntityDataSource ID="EntityDataSourceMaterialIncludingInactive" runat="server" 
+    ConnectionString="name=ModelTMSContainer" 
+    DefaultContainerName="ModelTMSContainer" EnableFlattening="False" 
+    EntitySetName="MaterialSet" Select="it.[Id], it.[Description]" 
+    Where="">
+</cc11:ClassEntityDataSource>
+
+
