@@ -2,7 +2,6 @@
 <%@ MasterType virtualpath="SiteBookkeeping.master" %>
 <%@ Register src="WebUserControlLedgerMutation.ascx" tagname="WebUserControlLedgerMutation" tagprefix="uc1" %>
 <%@ Register src="CalendarControl.ascx" tagname="CalendarControl" tagprefix="uc2" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register src="ComboBoxLocation.ascx" tagname="ComboBoxLocation" tagprefix="uc3" %>
 <%@ Register src="WebUserControlBookKeepingMutations.ascx" tagname="WebUserControlBookKeepingMutations" tagprefix="uc4" %>

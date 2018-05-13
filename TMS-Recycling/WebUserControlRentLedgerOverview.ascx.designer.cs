@@ -181,7 +181,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox ComboBoxInvoiceStatus;
+        protected global::TMS_Recycling.ClassComboBox ComboBoxInvoiceStatus;
         
         /// <summary>
         /// ButtonSearch control.
@@ -217,7 +217,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLedgerBase;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLedgerBase;
         
         /// <summary>
         /// EntityDataSourceMaterialType control.
@@ -226,6 +226,6 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMaterialType;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceMaterialType;
     }
 }

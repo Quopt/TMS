@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlRentLedgerOverview.ascx.cs" Inherits="TMS_Recycling.WebUserControlRentLedgerOverview" %>
 <%@ Register src="~/CalendarControl.ascx" tagname="CalendarControl" tagprefix="uc1" %><%@ Register src="~/WebUserControlOrderBase.ascx" tagname="WebUserControlOrderBase" tagprefix="uc2" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register src="WebUserControlRentLedgerBase.ascx" tagname="WebUserControlRentLedgerBase" tagprefix="uc3" %>
 <%@ Register src="ComboBoxLocation.ascx" tagname="ComboBoxLocation" tagprefix="uc4" %>

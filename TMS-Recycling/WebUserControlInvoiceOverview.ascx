@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlInvoiceOverview.ascx.cs" Inherits="TMS_Recycling.WebUserControlInvoiceOverview" %>
 <%@ Register src="~/CalendarControl.ascx" tagname="CalendarControl" tagprefix="uc1" %><%@ Register src="~/WebUserControlInvoiceBase.ascx" tagname="WebUserControlInvoiceBase" tagprefix="uc3" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
     <%@ Register src="ComboBoxLocation.ascx" tagname="ComboBoxLocation" tagprefix="uc2" %>
 <%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>

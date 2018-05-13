@@ -91,7 +91,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_OrderStatus_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_OrderStatus_SelectedValue;
         
         /// <summary>
         /// ButtonToProcessed control.
@@ -145,7 +145,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_Relation;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_Relation;
         
         /// <summary>
         /// LabelLedgerType control.
@@ -163,7 +163,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_Location;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_Location;
         
         /// <summary>
         /// LabelLedgerType0 control.
@@ -181,7 +181,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_StaffMemberPurchaser;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_StaffMemberPurchaser;
         
         /// <summary>
         /// LabelRelationLocation control.
@@ -199,7 +199,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_RelationLocation;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_RelationLocation;
         
         /// <summary>
         /// LabelCustomerProject control.
@@ -217,7 +217,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_RelationProject;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_RelationProject;
         
         /// <summary>
         /// LabelCustomerContact control.
@@ -235,7 +235,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_RelationContact;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_RelationContact;
         
         /// <summary>
         /// YourTruckPlate control.
@@ -289,7 +289,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_Freight;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_Freight;
         
         /// <summary>
         /// LabelFreightID control.
@@ -379,7 +379,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListMaterials;
+        protected global::TMS_Recycling.ClassComboBox DropDownListMaterials;
         
         /// <summary>
         /// LabelAmount control.
@@ -532,7 +532,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceRelations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceRelations;
         
         /// <summary>
         /// EntityDataSourceLocations control.
@@ -541,7 +541,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLocations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLocations;
         
         /// <summary>
         /// EntityDataSourceStaffMembers control.
@@ -550,7 +550,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceStaffMembers;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceStaffMembers;
         
         /// <summary>
         /// EntityDataSourceRelationLocations control.
@@ -559,7 +559,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceRelationLocations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceRelationLocations;
         
         /// <summary>
         /// EntityDataSourceRelationProjects control.
@@ -568,7 +568,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceRelationProjects;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceRelationProjects;
         
         /// <summary>
         /// EntityDataSourceRelationContacts control.
@@ -577,7 +577,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceRelationContacts;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceRelationContacts;
         
         /// <summary>
         /// EntityDataSourceRelationFreights control.
@@ -586,7 +586,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceRelationFreights;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceRelationFreights;
         
         /// <summary>
         /// EntityDataSourceOrderLines control.
@@ -595,7 +595,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceOrderLines;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceOrderLines;
         
         /// <summary>
         /// EntityDataSourceMaterialsContractsAndAgreements control.
@@ -604,7 +604,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMaterialsContractsAndAgreements;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceMaterialsContractsAndAgreements;
         
         /// <summary>
         /// LabelRelationType control.

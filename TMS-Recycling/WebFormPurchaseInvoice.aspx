@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SitePurchase.master" AutoEventWireup="true" CodeBehind="WebFormPurchaseInvoice.aspx.cs" Inherits="TMS_Recycling.WebFormPurchaseInvoice" %>
 <%@ Register src="~/CalendarControl.ascx" tagname="CalendarControl" tagprefix="uc1" %><%@ Register src="~/WebUserControlInvoiceBase.ascx" tagname="WebUserControlInvoiceBase" tagprefix="uc3" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register src="WebUserControlInvoiceOverview.ascx" tagname="WebUserControlInvoiceOverview" tagprefix="uc2" %>
 <%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>

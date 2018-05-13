@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlRentMaterialTypeBase.ascx.cs" Inherits="TMS_Recycling.WebUserControlRentMaterialTypeBase" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register src="URLPopUpControl.ascx" tagname="URLPopUpControl" tagprefix="uc1" %>
 <%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
@@ -48,7 +47,7 @@
     <td><asp:Label ID="Label15" runat="server" Text="Contractvoorwaarden"></asp:Label> </td>
     <td colspan="5"> 
 
-        <cc1:Editor ID="Editor_RentalConditions_Content" runat="server" />
+        <asp:HtmlEditorExtender ID="Editor_RentalConditions_Content" runat="server" />
 
     </td>
 </tr>

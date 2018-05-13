@@ -73,7 +73,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_AdressType_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_AdressType_SelectedValue;
         
         /// <summary>
         /// LabelAddressLine1 control.
@@ -181,7 +181,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_Country_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_Country_SelectedValue;
         
         /// <summary>
         /// Label15 control.

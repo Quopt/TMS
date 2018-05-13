@@ -73,7 +73,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox ComboBox_LedgerBookingCode;
+        protected global::TMS_Recycling.ClassComboBox ComboBox_LedgerBookingCode;
         
         /// <summary>
         /// Label15 control.
@@ -91,7 +91,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.HTMLEditor.Editor Editor_RentalConditions_Content;
+        protected global::AjaxControlToolkit.HtmlEditorExtender Editor_RentalConditions_Content;
         
         /// <summary>
         /// LabelAlternativeMaterialTypes control.
@@ -163,6 +163,6 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLedgerBookingCodes;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLedgerBookingCodes;
     }
 }

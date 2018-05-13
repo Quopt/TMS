@@ -136,7 +136,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_ContractType_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_ContractType_SelectedValue;
         
         /// <summary>
         /// LabelPrio control.
@@ -154,7 +154,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_ContractPriority_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_ContractPriority_SelectedValue;
         
         /// <summary>
         /// LabelContractStatus control.
@@ -172,7 +172,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_ContractStatus_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_ContractStatus_SelectedValue;
         
         /// <summary>
         /// LabelYourReference control.

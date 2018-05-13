@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteCustomerRelation.master" AutoEventWireup="true" CodeBehind="WebFormCustomerRelationContacts.aspx.cs" Inherits="TMS_Recycling.WebFormCustomerRelationContacts" %>
 <%@ MasterType virtualpath="SiteCustomerRelation.master" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register src="WebUserControlCustomerRelationContact.ascx" tagname="WebUserControlCustomerRelationContact" tagprefix="uc1" %>
 <%@ Register src="WebUserControlCustomerRelationContactLog.ascx" tagname="WebUserControlCustomerRelationContactLog" tagprefix="uc2" %>

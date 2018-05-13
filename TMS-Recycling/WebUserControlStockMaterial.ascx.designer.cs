@@ -145,7 +145,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_MaterialUnit;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_MaterialUnit;
         
         /// <summary>
         /// LabelCurrentStockLevel control.
@@ -208,7 +208,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_InvoiceType_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_InvoiceType_SelectedValue;
         
         /// <summary>
         /// LabelAlternativeStockPosition control.
@@ -226,7 +226,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListMaterialStockPosition;
+        protected global::TMS_Recycling.ClassComboBox DropDownListMaterialStockPosition;
         
         /// <summary>
         /// LabelH control.
@@ -244,7 +244,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_HCode_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_HCode_SelectedValue;
         
         /// <summary>
         /// LabelBaselCode control.
@@ -262,7 +262,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_BaselCode_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_BaselCode_SelectedValue;
         
         /// <summary>
         /// LabelPhysicalShape control.
@@ -280,7 +280,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_PhysicalShape_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_PhysicalShape_SelectedValue;
         
         /// <summary>
         /// LabelMaterialCategory control.
@@ -298,7 +298,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_Category_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_Category_SelectedValue;
         
         /// <summary>
         /// LabelMaterialGroup control.
@@ -460,7 +460,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox ComboBox_PurchaseLedgerBookingCode;
+        protected global::TMS_Recycling.ClassComboBox ComboBox_PurchaseLedgerBookingCode;
         
         /// <summary>
         /// LabelSalesBookingCode control.
@@ -478,7 +478,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox ComboBox_SalesLedgerBookingCode;
+        protected global::TMS_Recycling.ClassComboBox ComboBox_SalesLedgerBookingCode;
         
         /// <summary>
         /// LabelComments control.

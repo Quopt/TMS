@@ -73,7 +73,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListContractStatus;
+        protected global::TMS_Recycling.ClassComboBox DropDownListContractStatus;
         
         /// <summary>
         /// ButtonSearch control.
@@ -163,7 +163,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceRelation;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceRelation;
         
         /// <summary>
         /// LabelContractID control.
@@ -181,7 +181,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceContractMaterials;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceContractMaterials;
         
         /// <summary>
         /// Master property.

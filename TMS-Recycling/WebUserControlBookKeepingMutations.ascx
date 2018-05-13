@@ -2,7 +2,6 @@
 <%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>
 <%@ Register src="WebUserControlLedgerMutation.ascx" tagname="WebUserControlLedgerMutation" tagprefix="uc1" %>
 <%@ Register src="CalendarControl.ascx" tagname="CalendarControl" tagprefix="uc2" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register src="ComboBoxLocation.ascx" tagname="ComboBoxLocation" tagprefix="uc3" %>
 

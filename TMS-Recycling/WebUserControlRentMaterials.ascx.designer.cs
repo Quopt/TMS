@@ -37,7 +37,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox ComboBoxMaterialType;
+        protected global::TMS_Recycling.ClassComboBox ComboBoxMaterialType;
         
         /// <summary>
         /// LabelSpecificMaterialOr control.
@@ -73,7 +73,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox ComboBoxMaterials;
+        protected global::TMS_Recycling.ClassComboBox ComboBoxMaterials;
         
         /// <summary>
         /// TextBoxAmount control.
@@ -127,7 +127,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox ComboBoxCustomerLocation;
+        protected global::TMS_Recycling.ClassComboBox ComboBoxCustomerLocation;
         
         /// <summary>
         /// LabelDiscount control.
@@ -289,7 +289,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMaterialType;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceMaterialType;
         
         /// <summary>
         /// EntityDataSourceMaterials control.
@@ -298,7 +298,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMaterials;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceMaterials;
         
         /// <summary>
         /// EntityDataSourceCustomerLocations control.
@@ -307,7 +307,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceCustomerLocations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceCustomerLocations;
         
         /// <summary>
         /// XmlDataSourceOrderLines control.

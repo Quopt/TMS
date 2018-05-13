@@ -82,7 +82,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_WorkType_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_WorkType_SelectedValue;
         
         /// <summary>
         /// LabelContactDate control.
@@ -154,7 +154,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_LedgerBookingCode;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_LedgerBookingCode;
         
         /// <summary>
         /// LabelVATPercentage control.
@@ -316,6 +316,6 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLedgerBookingCodes;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLedgerBookingCodes;
     }
 }

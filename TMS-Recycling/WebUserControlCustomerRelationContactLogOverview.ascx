@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlCustomerRelationContactLogOverview.ascx.cs" Inherits="TMS_Recycling.WebUserControlCustomerRelationContactLogOverview" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register src="WebUserControlCustomerRelationContact.ascx" tagname="WebUserControlCustomerRelationContact" tagprefix="uc1" %>
 <%@ Register src="WebUserControlCustomerRelationContactLog.ascx" tagname="WebUserControlCustomerRelationContactLog" tagprefix="uc2" %>

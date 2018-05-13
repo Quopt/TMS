@@ -91,7 +91,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListBookingType;
+        protected global::TMS_Recycling.ClassComboBox DropDownListBookingType;
         
         /// <summary>
         /// LabelLocation control.
@@ -127,7 +127,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListMaterial;
+        protected global::TMS_Recycling.ClassComboBox DropDownListMaterial;
         
         /// <summary>
         /// LabelCustomer control.
@@ -181,7 +181,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListCorrected;
+        protected global::TMS_Recycling.ClassComboBox DropDownListCorrected;
         
         /// <summary>
         /// LabelInvoiceType control.
@@ -244,7 +244,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourcePurchaseInvoices;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourcePurchaseInvoices;
         
         /// <summary>
         /// EntityDataSourceMaterials control.
@@ -253,6 +253,6 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMaterials;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceMaterials;
     }
 }

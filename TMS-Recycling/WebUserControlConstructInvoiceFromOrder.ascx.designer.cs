@@ -64,7 +64,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListCustomers;
+        protected global::TMS_Recycling.ClassComboBox DropDownListCustomers;
         
         /// <summary>
         /// PanelOpenOrders control.
@@ -325,7 +325,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLocations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLocations;
         
         /// <summary>
         /// EntityDataSourceCustomers control.
@@ -334,7 +334,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceCustomers;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceCustomers;
         
         /// <summary>
         /// EntityDataSourceOpenOrders control.
@@ -343,7 +343,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceOpenOrders;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceOpenOrders;
         
         /// <summary>
         /// TextBoxCurrentPage control.

@@ -64,7 +64,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListCustomers;
+        protected global::TMS_Recycling.ClassComboBox DropDownListCustomers;
         
         /// <summary>
         /// TextBoxCustomer control.
@@ -154,7 +154,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListProjects;
+        protected global::TMS_Recycling.ClassComboBox DropDownListProjects;
         
         /// <summary>
         /// URLPopUpControlNewCustomerProject control.
@@ -181,7 +181,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListCustomerLocations;
+        protected global::TMS_Recycling.ClassComboBox DropDownListCustomerLocations;
         
         /// <summary>
         /// URLPopUpControlNewCustomerLocation control.
@@ -208,7 +208,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListCustomerFreights;
+        protected global::TMS_Recycling.ClassComboBox DropDownListCustomerFreights;
         
         /// <summary>
         /// URLPopUpControlShowFreightData control.
@@ -469,7 +469,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLocations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLocations;
         
         /// <summary>
         /// EntityDataSourceCustomers control.
@@ -478,7 +478,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceCustomers;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceCustomers;
         
         /// <summary>
         /// EntityDataSourceCustomerProjects control.
@@ -487,7 +487,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceCustomerProjects;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceCustomerProjects;
         
         /// <summary>
         /// EntityDataSourceCustomerLocations control.
@@ -496,7 +496,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceCustomerLocations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceCustomerLocations;
         
         /// <summary>
         /// EntityDataSourceCustomerInvoiceAddress control.
@@ -505,7 +505,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceCustomerInvoiceAddress;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceCustomerInvoiceAddress;
         
         /// <summary>
         /// EntityDataSourceCustomerFreights control.
@@ -514,7 +514,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceCustomerFreights;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceCustomerFreights;
         
         /// <summary>
         /// EntityDataSourceMaterials control.
@@ -523,7 +523,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMaterials;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceMaterials;
         
         /// <summary>
         /// EntityDataSourceCustomerPriceAgreements control.
@@ -532,7 +532,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceCustomerPriceAgreements;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceCustomerPriceAgreements;
         
         /// <summary>
         /// EntityDataSourcePurchaseContracts control.
@@ -541,7 +541,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourcePurchaseContracts;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourcePurchaseContracts;
         
         /// <summary>
         /// EntityDataSourceGeneratedOrder control.
@@ -550,7 +550,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceGeneratedOrder;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceGeneratedOrder;
         
         /// <summary>
         /// EntityDataSourceGeneratedOrderLine control.
@@ -559,7 +559,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceGeneratedOrderLine;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceGeneratedOrderLine;
         
         /// <summary>
         /// EntityDataSourceMaterialsContractsAndAgreements control.
@@ -568,7 +568,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMaterialsContractsAndAgreements;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceMaterialsContractsAndAgreements;
         
         /// <summary>
         /// LabelDeliveryPeriode control.
@@ -721,7 +721,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceGeneratedInvoiceLocation;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceGeneratedInvoiceLocation;
         
         /// <summary>
         /// EntityDataSourceGeneratedInvoice control.
@@ -730,7 +730,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceGeneratedInvoice;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceGeneratedInvoice;
         
         /// <summary>
         /// EntityDataSourceGeneratedInvoiceLine control.
@@ -739,6 +739,6 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceGeneratedInvoiceLine;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceGeneratedInvoiceLine;
     }
 }

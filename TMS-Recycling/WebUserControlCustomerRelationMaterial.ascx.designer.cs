@@ -73,7 +73,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_Material;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_Material;
         
         /// <summary>
         /// Label15 control.
@@ -127,6 +127,6 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMaterials;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceMaterials;
     }
 }

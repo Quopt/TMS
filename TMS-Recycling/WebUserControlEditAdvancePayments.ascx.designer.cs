@@ -37,7 +37,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListAdvancePayments;
+        protected global::TMS_Recycling.ClassComboBox DropDownListAdvancePayments;
         
         /// <summary>
         /// LabelAdvancePaymentAmountToBeCorrected control.
@@ -208,6 +208,6 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceAdvancePayments;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceAdvancePayments;
     }
 }

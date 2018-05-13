@@ -109,7 +109,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_FromRelation;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_FromRelation;
         
         /// <summary>
         /// LabelFreightDateTime control.
@@ -145,7 +145,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_FreightType_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_FreightType_SelectedValue;
         
         /// <summary>
         /// LabelYourReference control.
@@ -181,7 +181,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_FreightStatus_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_FreightStatus_SelectedValue;
         
         /// <summary>
         /// LabelFreightStartDateTime control.
@@ -235,7 +235,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_FreightDirection_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_FreightDirection_SelectedValue;
         
         /// <summary>
         /// LabelFreighID control.
@@ -289,7 +289,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_OurTruck;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_OurTruck;
         
         /// <summary>
         /// LabelFreighOurDriver control.
@@ -307,7 +307,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_OurDriverID;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_OurDriverID;
         
         /// <summary>
         /// Label15 control.
@@ -406,7 +406,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceTrucks;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceTrucks;
         
         /// <summary>
         /// EntityDataSourceDrivers control.
@@ -415,7 +415,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceDrivers;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceDrivers;
         
         /// <summary>
         /// EntityDataSourceRelations control.
@@ -424,6 +424,6 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceRelations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceRelations;
     }
 }

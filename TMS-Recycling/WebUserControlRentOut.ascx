@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlRentOut.ascx.cs" Inherits="TMS_Recycling.WebUserControlRentOut" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register src="URLPopUpControl.ascx" tagname="URLPopUpControl" tagprefix="uc3" %>
 <%@ Register src="CalendarControl.ascx" tagname="CalendarControl" tagprefix="uc4" %>

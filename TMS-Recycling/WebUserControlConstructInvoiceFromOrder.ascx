@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControlConstructInvoiceFromOrder.ascx.cs" Inherits="TMS_Recycling.WebUserControlConstructInvoiceFromOrder" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register src="URLPopUpControl.ascx" tagname="URLPopUpControl" tagprefix="uc1" %>
 <%@ Register src="WebUserControlEditAdvancePayments.ascx" tagname="WebUserControlEditAdvancePayments" tagprefix="uc2" %>

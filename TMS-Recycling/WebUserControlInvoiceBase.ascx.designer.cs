@@ -82,7 +82,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_InvoiceStatus_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_InvoiceStatus_SelectedValue;
         
         /// <summary>
         /// ButtonToProcessed control.
@@ -136,7 +136,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_Ledger;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_Ledger;
         
         /// <summary>
         /// LabelRelation control.
@@ -154,7 +154,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_Relation;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_Relation;
         
         /// <summary>
         /// YourReference control.
@@ -190,7 +190,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_Location;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_Location;
         
         /// <summary>
         /// LabelTotalAmountExVAT control.
@@ -406,7 +406,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListFreeLineLedgerBookingCode;
+        protected global::TMS_Recycling.ClassComboBox DropDownListFreeLineLedgerBookingCode;
         
         /// <summary>
         /// ButtonAddInvoiceLine control.
@@ -433,7 +433,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListAPCorrection;
+        protected global::TMS_Recycling.ClassComboBox DropDownListAPCorrection;
         
         /// <summary>
         /// LabelCorrectionAP control.
@@ -478,7 +478,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownListWorkCorrection;
+        protected global::TMS_Recycling.ClassComboBox DropDownListWorkCorrection;
         
         /// <summary>
         /// LabelWorkCorrectionAmount control.
@@ -604,7 +604,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceRelations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceRelations;
         
         /// <summary>
         /// URLPopUpControlShowInvoice control.
@@ -622,7 +622,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLocations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLocations;
         
         /// <summary>
         /// EntityDataSourceStaffMembers control.
@@ -631,7 +631,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceStaffMembers;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceStaffMembers;
         
         /// <summary>
         /// EntityDataSourceInvoiceLines control.
@@ -640,7 +640,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceInvoiceLines;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceInvoiceLines;
         
         /// <summary>
         /// EntityDataSourceOrders control.
@@ -649,7 +649,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceOrders;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceOrders;
         
         /// <summary>
         /// EntityDataSourceLedgers control.
@@ -658,7 +658,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLedgers;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLedgers;
         
         /// <summary>
         /// EntityDataSourceLedgerBookingCodes control.
@@ -667,7 +667,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLedgerBookingCodes;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLedgerBookingCodes;
         
         /// <summary>
         /// EntityDataSourceAdvancePayments control.
@@ -676,7 +676,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceAdvancePayments;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceAdvancePayments;
         
         /// <summary>
         /// EntityDataSourceWorkPayments control.
@@ -685,7 +685,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceWorkPayments;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceWorkPayments;
         
         /// <summary>
         /// CheckBoxRefreshRequired control.

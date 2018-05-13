@@ -73,7 +73,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_BookingType_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_BookingType_SelectedValue;
         
         /// <summary>
         /// LabelLedgerType0 control.
@@ -208,6 +208,6 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLocations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLocations;
     }
 }

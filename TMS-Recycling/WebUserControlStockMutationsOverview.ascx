@@ -2,8 +2,8 @@
     <%@ Register src="WebUserControlStockMutationsBase.ascx" tagname="WebUserControlStockMutationsBase" tagprefix="uc4" %>
     <asp:Label ID="LabelObjectName" runat="server" Text="..." 
         CssClass="SubMenuHeader"></asp:Label>
-<%@ Register src="~/CalendarControl.ascx" tagname="CalendarControl" tagprefix="uc1" %><%@ Register src="~/WebUserControlOrderBase.ascx" tagname="WebUserControlOrderBase" tagprefix="uc2" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+<%@ Register src="~/CalendarControl.ascx" tagname="CalendarControl" tagprefix="uc1" %>
+<%@ Register src="~/WebUserControlOrderBase.ascx" tagname="WebUserControlOrderBase" tagprefix="uc2" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register src="ComboBoxLocation.ascx" tagname="ComboBoxLocation" tagprefix="uc3" %>
 <%@ Register assembly="TMS-Recycling" namespace="TMS_Recycling" tagprefix="cc11" %>

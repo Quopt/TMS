@@ -145,7 +145,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_CustomerType_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_CustomerType_SelectedValue;
         
         /// <summary>
         /// LabelCustomerReference control.
@@ -181,7 +181,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_PreferredCurrency_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_PreferredCurrency_SelectedValue;
         
         /// <summary>
         /// LabelVATNumber control.
@@ -217,7 +217,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_Country_SelectedValue;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_Country_SelectedValue;
         
         /// <summary>
         /// LabelPreferredLocation control.
@@ -235,7 +235,7 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox DropDownList_PreferredLocation;
+        protected global::TMS_Recycling.ClassComboBox DropDownList_PreferredLocation;
         
         /// <summary>
         /// LabelTransportData control.
@@ -361,6 +361,6 @@ namespace TMS_Recycling {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceLocations;
+        protected global::TMS_Recycling.ClassEntityDataSource EntityDataSourceLocations;
     }
 }
