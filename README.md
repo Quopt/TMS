@@ -31,3 +31,5 @@ Voor de server heeft U nodig :
 - Microsoft IIS in de laatste versie
 - SQL Server (express is voldoende tot 10 Gbyte databases)
 - Reporting services voor het draaien van de rapporten
+
+Deze software is open source. De broncodes zijn copyright Quopt IT Services BV. U mag conform de licentie de broncodes aanpassen zolang de aanpassing open source zijn en niet auteursrechtelijk bescherm. Quopt IT Services BV behoudt zich het recht voor om deze broncodes uit het publieke domein terug te trekken zonder opgaaf van redenen. 
